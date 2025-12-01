@@ -11,31 +11,35 @@ const Home = () => {
             <section id="about" className="py-20 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
-                        <div className="relative">
-                            <div className="aspect-video bg-slate-100 rounded-2xl overflow-hidden shadow-xl relative">
-                                <div className="absolute inset-0 bg-slate-200 flex items-center justify-center text-slate-400">
-                                    <Building2 className="w-16 h-16" />
+                        <div>
+                            <div className="relative mb-8">
+                                <div className="aspect-video bg-slate-100 rounded-2xl overflow-hidden shadow-xl relative">
+                                    <div className="absolute inset-0 bg-slate-200 flex items-center justify-center text-slate-400">
+                                        <Building2 className="w-16 h-16" />
+                                    </div>
+                                    <img
+                                        src="/photos/award.webp"
+                                        alt="Company Award"
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                        loading="lazy"
+                                    />
                                 </div>
-                                <img
-                                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop"
-                                    alt="Company Building"
-                                    className="absolute inset-0 w-full h-full object-cover"
-                                    width="600" height="400" loading="lazy"
-                                    srcSet="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop 800w, 
-                          https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop 1200w"
-                                    sizes="(max-width: 768px) 100vw, 50vw"
-                                />
+                                <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 hidden md:block">
+                                    <div className="flex items-center gap-4">
+                                        <div className="bg-orange-100 p-3 rounded-full text-orange-600">
+                                            <ShieldCheck className="w-8 h-8" />
+                                        </div>
+                                        <div>
+                                            <p className="text-sm text-slate-500">專案管理經驗</p>
+                                            <p className="text-2xl font-bold text-slate-800">17+ 年</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 hidden md:block">
-                                <div className="flex items-center gap-4">
-                                    <div className="bg-orange-100 p-3 rounded-full text-orange-600">
-                                        <ShieldCheck className="w-8 h-8" />
-                                    </div>
-                                    <div>
-                                        <p className="text-sm text-slate-500">專案管理經驗</p>
-                                        <p className="text-2xl font-bold text-slate-800">17+ 年</p>
-                                    </div>
-                                </div>
+
+                            <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-xl shadow-sm">
+                                <p className="text-green-800 font-bold text-lg mb-1">2023 綠色科技創新獎</p>
+                                <p className="text-green-700">肯定我們在能源數據應用上的領先地位。</p>
                             </div>
                         </div>
                         <div>
