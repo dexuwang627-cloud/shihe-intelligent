@@ -23,7 +23,7 @@ export const projectData = {
     'taipeidome': {
         title: "台北大巨蛋機電工程",
         category: "機電工程/高規格",
-        image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2670&auto=format&fit=crop",
+        image: "/photos/egg.jpg",
         summary: "承攬國家級體育設施的核心電力與機電系統建置，需符合極高規格的穩定性與安全標準。",
         description: [
             "本案負責 15 個電氣室及 4 個變電站的高規格機電整合工程。挑戰在於系統的冗餘設計和快速應變能力，確保在滿載運營或突發狀況下，主體建築的電力供應不受影響。",
@@ -44,7 +44,7 @@ export const projectData = {
     'energyfarm': {
         title: "南部電網級儲能案",
         category: "電網級儲能",
-        image: "https://images.unsplash.com/photo-1619830502123-5e921d222230?q=80&w=2670&auto=format&fit=crop",
+        image: "/photos/net.jpg",
         summary: "MW 級儲能系統建置，參與台電電力交易平台，提供電網頻率調整輔助服務。",
         description: [
             "本案位於台灣南部，旨在透過大型儲能系統（BESS）提供快速反應的調頻備轉（dReg）服務，是穩定再生能源間歇性供電的重要基礎設施。",
@@ -87,7 +87,7 @@ export const projectData = {
     'factorymep': {
         title: "新竹高科技廠房空調節能",
         category: "廠房節能/ESCO",
-        image: "https://images.unsplash.com/photo-1629904853716-f07c87c2b6f3?q=80&w=2670&auto=format&fit=crop",
+        image: "/photos/ac.jpg",
         summary: "針對高耗能廠房進行空調節能改造，導入磁懸浮冰水主機，年節省電費超過 350 萬元。",
         description: [
             "此專案是典型的節能績效保證專案 (ESCO)，我們負責從設計、施工到驗收的所有環節。核心是汰換老舊冰水機組為高效能磁懸浮主機，並優化冷卻水塔與水泵變頻控制。",
@@ -129,7 +129,7 @@ export const projectData = {
     'officebess': {
         title: "小型辦公大樓 EMS",
         category: "能源管理",
-        image: "https://images.unsplash.com/photo-1587560411319-33b5c6870c97?q=80&w=2670&auto=format&fit=crop",
+        image: "/photos/office.jpg",
         summary: "透過 EMS 系統優化辦公室冰水主機排程與需量預測，精準管理電力，避免超約罰款。",
         description: [
             "本專案聚焦於中小型辦公大樓的電力精細化管理。辦公大樓的尖峰用電高度集中，易導致契約容量超約。",

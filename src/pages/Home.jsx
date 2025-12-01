@@ -194,7 +194,7 @@ const Home = () => {
 
                         <Link to="/project-detail?id=taipeidome" className="group cursor-pointer">
                             <div className="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
-                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2670&auto=format&fit=crop" alt="MEP Project" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
+                                <img src="/photos/egg.jpg" alt="MEP Project" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
                                 <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">機電工程</div>
                             </div>
                             <h4 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">台北大巨蛋機電工程</h4>

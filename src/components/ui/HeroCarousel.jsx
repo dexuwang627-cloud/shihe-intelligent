@@ -8,7 +8,7 @@ const carouselData = [
         title: "AI 精準環控與澆灌，提升作物產量 20%",
         link: "/project-detail?id=smartfarm",
         linkText: "查看智慧農業案例",
-        image: "/photos/agri2.webp"
+        image: "/photos/carousel-1.jpg"
     },
     {
         subtitle: "淨零轉型 | 節能優化",
