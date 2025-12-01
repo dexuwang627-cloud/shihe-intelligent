@@ -33,7 +33,7 @@ const Navbar = () => {
             className={`fixed w-full z-50 transition-all duration-300 py-3 border-b border-green-500/50 ${isScrolled ? 'bg-slate-900 shadow-lg' : 'bg-slate-900/90 backdrop-blur-sm'
                 }`}
         >
-            <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div className="w-full px-4 md:px-6 lg:px-8 flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-2">
                     <img src="/photos/logo.png" alt="世和智能 Logo" className="h-10 w-auto" width="40" height="40" />
                     <div>
