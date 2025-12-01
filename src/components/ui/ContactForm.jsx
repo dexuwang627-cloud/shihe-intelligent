@@ -1,43 +1,44 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
-const WORKER_ENDPOINT = "https://shihe-email.9g2mn5pjrf.workers.dev/";
+// TODO: Replace these with your actual EmailJS credentials
+// You can get these from https://dashboard.emailjs.com/admin
+const SERVICE_ID = "service_486b1wq";
+const TEMPLATE_ID = "template_4khcs2a";
+const PUBLIC_KEY = "0_3tN7zE5jZmvRXb-";
 
 const ContactForm = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const form = useRef();
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        const form = event.target;
-        const formData = new FormData(form);
-        const data = {};
-        for (const [key, value] of formData.entries()) {
-            data[key] = value;
-        }
-
         setIsSubmitting(true);
 
         try {
-            const response = await fetch(WORKER_ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            if (response.ok) {
+            const result = await emailjs.sendForm(
+                SERVICE_ID,
+                TEMPLATE_ID,
+                form.current,
+                PUBLIC_KEY
+            );
+
+            if (result.text === 'OK') {
                 alert('✅ 諮詢已成功送出！感謝您的聯繫。');
-                form.reset();
+                form.current.reset();
             } else {
-                alert(`❌ 錯誤：無法送出。伺服器狀態碼: ${response.status}`);
+                throw new Error(result.text);
             }
         } catch (error) {
-            alert('❌ 網路錯誤，無法連線至伺服器。請檢查 Worker 網址。');
-            console.error('Fetch error:', error);
+            console.error('EmailJS Error:', error);
+            alert(`❌ 發送失敗: ${error.text || error.message || '未知錯誤'}`);
         } finally {
             setIsSubmitting(false);
         }
     };
 
     return (
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form ref={form} className="space-y-4" onSubmit={handleSubmit}>
             <div>
                 <label className="block text-sm text-slate-300 mb-1">公司名稱</label>
                 <input
@@ -53,7 +54,7 @@ const ContactForm = () => {
                     <label className="block text-sm text-slate-300 mb-1">聯絡人</label>
                     <input
                         type="text"
-                        name="contactPerson"
+                        name="contact_person" // Changed to snake_case for common EmailJS templates
                         className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-green-500"
                         placeholder="王小明"
                         required
@@ -73,7 +74,7 @@ const ContactForm = () => {
             <div>
                 <label className="block text-sm text-slate-300 mb-1">需求項目</label>
                 <select
-                    name="inquiryType"
+                    name="inquiry_type" // Changed to snake_case
                     className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-green-500 [&>option]:text-slate-900"
                 >
                     <option>太陽能/儲能建置</option>
