@@ -49,6 +49,31 @@ const Services = () => {
                         </div>
                     </div>
 
+                    <div className="bg-white rounded-2xl shadow-lg overflow-hidden mb-16 flex flex-col md:flex-row">
+                        <div className="md:w-1/2">
+                            <img src="/photos/lightwind1.webp" alt="Wind-Solar Hybrid" className="w-full h-full object-cover min-h-[300px]" />
+                        </div>
+                        <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                            <div className="flex items-center gap-3 mb-4">
+                                <div className="bg-blue-100 p-3 rounded-full text-blue-600">
+                                    <Wind className="w-6 h-6" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-slate-900">風光互補型發電與微電網</h3>
+                            </div>
+                            <p className="text-slate-600 mb-6 leading-relaxed">
+                                針對離島或偏遠地區，我們提供結合小型風力發電與太陽能的「風光互補」解決方案。透過分散式微型電網技術，整合多種再生能源與儲能系統，實現能源自給自足，大幅降低對柴油發電機的依賴。
+                            </p>
+                            <ul className="space-y-3">
+                                <li className="flex items-center gap-2 text-slate-700">
+                                    <Check className="w-5 h-5 text-green-500" /> <span>全天候發電：日間太陽能，夜間風力互補</span>
+                                </li>
+                                <li className="flex items-center gap-2 text-slate-700">
+                                    <Check className="w-5 h-5 text-green-500" /> <span>能源獨立：適合無電網或電網不穩地區</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div className="bg-white p-6 rounded-xl shadow-md border border-green-200 mb-12 max-w-full">
                         <button
                             onClick={() => setIsMicroStorageOpen(!isMicroStorageOpen)}
@@ -275,7 +300,7 @@ const Services = () => {
                     <div className="grid md:grid-cols-2 gap-12 mb-16">
                         <div className="bg-white rounded-2xl shadow-md overflow-hidden group">
                             <div className="h-64 overflow-hidden relative">
-                                <img src="https://images.unsplash.com/photo-1625246333195-5840b90c06ed?q=80&w=2670&auto=format&fit=crop" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Smart Farm" />
+                                <img src="/photos/agri2.webp" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="Smart Farm" />
                                 <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-6">
                                     <h3 className="text-2xl font-bold text-white">智慧農業環控</h3>
                                 </div>
@@ -283,10 +308,13 @@ const Services = () => {
                             <div className="p-8">
                                 <ul className="space-y-4">
                                     <li className="flex gap-3">
-                                        <div className="bg-green-100 p-2 rounded-full text-green-600 h-fit"><CloudRain className="w-5 h-5" /></div>
+                                        <div className="w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden">
+                                            <img src="/photos/agri1.webp" alt="Energy Independent" className="w-full h-full object-cover" />
+                                        </div>
                                         <div>
-                                            <h4 className="font-bold text-lg">微氣候精準監測</h4>
-                                            <p className="text-slate-600 text-sm">即時監測溫濕度、光照、土壤酸鹼值(EC/pH)，數據上傳雲端戰情室。</p>
+                                            <h4 className="font-bold text-lg mb-1">微氣候精準監測</h4>
+                                            <p className="text-slate-600 text-sm mb-2">即時監測溫濕度、光照、土壤酸鹼值(EC/pH)，數據上傳雲端戰情室。</p>
+                                            <span className="inline-block bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded">能源獨立解決方案</span>
                                         </div>
                                     </li>
                                     <li className="flex gap-3">
