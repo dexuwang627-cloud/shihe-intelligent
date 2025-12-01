@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 // TODO: Replace these with your actual EmailJS credentials
 // You can get these from https://dashboard.emailjs.com/admin
 const SERVICE_ID = "service_486b1wq";
-const TEMPLATE_ID = "template_4khcs2a";
+const TEMPLATE_ID = "template_jwt8q6u";
 const PUBLIC_KEY = "0_3tN7zE5jZmvRXb-";
 
 const ContactForm = () => {
