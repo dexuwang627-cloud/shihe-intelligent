@@ -78,16 +78,7 @@ const Projects = () => {
                             </div>
                         </Link>
 
-                        <Link to="/project-detail?id=microbess" className="group cursor-pointer bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
-                            <div className="aspect-[4/3] bg-slate-200 overflow-hidden relative">
-                                <img src="https://images.unsplash.com/photo-1621213328416-83a3ec7df4b9?q=80&w=2670&auto=format&fit=crop" alt="Small BESS" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                                <div className="absolute top-3 left-3 bg-orange-500 text-white text-xs font-bold px-2 py-0.5 rounded-full">微型光儲/防停電</div>
-                            </div>
-                            <div className="p-4">
-                                <h4 className="text-lg font-bold text-slate-900 mb-1 group-hover:text-orange-500 transition-colors">連鎖咖啡店微型儲能</h4>
-                                <p className="text-slate-600 text-xs">離峰儲電與不斷電系統，節費與防災並行。</p>
-                            </div>
-                        </Link>
+
 
                         <Link to="/project-detail?id=carecenter" className="group cursor-pointer bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
                             <div className="aspect-[4/3] bg-slate-200 overflow-hidden relative">

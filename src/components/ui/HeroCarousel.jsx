@@ -4,11 +4,11 @@ import { Leaf, ArrowRight } from 'lucide-react';
 
 const carouselData = [
     {
-        subtitle: "微型光儲 | 企業不斷電",
-        title: "5年回本，安全固若金湯，停電免驚！",
-        link: "/project-detail?id=microbess",
-        linkText: "查看微型光儲案例",
-        image: "/photos/carousel-1.jpg"
+        subtitle: "智慧農業 | 科技種植",
+        title: "AI 精準環控與澆灌，提升作物產量 20%",
+        link: "/project-detail?id=smartfarm",
+        linkText: "查看智慧農業案例",
+        image: "/photos/agri2.webp"
     },
     {
         subtitle: "淨零轉型 | 節能優化",

@@ -18,7 +18,7 @@ const Home = () => {
                                         <Building2 className="w-16 h-16" />
                                     </div>
                                     <img
-                                        src="/photos/award.webp"
+                                        src="/photos/award1.webp"
                                         alt="Company Award"
                                         className="absolute inset-0 w-full h-full object-cover object-top"
                                         loading="lazy"
