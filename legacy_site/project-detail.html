@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="深入了解世和智能的單一工程實績：包含專案規模、技術規格、以及在桃園、新竹地區實現的節能與環境效益。">
+    <title id="page-title">專案詳細資訊 | 世和智能 Shi-He Intelligent</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness", 
+  "name": "世和智能股份有限公司 Shi-He Intelligent",
+  "legalName": "世和智能股份有限公司",
+  "url": "https://shiheintelligent.com",
+  "logo": "photos/logo.png", 
+  "serviceType": ["太陽能建置", "儲能系統整合", "機電節能工程", "智慧農業顧問"], 
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+886-926-858-757",
+    "contactType": "customer service",
+    "areaServed": ["桃園市", "新竹縣市", "全台灣"] 
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "興國路42號", 
+    "addressLocality": "中壢區", 
+    "addressRegion": "桃園市", 
+    "postalCode": "320",
+    "addressCountry": "TW"
+  },
+  "sameAs": [
+    "https://facebook.com/profile.php?id=61550299602989",
+    "https://www.google.com/search?q=世和智能股份有限公司"
+  ]
+}
+</script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* 保持與其他頁面風格一致 */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800">
+    
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-slate-900 shadow-lg py-3 border-b border-green-500/50">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="photos/logo.png" alt="世和智能 Logo" class="h-10 w-auto"> 
+                <div>
+                    <h1 class="font-bold text-xl leading-tight text-white md:text-2xl">
+                        世和智能
+                    </h1>
+                    <p class="text-xs tracking-wider text-slate-400">
+                        Shi-He Intelligent
+                    </p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">首頁</a>
+                <a href="index.html#about" class="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">關於我們</a>
+                <a href="services.html" class="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">核心服務</a>
+                <a href="index.html#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg hover:shadow-orange-500/30">
+                    立即諮詢
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i data-lucide="menu" class="text-white w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-slate-800 shadow-lg md:hidden flex-col p-4 gap-4 border-t border-green-500/50">
+            <a href="index.html" class="text-left font-medium text-slate-200 py-2 border-b border-slate-700">首頁</a>
+            <a href="index.html#about" class="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">關於我們</a>
+            <a href="services.html" class="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">核心服務</a>
+            <a href="index.html#contact" class="bg-orange-500 text-white py-3 rounded-lg font-medium text-center mt-2 hover:bg-orange-600">
+                立即諮詢
+            </a>
+        </div>
+    </nav>
+
+    <main class="fade-in pt-24 min-h-screen">
+        <div class="container mx-auto px-4">
+            <div class="mb-8">
+                <a href="projects.html" class="flex items-center gap-2 text-slate-500 hover:text-orange-600 transition-colors font-medium mb-4">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> 返回所有工程實績
+                </a>
+            </div>
+
+            <div id="project-header" class="mb-10">
+                <span id="project-category-badge" class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold"></span>
+                <h1 id="project-title" class="text-4xl font-bold text-slate-900 mt-4 mb-3"></h1>
+                <p id="project-summary" class="text-xl text-slate-600 max-w-4xl"></p>
+            </div>
+
+            <div id="project-image-container" class="mb-12">
+                <img id="project-main-image" src="" alt="專案主圖" class="w-full h-[500px] object-cover rounded-2xl shadow-xl border border-slate-200">
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-10 mb-20">
+                
+                <div class="lg:col-span-1 bg-white p-8 rounded-2xl shadow-lg border border-slate-100 h-fit">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-6 border-b pb-3">關鍵指標與技術規格</h2>
+                    <ul id="project-specs" class="space-y-4 text-slate-700">
+                        </ul>
+                </div>
+
+                <div class="lg:col-span-2">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4">專案簡介與挑戰</h2>
+                    <div id="project-description" class="space-y-6 text-slate-700 leading-relaxed mb-10">
+                        </div>
+
+                    <h2 class="text-2xl font-bold text-slate-900 mb-4 mt-8">客戶效益回饋</h2>
+                    <div id="project-benefits" class="grid sm:grid-cols-3 gap-4 text-center">
+                        </div>
+                </div>
+            </div>
+
+            <div class="bg-orange-500/10 border border-orange-500/30 text-slate-900 rounded-2xl p-8 text-center mb-20">
+                <h3 class="text-2xl font-bold mb-3">您的專案需求是否與此類似？</h3>
+                <p class="text-slate-700 mb-6">我們能為您量身打造符合企業 ESG 目標與節能需求的客製化方案。</p>
+                <a href="index.html#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition-all shadow-lg hover:shadow-orange-500/40">
+                    預約一對一專案諮詢
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer id="footer-contact" class="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div class="md:col-span-2">
+                    <div class="flex items-center gap-2 mb-6">
+                        <img src="photos/logo.png" alt="世和智能 Logo" class="h-8 w-auto"> 
+                        <h2 class="font-bold text-xl text-slate-800">世和智能股份有限公司</h2>
+                    </div>
+                    <p class="text-slate-600 mb-6 max-w-sm">
+                        致力於運用先進科技解決能源與環境問題，為客戶創造最大價值的同時，也為地球永續盡一份心力。
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="font-bold text-slate-900 mb-4">服務項目</h3>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="services.html#service-solar" class="hover:text-orange-500 transition-colors">綠能光儲建置</a></li>
+                        <li><a href="services.html#service-mep" class="hover:text-orange-500 transition-colors">機電節能工程</a></li>
+                        <li><a href="services.html#service-ems" class="hover:text-orange-500 transition-colors">EMS 能源管理</a></li>
+                        <li><a href="services.html#service-consult" class="hover:text-orange-500 transition-colors">企業輔助輔導</a></li>
+                        <li><a href="services.html#service-smart" class="hover:text-orange-500 transition-colors">智慧農業/照護</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-bold text-slate-900 mb-4">聯絡資訊</h3>
+                    <ul class="space-y-4 text-sm text-slate-600">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="phone" class="text-green-500 flex-shrink-0 mt-0.5 w-4 h-4"></i>
+                            <span>0926-858-757 (專案經理: 王啓龍)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="mail" class="text-green-500 flex-shrink-0 mt-0.5 w-4 h-4"></i>
+                            <a href="/cdn-cgi/l/email-protection#783417161f141d0c0c1d0a494a4b381f15191114561b1715" class="hover:text-green-600 transition-colors"><span class="__cf_email__" data-cfemail="bdf1d2d3dad1d8c9c9d8cf8c8f8efddad0dcd4d193ded2d0">[email&#160;protected]</span></a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="text-green-500 flex-shrink-0 mt-0.5 w-4 h-4"></i>
+                            <span>桃園市中壢區（詳細地址請洽詢）</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-200 pt-8 text-center text-sm text-slate-500">
+                <p>&copy; 2025 世和智能股份有限公司 Shi-He Intelligent Co., Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // 專案數據定義 (使用實際專案 ID)
+        const projectData = {
+            'yanghwa': {
+                title: "洋華光電 996KW 案場",
+                category: "太陽能/MW級",
+                image: "https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2670&auto=format&fit=crop",
+                summary: "在屋頂空間建置近 1MW 的太陽能電站，利用高效能模組與優化器，實現最大發電效益。",
+                description: [
+                    "此專案挑戰在大型工業廠房屋頂上，整合不同結構與遮蔽物，最大化設置容量。我們採用了高轉換效率的單晶模組，並搭配 SolarEdge 智慧變流器，確保在部分遮蔭情況下也能維持最佳性能。",
+                    "整個建置過程嚴格遵循最新的電業法規和颱風負荷標準，確保系統在 20 年壽命週期內安全可靠運作。監測系統可秒級偵測異常電弧，提供最高等級的消防安全防護。"
+                ],
+                specs: {
+                    '專案規模': '996 KWp',
+                    '系統類型': '屋頂型太陽能電站',
+                    '核心技術': 'SolarEdge 智慧變流器/高效能單晶模組',
+                    '維運模式': '24/7 遠端監控與無人機巡檢'
+                },
+                benefits: {
+                    '年發電量': '125 萬度',
+                    '節省成本': '約 600 萬元/年',
+                    '減碳量': '630 噸 CO2e/年'
+                }
+            },
+            'taipeidome': {
+                title: "台北大巨蛋機電工程",
+                category: "機電工程/高規格",
+                image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2670&auto=format&fit=crop",
+                summary: "承攬國家級體育設施的核心電力與機電系統建置，需符合極高規格的穩定性與安全標準。",
+                description: [
+                    "本案負責 15 個電氣室及 4 個變電站的高規格機電整合工程。挑戰在於系統的冗餘設計和快速應變能力，確保在滿載運營或突發狀況下，主體建築的電力供應不受影響。",
+                    "我們導入了自動化電力監控系統，精準管理電能品質。所有建置材料均符合最新消防法規與國際標準，為大型公共設施提供固若金湯的電力保障。"
+                ],
+                specs: {
+                    '專案範圍': '電氣室 15 座 / 變電站 4 座',
+                    '主要服務': '高壓變電系統、緊急備用電源',
+                    '核心標準': '符合 IEC、CNS、及最新消防規範',
+                    '專案期程': '3 年'
+                },
+                benefits: {
+                    '系統穩定度': '99.999% (五個九)',
+                    '節能效益': '預計節能 15% (與傳統設計相比)',
+                    '安全等級': '最高安全等級電氣設計'
+                }
+            },
+            'energyfarm': {
+                title: "南部電網級儲能案",
+                category: "電網級儲能",
+                image: "https://images.unsplash.com/photo-1619830502123-5e921d222230?q=80&w=2670&auto=format&fit=crop",
+                summary: "MW 級儲能系統建置，參與台電電力交易平台，提供電網頻率調整輔助服務。",
+                description: [
+                    "本案位於台灣南部，旨在透過大型儲能系統（BESS）提供快速反應的調頻備轉（dReg）服務，是穩定再生能源間歇性供電的重要基礎設施。",
+                    "挑戰包含電池櫃的熱管理與消防設計。我們採用了多級次消防系統，並搭配獨家 EMS 系統，確保在毫秒級響應速度下，系統安全穩定，達成年化報酬率目標。"
+                ],
+                specs: {
+                    '系統容量': '20 MW / 40 MWh',
+                    '輔助服務': 'dReg/E-dReg (調頻備轉)',
+                    '核心技術': '液冷電池系統 / 世和智能 EMS',
+                    '併網標準': '台電電網規範 (Grid Code)'
+                },
+                benefits: {
+                    '年化報酬率': '高於業界平均 15%',
+                    '系統響應速度': '小於 200 毫秒',
+                    '電網貢獻': '每日提供數十次調頻服務'
+                }
+            },
+            'microbess': {
+                title: "連鎖咖啡店微型儲能",
+                category: "微型光儲/防停電",
+                image: "https://images.unsplash.com/photo-1621213328416-83a3ec7df4b9?q=80&w=2670&auto=format&fit=crop",
+                summary: "為連鎖餐飲業提供小型、經濟實惠的儲能解決方案，確保 POS 系統與照明在停電時持續運作，並利用價差削峰填谷。",
+                description: [
+                    "此微型光儲專案針對零售業，容量小巧但效益顯著。主要功能是作為不斷電系統（UPS），避免停電造成的營業損失和設備損壞。同時，系統在離峰時充電、尖峰時放電，有效降低月電費帳單。",
+                    "安裝流程快速簡潔，並提供五年回本的節能保證。客戶對其在颱風季節的穩定表現給予高度評價。"
+                ],
+                specs: {
+                    '系統容量': '20 KWh',
+                    '主要功能': 'UPS 不斷電 / 尖峰負載轉移',
+                    '回本週期': '5 年 (搭配節能保證)',
+                    '安全特性': '通過 UL9540/VDE 4105 標準'
+                },
+                benefits: {
+                    '停電備用時間': '4 小時 (提供基本照明與 POS)',
+                    '尖峰負載轉移': '轉移 100% 尖峰時段負載',
+                    '客戶評價': '「不再害怕夏季跳電，營業不受影響。」'
+                }
+            },
+            'smartfarm': {
+                title: "鮮一有機智慧農場",
+                category: "智慧農業/AIoT",
+                image: "https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2532&auto=format&fit=crop",
+                summary: "建置精準環境控制與 AI 澆灌系統，結合智慧光照，協助農民提早採收，降低經營成本。",
+                description: [
+                    "我們深刻理解農民的辛苦，透過智慧系統，不僅能精準監測微氣候，還能根據作物特性，提供專業光照波長建議，利用智慧光照系統將採收期穩定提早 7-10 天。",
+                    "AI 智慧澆灌系統依據土壤和天氣預測，自動控制水肥，有效節省 30% 以上的水肥用量。同時，我們的智慧系統提供<span class='font-bold text-green-600'>零年費服務</span>，讓農民可以無後顧之憂地提高產能。"
+                ],
+                specs: {
+                    '專案規模': '3,000 坪溫室',
+                    '核心技術': 'AI 智慧澆灌 / 智慧光照波長優化',
+                    '系統費用': '無年費',
+                    '節約效益': '節省水肥用量 30% 以上'
+                },
+                benefits: {
+                    '採收期縮短': '7-10 天',
+                    '產量增幅': '約 20%',
+                    '人力節省': '降低 40% 田間管理時間'
+                }
+            },
+            'factorymep': {
+                title: "新竹高科技廠房空調節能",
+                category: "廠房節能/ESCO",
+                image: "https://images.unsplash.com/photo-1629904853716-f07c87c2b6f3?q=80&w=2670&auto=format&fit=crop",
+                summary: "針對高耗能廠房進行空調節能改造，導入磁懸浮冰水主機，年節省電費超過 350 萬元。",
+                description: [
+                    "此專案是典型的節能績效保證專案 (ESCO)，我們負責從設計、施工到驗收的所有環節。核心是汰換老舊冰水機組為高效能磁懸浮主機，並優化冷卻水塔與水泵變頻控制。",
+                    "透過 EMS 系統的 AI 最佳化控制參數，確保空調系統以最低能耗運營，同時滿足製程對溫濕度的嚴格要求。客戶在 2.8 年內實現投資回本，並大幅提升了企業 ESG 績效。"
+                ],
+                specs: {
+                    '節能規模': '冰水主機 1500 RT',
+                    '主要服務': '空調節能改造 / ESCO 模式',
+                    '投資回收期': '2.8 年',
+                    '補助輔導': '已協助申請經濟部節能專案補助'
+                },
+                benefits: {
+                    '年節省電費': '350 萬元',
+                    '減碳效益': '480 噸 CO2e/年',
+                    '設備壽命': '延長 5 年'
+                }
+            },
+            'carecenter': {
+                title: "台中長照中心生理監測",
+                category: "長照智慧",
+                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670&auto=format&fit=crop",
+                summary: "導入非接觸式生理監測、跌倒偵測與電子圍籬系統，為長者提供高標準的安全照護環境。",
+                description: [
+                    "此智慧照護系統採用非侵入式的毫米波雷達，可精確偵測長者的呼吸與心律，無須穿戴任何裝置，大幅提升舒適度。系統能即時偵測跌倒或離床等異常行為，並在第一時間通知護理站。",
+                    "我們額外新增了<span class='font-bold text-green-600'>電子圍籬功能</span>，透過長者手錶定位，一旦超出設定的安全範圍，警鈴即響，確保長者不走失。此系統為<span class='font-bold text-green-600'>無年費智慧系統</span>，且我們能全力協助業主申請<span class='font-bold text-green-600'>115-116年政府獎助金</span>，數據完整驗收後即可撥款。"
+                ],
+                specs: {
+                    '系統範圍': '50 床位 / 2 樓層',
+                    '核心技術': '非接觸式雷達 / 電子圍籬系統',
+                    '系統費用': '無年費',
+                    '補助狀態': '可申請 115-116年長照智慧化獎助'
+                },
+                benefits: {
+                    '安全反應時間': '小於 10 秒',
+                    '照護人力節省': '減輕夜間巡房壓力 50%',
+                    '家屬滿意度': '極高 (提供安心的零年費系統)'
+                }
+            },
+            'officebess': {
+                title: "小型辦公大樓 EMS",
+                category: "能源管理",
+                image: "https://images.unsplash.com/photo-1587560411319-33b5c6870c97?q=80&w=2670&auto=format&fit=crop",
+                summary: "透過 EMS 系統優化辦公室冰水主機排程與需量預測，精準管理電力，避免超約罰款。",
+                description: [
+                    "本專案聚焦於中小型辦公大樓的電力精細化管理。辦公大樓的尖峰用電高度集中，易導致契約容量超約。",
+                    "我們的 EMS 系統能即時監控負載，並透過 AI 預測隔日需量，自動調整冰水主機啟停時間，甚至在必要時執行負載卸載，確保電力調度在安全線內，同時達到節費目的。"
+                ],
+                specs: {
+                    '監控點位': '50+ 電表/設備',
+                    '核心功能': 'AI 需量預測 / 冰水主機排程優化',
+                    '系統架構': '雲端微服務',
+                    '節費目標': '避免超約罰款'
+                },
+                benefits: {
+                    '超約罰款次數': '0 次/年',
+                    '節電率': '12%',
+                    '管理效率提升': '80%'
+                }
+            }
+            // ... 您可以繼續添加其他專案數據
+        };
+
+
+        // ---------------------------------------------------------
+        // JavaScript 邏輯：讀取 URL 參數並動態填充內容
+        // ---------------------------------------------------------
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            const regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            const results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        };
+
+        function populateProjectDetails() {
+            const projectId = getUrlParameter('id') || 'yanghwa'; // 預設顯示 'yanghwa'
+            const project = projectData[projectId];
+
+            if (!project) {
+                document.getElementById('project-header').innerHTML = '<h1 class="text-4xl font-bold text-red-600">404 專案不存在</h1><p class="text-xl text-slate-600 mt-2">找不到您請求的專案資訊。</p>';
+                document.getElementById('page-title').textContent = '專案不存在 | 世和智能';
+                return;
+            }
+
+            // 1. 填充標題和摘要
+            document.getElementById('page-title').textContent = project.title + ' | 世和智能';
+            document.getElementById('project-category-badge').textContent = project.category;
+            document.getElementById('project-title').textContent = project.title;
+            document.getElementById('project-summary').textContent = project.summary;
+            document.getElementById('project-main-image').src = project.image;
+            document.getElementById('project-main-image').alt = project.title + ' 專案圖片';
+
+
+            // 2. 填充詳細描述
+            const descriptionContainer = document.getElementById('project-description');
+            descriptionContainer.innerHTML = project.description.map(p => `<p>${p}</p>`).join('');
+
+            // 3. 填充技術規格
+            const specsContainer = document.getElementById('project-specs');
+            specsContainer.innerHTML = Object.entries(project.specs).map(([key, value]) => `
+                <li class="flex justify-between items-center border-b border-slate-100 pb-2">
+                    <span class="font-medium text-slate-900">${key}</span>
+                    <span class="text-green-600 font-bold">${value}</span>
+                </li>
+            `).join('');
+
+            // 4. 填充效益指標
+            const benefitsContainer = document.getElementById('project-benefits');
+            benefitsContainer.innerHTML = Object.entries(project.benefits).map(([key, value]) => `
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-green-200">
+                    <p class="text-slate-500 text-sm">${key}</p>
+                    <p class="text-3xl font-bold text-orange-600 mt-1">${value}</p>
+                </div>
+            `).join('');
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // 載入專案內容
+            populateProjectDetails();
+            
+            // 初始化 Icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // 處理 Mobile Menu Toggle (保持不變)
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    const icon = menuBtn.querySelector('i');
+                    
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenu.classList.add('flex');
+                        icon.setAttribute('data-lucide', 'x');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                        icon.setAttribute('data-lucide', 'menu');
+                    }
+                    if (typeof lucide !== 'undefined') {
+                        lucide.createIcons();
+                    }
+                });
+            }
+
+            // 處理年份顯示
+            const footerP = document.querySelector('footer p');
+            if (footerP) {
+                footerP.innerHTML = footerP.innerHTML.replace('2025', new Date().getFullYear());
+            }
+        });
+    </script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"471a3ae9fb184d6498050dffaeabfcc3","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

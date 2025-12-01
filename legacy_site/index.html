@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="世和智能 Shi-He Intelligent：淨零轉型領航者，提供高效能太陽能儲能建置、AI EMS能源管理、工廠機電節能 ESCO 與台電dReg輔助服務，助您在桃園、新竹達成永續目標。">
+    <title>世和智能/鑫浩瀚企業 | 淨零轉型領航者</title>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness", 
+  "name": "世和智能 / 鑫浩瀚企業", 
+  "legalName": "世和智能股份有限公司 / 鑫浩瀚企業",
+  "url": "https://shiheintelligent.com",
+  "logo": "photos/logo.png", 
+  "serviceType": ["太陽能建置", "儲能系統整合", "機電節能工程", "智慧農業顧問"], 
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+886-926-858-757",
+    "contactType": "customer service",
+    "areaServed": ["全台灣", "桃園市", "新竹縣市"] // Geo-Scope 優先設定為全台灣
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "興國路42號", 
+    "addressLocality": "中壢區", 
+    "addressRegion": "桃園市", 
+    "postalCode": "320",
+    "addressCountry": "TW"
+  },
+  "sameAs": [
+    "https://facebook.com/profile.php?id=61550299602989",
+    "https://www.google.com/search?q=世和智能股份有限公司"
+  ]
+}
+</script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <style>
+        /* ... CSS 樣式省略 ... */
+        /* 輪播文字漸變樣式 */
+        .carousel-content-wrapper {
+            transition: opacity 0.4s ease-in-out;
+        }
+        .text-fade-out {
+            opacity: 0 !important;
+        }
+        /* 輪播樣式 */
+        .carousel-item {
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            transition: opacity 0.7s ease-in-out;
+            position: absolute;
+            opacity: 0;
+        }
+        .carousel-item.active {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 font-sans text-slate-800">
+    
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-slate-900 shadow-lg py-3 border-b border-green-500/50">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-2">
+                <img src="photos/logo.png" alt="世和智能 Logo" class="h-10 w-auto" width="40" height="40"> 
+                <div>
+                    <h1 class="font-bold text-xl leading-tight text-white md:text-2xl">
+                        世和智能 / 鑫浩瀚企業
+                    </h1>
+                    <p class="text-xs tracking-wider text-slate-400">
+                        Shi-He Intelligent
+                    </p>
+                </div>
+            </a>
+
+            <div class="hidden md:flex items-center gap-8">
+                <a href="index.html" class="nav-link font-medium text-green-400 hover:text-orange-400 transition-colors font-bold">首頁</a>
+                <a href="#about" class="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">關於我們</a>
+                <a href="services.html" class="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">核心服務</a>
+                <a href="#contact" class="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg hover:shadow-orange-500/30">
+                    立即諮詢
+                </a>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i data-lucide="menu" class="text-white w-6 h-6"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-slate-800 shadow-lg md:hidden flex-col p-4 gap-4 border-t border-green-500/50">
+            <a href="index.html" class="text-left font-medium text-green-400 py-2 border-b border-slate-700">首頁</a>
+            <a href="#about" class="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">關於我們</a>
+            <a href="services.html" class="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">核心服務</a>
+            <a href="#contact" class="bg-orange-500 text-white py-3 rounded-lg font-medium text-center mt-2 hover:bg-orange-600">
+                立即諮詢
+            </a>
+        </div>
+    </nav>
+
+    <div id="page-home" class="page-section fade-in">
+        <main>
+            <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden bg-slate-900">
+                
+                <div id="carousel-track" class="absolute inset-0">
+                    </div>
+
+                <div class="absolute inset-0 bg-slate-900/70"></div>
+                
+                <div id="carousel-indicators" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">
+                    </div>
+
+                <div class="container mx-auto px-4 relative z-10 pt-[100px] text-center md:text-left md:pt-40">
+                    <div id="carousel-content-wrapper" class="max-w-4xl mx-auto carousel-content-wrapper">
+                        </div>
+                </div>
+            </section>
+            <section id="about" class="py-20 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div class="relative">
+                            <div class="aspect-video bg-slate-100 rounded-2xl overflow-hidden shadow-xl relative">
+                                <div class="absolute inset-0 bg-slate-200 flex items-center justify-center text-slate-400">
+                                    <i data-lucide="building-2" class="w-16 h-16"></i>
+                                </div>
+                                <img 
+                                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop" 
+                                    alt="Company Building" 
+                                    class="absolute inset-0 w-full h-full object-cover"
+                                    width="600" height="400" loading="lazy"
+                                    
+                                    srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop 800w, 
+                                            https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200&auto=format&fit=crop 1200w"
+                                    sizes="(max-width: 768px) 100vw, 50vw"
+                                />
+                            </div>
+                            <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 hidden md:block">
+                                <div class="flex items-center gap-4">
+                                    <div class="bg-orange-100 p-3 rounded-full text-orange-600">
+                                        <i data-lucide="shield-check" class="w-8 h-8"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-slate-500">專案管理經驗</p>
+                                        <p class="text-2xl font-bold text-slate-800">17+ 年</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-green-600 font-bold tracking-wide uppercase mb-2">關於世和智能</h2>
+                            <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">國家級戰略視野 <br/>全省在地化專業服務</h3>
+                            <p class="text-slate-600 mb-6 leading-relaxed">
+                                世和智能定位為淨零轉型的領航者，團隊核心成員擁有中科院17年系統與專案管理經驗。我們不僅是工程建置商，更是企業的策略夥伴。
+                            </p>
+                            <p class="text-slate-600 mb-6 leading-relaxed">
+                                我們的願景是成為亞洲地區綠色能源數據應用的領導者，將複雜的能源管理轉化為簡單、高效且具備 AI 預測能力的智能系統，為客戶資產創造長期的永續價值。
+                            </p>
+                            <ul class="space-y-4 mb-8">
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check-circle-2" class="text-green-500 flex-shrink-0 mt-1 w-5 h-5"></i>
+                                    <span class="text-slate-700">國科會淨零成員：參與國家級戰略，掌握前沿科技</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check-circle-2" class="text-green-500 flex-shrink-0 mt-1 w-5 h-5"></i>
+                                    <span class="text-slate-700">一站式服務：提供從規劃、申請、施工到維運的完整 EPC 服務</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check-circle-2" class="text-green-500 flex-shrink-0 mt-1 w-5 h-5"></i>
+                                    <span class="text-slate-700">跨域整合能力：擁有強大的 IT 軟體研發與系統整合實力</span>
+                                </li>
+                            </ul>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3 mt-8">核心技術優勢</h4>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="shield-check" class="text-green-500 flex-shrink-0 mt-1 w-5 h-5"></i>
+                                    <span class="text-slate-700">數據驅動：獨家 EMS 系統實現秒級能源監控與自動化調度。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="check-circle-2" class="text-green-500 flex-shrink-0 mt-1 w-5 h-5"></i>
+                                    <span class="text-slate-700">彈性架構：系統採用微服務架構，可快速適應新設備與法規變更。</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i data-lucide="building-2" class="text-green-500 flex-shrink-0 mt-1 w-5 h-5"></i>
+                                    <span class="text-slate-700">高標準安全：儲能建置超越業界標準，確保專案資產與運營安全。</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="services" class="py-20 bg-slate-50">
+                <div class="container mx-auto px-4">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-green-600 font-bold tracking-wide uppercase mb-2">核心服務</h2>
+                        <h3 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">全方位能源與智慧解決方案</h3>
+                        <p class="text-slate-600">
+                            結合硬體建置與軟體智慧，為不同場域量身打造最佳效益的解決方案。點擊下方項目了解更多細節。
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <a href="services.html#service-solar" class="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-green-200 lg:col-span-2">
+                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                                <i data-lucide="sun" class="w-8 h-8 animate-pulse"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-green-600">綠能光儲建置</h4>
+                            <p class="inline-flex items-center gap-1 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wider">
+                                <i data-lucide="zap" class="w-3 h-3"></i> 微型光儲 · 5年回本，停電免驚！
+                            </p>
+                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                                涵蓋太陽能電站、電網級儲能及家用光儲。提供一站式 EPC 服務。
+                            </p>
+                            <span class="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                了解詳情 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </a>
+                        
+                        <a href="services.html#service-smart" class="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-green-200 lg:col-span-2">
+                            <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors">
+                                <i data-lucide="sprout" class="w-8 h-8 animate-pulse"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-1 group-hover:text-green-600">智慧農業與照護</h4>
+                            <p class="inline-flex items-center gap-1 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wider">
+                                <i data-lucide="shield" class="w-3 h-3"></i> 零年費系統 · 補助專案輔導
+                            </p>
+                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                                結合 IoT 感測技術，應用於精準農業環控與長照機構安全監測。
+                            </p>
+                            <span class="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                了解詳情 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </a>
+                        
+                        <a href="services.html#service-mep" class="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-orange-200">
+                            <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                <i data-lucide="zap" class="w-8 h-8 animate-pulse"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600">機電與節能工程</h4>
+                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                                針對高耗能設備進行優化，包含冰水主機、儲冰系統與廢熱回收。
+                            </p>
+                            <span class="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                了解詳情 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </a>
+
+                        <a href="services.html#service-ems" class="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-orange-200">
+                            <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                <i data-lucide="cpu" class="w-8 h-8 animate-pulse"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600">EMS 能源管理</h4>
+                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                                獨家開發 EMS 系統，透過數據分析提升電力調度效率與決策品質。
+                            </p>
+                            <span class="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                了解詳情 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </a>
+
+                        <a href="services.html#service-consult" class="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-orange-200 lg:col-span-2">
+                            <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
+                                <i data-lucide="bar-chart-3" class="w-8 h-8 animate-pulse"></i>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600">企業輔導與補助</h4>
+                            <p class="text-slate-600 text-sm mb-4 leading-relaxed">
+                                協助 RE100 目標、碳盤查體系，輔導申請政府補助與綠色金融。
+                            </p>
+                            <span class="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                了解詳情 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" class="py-20 bg-white">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
+                        <div>
+                            <h2 class="text-green-600 font-bold tracking-wide uppercase mb-2">工程實績</h2>
+                            <h3 class="text-3xl md:text-4xl font-bold text-slate-900">見證我們的專業成果</h3>
+                        </div>
+                        <a href="projects.html" class="text-orange-500 font-medium hover:text-orange-600 flex items-center gap-1 transition-colors">
+                            查看更多案例 <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        
+                        <a href="project-detail.html?id=yanghwa" class="group cursor-pointer">
+                            <div class="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
+                                <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2670&auto=format&fit=crop" alt="Solar Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
+                                <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">太陽能</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">洋華光電 996KW 案場</h4>
+                            <p class="text-slate-600 text-sm">導入高效能模組與 SolarEdge 優化器，大幅提升發電效率。</p>
+                        </a>
+
+                        <a href="project-detail.html?id=taipeidome" class="group cursor-pointer">
+                            <div class="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
+                                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2670&auto=format&fit=crop" alt="MEP Project" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
+                                <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">機電工程</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">台北大巨蛋機電工程</h4>
+                            <p class="text-slate-600 text-sm">承攬 15 個電氣室及 4 個變電站之高規格機電建置工程。</p>
+                        </a>
+
+                        <a href="project-detail.html?id=smartfarm" class="group cursor-pointer">
+                            <div class="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
+                                <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2532&auto=format&fit=crop" alt="Smart Agriculture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
+                                <div class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">智慧整合</div>
+                            </div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">鮮一有機智慧農場</h4>
+                            <p class="text-slate-600 text-sm">建置環境監控、土壤偵測與智慧澆灌系統，實現精準農業。</p>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+                <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2672&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+                <div class="container mx-auto px-4 relative z-10">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h2 class="text-green-400 font-bold tracking-wide uppercase mb-2">為何選擇世和智能</h2>
+                            <h3 class="text-3xl md:text-4xl font-bold mb-6">不只是設備供應商<br/>更是您的淨零轉型顧問</h3>
+                            <div class="space-y-6">
+                                <div class="flex gap-4">
+                                    <div class="bg-white/10 p-3 rounded-lg h-fit">
+                                        <i data-lucide="battery" class="text-orange-400 w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-2">顯著降低營運成本</h4>
+                                        <p class="text-slate-300 text-sm">利用儲能削峰填谷與離峰電價優惠，最高可協助企業節省 76% 電費支出。</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="bg-white/10 p-3 rounded-lg h-fit">
+                                        <i data-lucide="bar-chart-3" class="text-orange-400 w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-2">降低轉型門檻</h4>
+                                        <p class="text-slate-300 text-sm">提供完整補助申請規劃與 ESCO 模式，減輕企業初期資本投入壓力。</p>
+                                    </div>
+                                </div>
+                                <div class="flex gap-4">
+                                    <div class="bg-white/10 p-3 rounded-lg h-fit">
+                                        <i data-lucide="shield-check" class="text-orange-400 w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-xl font-bold mb-2">最高安全規格</h4>
+                                        <p class="text-slate-300 text-sm">儲能系統採多維度消防設計（氣體偵測、自動滅火），確保資產與人員安全。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
+                            <h3 class="text-2xl font-bold mb-6 text-center">立即開始您的綠色轉型</h3>
+                            <form class="space-y-4" id="contactForm" onsubmit="return submitForm(event)">
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">公司名稱</label>
+                                    <input type="text" name="company" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-green-500" placeholder="請輸入公司名稱" required />
+                                </div>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <label class="block text-sm text-slate-300 mb-1">聯絡人</label>
+                                        <input type="text" name="contactPerson" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-green-500" placeholder="王小明" required />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm text-slate-300 mb-1">電話</label>
+                                        <input type="text" name="phone" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-green-500" placeholder="0912-345-678" required />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">需求項目</label>
+                                    <select name="inquiryType" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-green-500 [&>option]:text-slate-900">
+                                        <option>太陽能/儲能建置</option>
+                                        <option>機電/空調節能</option>
+                                        <option>智慧系統整合</option>
+                                        <option>其他諮詢</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-sm text-slate-300 mb-1">詳細需求 (選填)</label>
+                                    <textarea name="details" rows="3" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-green-500" placeholder="請簡述您的專案規模、預期目標或任何特殊要求。"></textarea>
+                                </div>
+                                <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-orange-500 hover:from-green-600 hover:to-orange-600 text-white font-bold py-3 rounded-lg transition-all mt-4 shadow-lg">
+                                    送出諮詢
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <footer id="footer-contact" class="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8 mb-12">
+                    <div class="md:col-span-2">
+                        <div class="flex items-center gap-2 mb-6">
+                            <img src="photos/logo.png" alt="世和智能 Logo" class="h-8 w-auto" width="32" height="32"> 
+                            <h2 class="font-bold text-xl text-slate-800">世和智能股份有限公司</h2>
+                        </div>
+                        <p class="text-slate-600 mb-6 max-w-sm">
+                            致力於運用先進科技解決能源與環境問題，為客戶創造最大價值的同時，也為地球永續盡一份心力。
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-4">服務項目</h3>
+                        <ul class="space-y-2 text-sm text-slate-600">
+                            <li><a href="services.html#service-solar" class="hover:text-orange-500 transition-colors">綠能光儲建置</a></li>
+                            <li><a href="services.html#service-mep" class="hover:text-orange-500 transition-colors">機電節能工程</a></li>
+                            <li><a href="services.html#service-ems" class="hover:text-orange-500 transition-colors">EMS 能源管理</a></li>
+                            <li><a href="services.html#service-consult" class="hover:text-orange-500 transition-colors">企業輔助輔導</a></li>
+                            <li><a href="services.html#service-smart" class="hover:text-orange-500 transition-colors">智慧農業/照護</a></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold text-slate-900 mb-4">聯絡資訊</h3>
+                        <ul class="space-y-4 text-sm text-slate-600">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="phone" class="text-green-500 flex-shrink-0 mt-0.5 w-4 h-4"></i>
+                                <span>0926-858-757 (專案經理: 王啓龍)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="mail" class="text-green-500 flex-shrink-0 mt-0.5 w-4 h-4"></i>
+                                <a href="/cdn-cgi/l/email-protection#783417161f141d0c0c1d0a494a4b381f15191114561b1715" class="hover:text-green-600 transition-colors"><span class="__cf_email__" data-cfemail="bdf1d2d3dad1d8c9c9d8cf8c8f8efddad0dcd4d193ded2d0">[email&#160;protected]</span></a>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="text-green-500 flex-shrink-0 mt-0.5 w-4 h-4"></i>
+                                <span>桃園市中壢區（詳細地址請洽詢）</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-slate-200 pt-8 text-center text-sm text-slate-500">
+                    <p>&copy; 2025 世和智能股份有限公司 Shi-He Intelligent Co., Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+   <script>
+    // =========================================================
+    // 廣告動態牆數據與邏輯
+    // =========================================================
+    const carouselData = [
+        {
+            subtitle: "微型光儲 | 企業不斷電",
+            title: "5年回本，安全固若金湯，停電免驚！",
+            link: "project-detail.html?id=microbess",
+            linkText: "查看微型光儲案例",
+            image: "photos/carousel-1.jpg"
+        },
+        {
+            subtitle: "淨零轉型 | 節能優化",
+            title: "AI 智慧節能系統，降低營運成本 30% 以上",
+            link: "services.html#service-mep",
+            linkText: "探索節能方案",
+            image: "photos/carousel-2.jpg"
+        },
+        {
+            subtitle: "能源數據 | 數位核心",
+            title: "獨家 EMS 系統，精準預測需量，杜絕超約罰款",
+            link: "services.html#service-ems",
+            linkText: "了解 EMS 技術",
+            image: "photos/carousel-3.jpg"
+        }
+    ];
+
+    let currentIndex = 0;
+    const track = document.getElementById('carousel-track');
+    const indicatorsContainer = document.getElementById('carousel-indicators');
+    const contentContainer = document.getElementById('carousel-content-wrapper');
+    const intervalTime = 5000;
+
+    function updateCarousel() {
+        if (currentIndex >= carouselData.length) {
+            currentIndex = 0;
+        } else if (currentIndex < 0) {
+            currentIndex = carouselData.length - 1;
+        }
+
+        const items = track.querySelectorAll('.carousel-item');
+        items.forEach((item, i) => {
+            if (i === currentIndex) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+        
+        const contentWrapper = document.getElementById('carousel-content-wrapper');
+        contentWrapper.classList.add('text-fade-out');
+
+        setTimeout(() => {
+            const data = carouselData[currentIndex];
+            contentWrapper.innerHTML = `
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 border border-green-500/30 text-green-400 text-sm font-medium mb-6 backdrop-blur-sm">
+                    <i data-lucide="leaf" class="w-4 h-4"></i>
+                    <span>${data.subtitle}</span>
+                </div>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+                    ${data.title}
+                </h1>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="${data.link}" class="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/40">
+                        ${data.linkText} <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm rounded-lg font-bold transition-all flex items-center justify-center gap-2">
+                        預約免費諮詢
+                    </a>
+                </div>
+            `;
+            
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            contentWrapper.classList.remove('text-fade-out');
+
+        }, 400);
+
+        const indicators = indicatorsContainer.querySelectorAll('.indicator');
+        indicators.forEach((indicator, i) => {
+            if (i === currentIndex) {
+                indicator.classList.add('bg-white', 'w-4');
+                indicator.classList.remove('bg-white/50', 'w-2');
+            } else {
+                indicator.classList.add('bg-white/50', 'w-2');
+                indicator.classList.remove('bg-white', 'w-4');
+            }
+        });
+    }
+
+    function createCarouselStructure() {
+        carouselData.forEach((data, index) => {
+            const item = document.createElement('div');
+            item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+            
+            item.style.backgroundImage = `url('${data.image}')`;
+            item.style.backgroundSize = 'cover';
+            item.style.backgroundPosition = 'center';
+
+            if (index === 0) {
+                const preloadImg = document.createElement('img');
+                preloadImg.src = data.image; 
+                preloadImg.alt = data.title + '背景圖';
+                preloadImg.style.display = 'none';
+                preloadImg.setAttribute('width', '1920'); 
+                preloadImg.setAttribute('height', '1080'); 
+                item.appendChild(preloadImg); 
+            }
+
+            track.appendChild(item);
+
+            const indicator = document.createElement('button');
+            indicator.className = `indicator h-2 rounded-full transition-all ${index === 0 ? 'bg-white w-4' : 'bg-white/50 w-2'}`;
+            indicator.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+                resetAutoPlay();
+            });
+            indicatorsContainer.appendChild(indicator);
+        });
+        updateCarousel();
+    }
+
+    let autoPlayInterval;
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            currentIndex++;
+            updateCarousel();
+        }, intervalTime);
+    }
+
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        startAutoPlay();
+    }
+
+
+    // =========================================================
+    // 聯絡表單邏輯 (保持不變)
+    // =========================================================
+    const WORKER_ENDPOINT = "https://shihe-email.9g2mn5pjrf.workers.dev/";
+    async function submitForm(event) {
+        event.preventDefault();
+        const form = document.getElementById('contactForm');
+        const formData = new FormData(form);
+        const data = {};
+        for (const [key, value] of formData.entries()) {
+            data[key] = value;
+        }
+        const submitButton = form.querySelector('button[type="submit"]');
+        const originalText = submitButton.textContent;
+        submitButton.textContent = '傳送中...';
+        submitButton.disabled = true;
+
+        try {
+            const response = await fetch(WORKER_ENDPOINT, {
+                method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)
+            });
+            if (response.ok) {
+                alert('✅ 諮詢已成功送出！感謝您的聯繫。');
+                form.reset(); 
+            } else {
+                alert(`❌ 錯誤：無法送出。伺服器狀態碼: ${response.status}`);
+            }
+        } catch (error) {
+            alert('❌ 網路錯誤，無法連線至伺服器。請檢查 Worker 網址。');
+            console.error('Fetch error:', error);
+        } finally {
+            submitButton.textContent = originalText;
+            submitButton.disabled = false;
+        }
+        return false;
+    }
+
+
+    // =========================================================
+    // 初始化
+    // =========================================================
+    document.addEventListener('DOMContentLoaded', () => {
+        createCarouselStructure();
+        startAutoPlay();
+        
+        // 處理錨點跳轉 (A-HREF to #ID)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.hostname === location.hostname && this.pathname === location.pathname) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    const navbar = document.getElementById('navbar');
+                    if (targetElement && navbar) {
+                        const navbarHeight = navbar.offsetHeight;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    } else if (targetElement) {
+                         targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // 處理 Mobile Menu Toggle (保持不變)
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (menuBtn && mobileMenu) {
+            menuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                const icon = menuBtn.querySelector('i');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('flex');
+                    icon.setAttribute('data-lucide', 'x');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenu.classList.remove('flex');
+                    icon.setAttribute('data-lucide', 'menu');
+                }
+                if (typeof lucide !== 'undefined') { lucide.createIcons(); }
+            });
+        }
+
+        // 處理年份顯示
+        const footerP = document.querySelector('footer p');
+        if (footerP) {
+            footerP.innerHTML = footerP.innerHTML.replace('2025', new Date().getFullYear());
+        }
+    });
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"471a3ae9fb184d6498050dffaeabfcc3","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
