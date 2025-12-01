@@ -27,14 +27,15 @@ html,
 body,
 #root {
   height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
 }
 
 /* Merged from App.css */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  /* Removed default Vite styles that caused margins */
+  text-align: left;
 }
 
 .logo {
