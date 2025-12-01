@@ -2,43 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    
     <url>
-        <loc>https://www.shiheintelligent.com/index.html</loc>
-        <lastmod>2025-11-28</lastmod>
+        <loc>https://www.shiheintelligent.com/</loc>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <url>
-        <loc>https://www.shiheintelligent.com/services.html</loc>
-        <lastmod>2025-11-28</lastmod>
+        <loc>https://www.shiheintelligent.com/services</loc>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://www.shiheintelligent.com/projects.html</loc>
-        <lastmod>2025-11-28</lastmod>
+        <loc>https://www.shiheintelligent.com/projects</loc>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
-        <loc>https://www.shiheintelligent.com/project-detail.html?id=yanghwa</loc>
-        <lastmod>2025-11-28</lastmod>
+        <loc>https://www.shiheintelligent.com/smart-care</loc>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
     </url>
+
     <url>
-        <loc>https://www.shiheintelligent.com/project-detail.html?id=microbess</loc>
-        <lastmod>2025-11-28</lastmod>
+        <loc>https://www.shiheintelligent.com/project-detail?id=yanghwa</loc>
+        <lastmod>2025-12-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
 
     <url>
-        <loc>https://www.shiheintelligent.com/services.html#service-solar</loc>
-        <lastmod>2025-11-28</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://www.shiheintelligent.com/project-detail?id=taipeidome</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
-    </urlset>
+
+    <url>
+        <loc>https://www.shiheintelligent.com/project-detail?id=energyfarm</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.shiheintelligent.com/project-detail?id=factorymep</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.shiheintelligent.com/project-detail?id=smartfarm</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.shiheintelligent.com/project-detail?id=carecenter</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://www.shiheintelligent.com/project-detail?id=officebess</loc>
+        <lastmod>2025-12-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+</urlset>
