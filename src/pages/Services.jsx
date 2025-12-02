@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ArrowLeft, ChevronDown, Sun, Battery, Settings, Wind, Snowflake, Recycle, Monitor, BrainCircuit, FileBarChart, TrendingUp, CloudRain, Droplets, Lightbulb, Activity, AlertCircle, MapPin, BookOpen, Check, Info } from 'lucide-react';
+import { ArrowLeft, ChevronDown, Sun, Battery, Settings, Wind, Snowflake, Recycle, Monitor, BrainCircuit, FileBarChart, TrendingUp, CloudRain, Droplets, Lightbulb, Activity, AlertCircle, MapPin, BookOpen, Check, Info, Home, Heart, Zap, ShieldCheck } from 'lucide-react';
+import EducationCarousel from '../components/ui/EducationCarousel';
 
 const Services = () => {
     const [isMicroStorageOpen, setIsMicroStorageOpen] = useState(false);
@@ -71,6 +72,50 @@ const Services = () => {
                                     <Check className="w-5 h-5 text-green-500" /> <span>能源獨立：適合無電網或電網不穩地區</span>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <div className="bg-white rounded-2xl shadow-lg p-8 mb-16 border-t-4 border-green-500">
+                        <div className="flex items-center gap-3 mb-6">
+                            <div className="bg-green-100 p-3 rounded-full text-green-600">
+                                <Home className="w-6 h-6" />
+                            </div>
+                            <h3 className="text-2xl font-bold text-slate-900">微型家用/小型住商光儲系統</h3>
+                        </div>
+                        <p className="text-slate-600 mb-8 leading-relaxed">
+                            家用與住商是我們未來最重要的服務對象。我們致力於將綠能帶入每個家庭，特別是偏遠山區與弱勢族群，透過科技改善生活品質，實現能源平權。
+                        </p>
+
+                        <div className="grid md:grid-cols-3 gap-8">
+                            <div className="bg-slate-50 p-6 rounded-xl">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Heart className="w-5 h-5 text-orange-500" />
+                                    <h4 className="font-bold text-lg text-slate-800">公益關懷與偏鄉支援</h4>
+                                </div>
+                                <p className="text-slate-600 text-sm">
+                                    針對山上隔代教養家庭，我們提供專案補助與公司贊助，改善爺爺奶奶與小朋友的生活環境，大幅降低電費負擔。
+                                </p>
+                            </div>
+
+                            <div className="bg-slate-50 p-6 rounded-xl">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <Zap className="w-5 h-5 text-yellow-500" />
+                                    <h4 className="font-bold text-lg text-slate-800">五年回本與不斷電</h4>
+                                </div>
+                                <p className="text-slate-600 text-sm">
+                                    一般用戶搭配政府補助，預計五年內即可回本。系統提供持續的節費效益，並確保在電網不穩時仍有穩定的電力供應。
+                                </p>
+                            </div>
+
+                            <div className="bg-slate-50 p-6 rounded-xl">
+                                <div className="flex items-center gap-2 mb-3">
+                                    <ShieldCheck className="w-5 h-5 text-green-600" />
+                                    <h4 className="font-bold text-lg text-slate-800">最佳消防防護</h4>
+                                </div>
+                                <p className="text-slate-600 text-sm">
+                                    補齊業界缺乏的安全標準。不論微型或中小型光儲，皆配備遠端監控與獨家物理檢測器，完全符合消防規範，保障用戶安全。
+                                </p>
+                            </div>
                         </div>
                     </div>
 
@@ -230,7 +275,7 @@ const Services = () => {
                         </Link>
                         <span className="bg-orange-100 text-orange-700 px-3 py-1 rounded-full text-sm font-bold">顧問服務</span>
                         <h1 className="text-4xl font-bold text-slate-900 mt-4 mb-4">企業輔導與補助申請</h1>
-                        <p className="text-xl text-slate-600 max-w-3xl">淨零轉型不是成本，而是競爭力。我們協助企業盤點現狀、規劃路徑，並引入政府資源，降低轉型陣痛期。</p>
+                        <p className="text-xl text-slate-600 max-w-4xl">淨零轉型不是成本，而是競爭力。我們協助企業盤點現狀、規劃路徑，並引入政府補助資源、綠色金融，降低轉型陣痛期，服務範圍涵蓋「碳數據盤查 - 減排策略制定 - 搭配政府補助實施落地 - AI監測優化節省企業用電 - 價值轉化提升企業形象」全流程。</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-8 mb-16">
@@ -251,13 +296,7 @@ const Services = () => {
                                         <p className="text-slate-600 text-sm">針對出口導向產品進行生命週期碳足跡計算，因應 CBAM 規範。</p>
                                     </div>
                                 </li>
-                                <li className="flex items-start gap-3">
-                                    <span className="bg-orange-500 text-white w-6 h-6 rounded-full flex items-center justify-center text-xs flex-shrink-0 mt-1">3</span>
-                                    <div>
-                                        <h4 className="font-bold text-lg">科學基礎減量目標 (SBTi)</h4>
-                                        <p className="text-slate-600 text-sm">輔導企業設定符合國際標準的短中長期減碳路徑。</p>
-                                    </div>
-                                </li>
+
                             </ul>
                         </div>
 
@@ -271,6 +310,8 @@ const Services = () => {
                                 <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">廢熱回收補助</span>
                                 <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">商業服務業節能設備汰換</span>
                                 <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">智慧機械投資抵減</span>
+                                <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">SBIR-企業跨域研發補助</span>
+                                <span className="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">SIIR</span>
                             </div>
 
                             <div className="bg-orange-50 p-4 rounded-xl border border-orange-100 flex gap-3 items-start">
@@ -289,7 +330,7 @@ const Services = () => {
                             <ArrowLeft className="w-4 h-4" /> 返回核心服務
                         </Link>
                         <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">跨域應用</span>
-                        <h1 className="text-4xl font-bold text-slate-900 mt-4 mb-4">智慧農業與長照應用</h1>
+                        <h1 className="text-4xl font-bold text-slate-900 mt-4 mb-4">智慧農業/智慧照護</h1>
                         <p className="text-xl text-slate-600 max-w-3xl">將 AIoT 核心技術延伸至農業與照護領域，用科技解決勞動力短缺問題，提升生產效率與照護品質。我們理解農民的辛勞，並全力協助運用政府補助，提供更優質的種植環境。</p>
                     </div>
 
@@ -320,8 +361,8 @@ const Services = () => {
                                     <li className="flex gap-3">
                                         <div className="bg-green-100 p-2 rounded-full text-green-600 h-fit"><Droplets className="w-5 h-5" /></div>
                                         <div>
-                                            <h4 className="font-bold text-lg">AI 智慧澆灌決策</h4>
-                                            <p className="text-slate-600 text-sm">依據作物生長曲線與天氣預報，自動控制水閥與施肥機，節省 30% 以上水肥用量。</p>
+                                            <h4 className="font-bold text-lg">AI 智慧管理系統</h4>
+                                            <p className="text-slate-600 text-sm">AI管理作物生長預測、採收預警、安防管理(光儲監視系統)</p>
                                         </div>
                                     </li>
                                     <li className="flex gap-3">
@@ -374,6 +415,64 @@ const Services = () => {
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="service-education" className="page-section pt-24 bg-white min-h-screen">
+                <div className="container mx-auto px-4">
+                    <div className="mb-12">
+                        <Link to="/#services" className="flex items-center gap-2 text-slate-500 hover:text-blue-600 transition-colors font-medium mb-4">
+                            <ArrowLeft className="w-4 h-4" /> 返回核心服務
+                        </Link>
+                        <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold">智慧校園</span>
+                        <h1 className="text-4xl font-bold text-slate-900 mt-4 mb-4">智慧教育與校園數位化</h1>
+                        <p className="text-xl text-slate-600 max-w-4xl">
+                            本公司深耕智慧教育領域逾 7 年，專注於智慧教室整體解決方案規劃、智慧黑板等核心設備供應與一站式安裝服務，累積了極為豐富的項目執行經驗與技術沉澱，任何場域均難不倒我們。
+                        </p>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-12 mb-16 items-center">
+                        <div className="space-y-6">
+                            <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">科技賦能教育</h3>
+                                <p className="text-slate-600 leading-relaxed">
+                                    7 年來，我們始終以「科技賦能教育」為核心使命，憑藉對教育場景的深刻理解、成熟的技術團隊與嚴格的品質管控體系，已成功為全國多地各級學校（涵蓋幼兒園、中小學、職業院校、高等院校及補習班）完成 3000 間智慧教室的全流程建置，服務師生超數十萬人次，服務範圍包含全台灣，贏得教育主管部門、學校及業界的高度認可與口碑。
+                                </p>
+                            </div>
+                            <div className="bg-slate-50 p-6 rounded-xl border border-slate-100">
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">量身定製的全生命週期服務</h3>
+                                <p className="text-slate-600 leading-relaxed">
+                                    在項目執行過程中，我們堅持「量身定製」的規劃理念，根據不同學校的教學需求、場地條件與預算規模，提供從前期現場勘測、方案設計、設備選型、軟硬件集成，到後續安裝調試、教師培訓、售後維護的全生命週期服務。
+                                </p>
+                            </div>
+                        </div>
+                        <div className="bg-blue-50 p-8 rounded-2xl">
+                            <h3 className="text-2xl font-bold text-blue-900 mb-4">核心產品：智慧黑板</h3>
+                            <p className="text-slate-700 mb-6">
+                                融合了高清顯示、觸控互動、多媒體教學、無線投屏等多項功能，兼容傳統黑板書寫體驗與現代數位教學優勢，並可與校園智慧管理平台、線上教學資源庫實現無縫對接，有效打破傳統教學模式的局限，提升課堂互動性與教學效率。
+                            </p>
+                            <div className="flex flex-wrap gap-2">
+                                <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">高清顯示</span>
+                                <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">觸控互動</span>
+                                <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">無線投屏</span>
+                                <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">多媒體教學</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="mb-16">
+                        <h2 className="text-3xl font-bold text-center text-slate-900 mb-8">智慧教室應用場景</h2>
+                        <EducationCarousel />
+                    </div>
+
+                    <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12 text-center">
+                        <h2 className="text-3xl font-bold mb-4">3000 間智慧教室的成功見證</h2>
+                        <p className="text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                            這不僅印證了我們在技術實力、項目管理與服務品質上的硬實力，更積累了大量針對不同教學場景（如普通教室、多媒體教室、實驗室、階梯教室等）的成熟解決方案與應對經驗，能夠靈活應對項目實施中可能出現的各類複雜問題，確保每一個項目都能高標準、高質量交付。
+                        </p>
+                        <p className="text-green-400 font-bold text-lg">
+                            未來，我們將持續深耕智慧教育領域，為更多學校打造高品質、智能化的教學空間，助力教育數位化轉型與高質量發展。
+                        </p>
                     </div>
                 </div>
             </div>

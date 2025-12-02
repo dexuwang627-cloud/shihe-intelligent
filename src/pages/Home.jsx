@@ -54,7 +54,7 @@ const Home = () => {
                             <ul className="space-y-4 mb-8">
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                    <span className="text-slate-700">國科會淨零成員：參與國家級戰略，掌握前沿科技</span>
+                                    <span className="text-slate-700">國科會淨零成員；ESCO協會成員、軟協成員：參與國家級戰略，掌握前沿科技</span>
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
@@ -77,7 +77,7 @@ const Home = () => {
                                 </li>
                                 <li className="flex items-start gap-3">
                                     <Building2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                    <span className="text-slate-700">高標準安全：儲能建置超越業界標準，確保專案資產與運營安全。</span>
+                                    <span className="text-slate-700">高標準安全：儲能建置安全超越業界標準，除了BMS/EMS電池管理系統外，加裝物理性監測器搭配系統預警、智慧消防系統及獨家的盤體設計，確保專案資產與運營安全。</span>
                                 </li>
                             </ul>
                         </div>
