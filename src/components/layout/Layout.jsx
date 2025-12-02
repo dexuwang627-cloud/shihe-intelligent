@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 
+import SearchBar from '../ui/SearchBar';
+
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -46,10 +48,13 @@ const Navbar = () => {
                     </div>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden md:flex items-center gap-6">
                     <Link to="/" className="nav-link font-medium text-green-400 hover:text-orange-400 transition-colors font-bold">首頁</Link>
                     <a href="/#about" className="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">關於我們</a>
                     <Link to="/services" className="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">核心服務</Link>
+
+                    <SearchBar />
+
                     <a href="/#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg hover:shadow-orange-500/30">
                         立即諮詢
                     </a>
@@ -67,6 +72,7 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isMenuOpen && (
                 <div id="mobile-menu" className="absolute top-full left-0 w-full bg-slate-800 shadow-lg md:hidden flex flex-col p-4 gap-4 border-t border-green-500/50">
+                    <SearchBar className="mb-2" />
                     <Link to="/" className="text-left font-medium text-green-400 py-2 border-b border-slate-700">首頁</Link>
                     <a href="/#about" className="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">關於我們</a>
                     <Link to="/services" className="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">核心服務</Link>
@@ -99,11 +105,12 @@ const Footer = () => {
                     <div>
                         <h3 className="font-bold text-slate-900 mb-4">服務項目</h3>
                         <ul className="space-y-2 text-sm text-slate-600">
-                            <li><Link to="/services#service-solar" className="hover:text-orange-500 transition-colors">綠能光儲建置</Link></li>
-                            <li><Link to="/services#service-mep" className="hover:text-orange-500 transition-colors">機電節能工程</Link></li>
-                            <li><Link to="/services#service-ems" className="hover:text-orange-500 transition-colors">EMS 能源管理</Link></li>
-                            <li><Link to="/services#service-consult" className="hover:text-orange-500 transition-colors">企業輔助輔導</Link></li>
-                            <li><Link to="/services#service-smart" className="hover:text-orange-500 transition-colors">智慧農業/照護</Link></li>
+                            <li><Link to="/services/green-energy" className="hover:text-orange-500 transition-colors">綠能光儲建置</Link></li>
+                            <li><Link to="/services/mep-engineering" className="hover:text-orange-500 transition-colors">機電節能工程</Link></li>
+                            <li><Link to="/services/ems" className="hover:text-orange-500 transition-colors">EMS 能源管理</Link></li>
+                            <li><Link to="/services/consulting" className="hover:text-orange-500 transition-colors">企業輔助輔導</Link></li>
+                            <li><Link to="/services/smart-agriculture" className="hover:text-orange-500 transition-colors">智慧農業/照護</Link></li>
+                            <li><Link to="/services/smart-education" className="hover:text-orange-500 transition-colors">智慧教育/校園</Link></li>
                         </ul>
                     </div>
 

@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, LayoutGrid, List, ArrowRight } from 'lucide-react';
+import { ArrowRight, MapPin, Calendar, Tag, Grid, List, Filter } from 'lucide-react';
 import { projectData } from '../data/projects';
+import SEO from '../components/common/SEO';
 
 const Projects = () => {
     const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
+    const [filter, setFilter] = useState('all'); // 'all', 'green-energy', 'smart-city', 'smart-agriculture'
 
     const largeScaleProjects = ['yanghwa', 'taipeidome', 'energyfarm', 'factorymep'];
     const microSmartProjects = ['smartfarm', 'carecenter', 'officebess'];

@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
-import { Building2, ShieldCheck, CheckCircle2, Sun, Zap, Sprout, Cpu, BarChart3, ArrowRight, Battery, Shield } from 'lucide-react';
+import { Building2, ShieldCheck, CheckCircle2, Sun, Zap, Sprout, Cpu, BarChart3, ArrowRight, Battery, Shield, Leaf, Award, Users, Globe, Wind } from 'lucide-react';
 import HeroCarousel from '../components/ui/HeroCarousel';
 import ContactForm from '../components/ui/ContactForm';
+import SEO from '../components/common/SEO';
 
 const Home = () => {
     return (
         <div id="page-home" className="page-section fade-in">
+            <SEO
+                title="首頁"
+                description="世和智能致力於提供全方位的綠能光儲、機電工程、EMS能源管理及智慧農業解決方案，協助企業達成淨零碳排目標。"
+            />
+
             <HeroCarousel />
 
             <section id="about" className="py-20 bg-white">
@@ -87,85 +93,52 @@ const Home = () => {
 
             <section id="services" className="py-20 bg-slate-50">
                 <div className="container mx-auto px-4">
-                    <div className="text-center max-w-3xl mx-auto mb-16">
-                        <h2 className="text-green-600 font-bold tracking-wide uppercase mb-2">核心服務</h2>
-                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">全方位能源與智慧解決方案</h3>
-                        <p className="text-slate-600">
-                            結合硬體建置與軟體智慧，為不同場域量身打造最佳效益的解決方案。點擊下方項目了解更多細節。
-                        </p>
-                    </div>
+                    <div className="flex flex-col md:flex-row items-center justify-between gap-12">
+                        <div className="md:w-1/2">
+                            <h2 className="text-green-600 font-bold tracking-wide uppercase mb-2">核心服務</h2>
+                            <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">全方位能源與智慧解決方案</h3>
+                            <p className="text-slate-600 mb-8 leading-relaxed text-lg">
+                                我們提供從綠能建置、機電節能到智慧跨域應用的完整生態系服務。無論是企業淨零轉型、工廠節能改造，或是智慧農業與校園數位化，世和智能都是您最值得信賴的合作夥伴。
+                            </p>
 
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <Link to="/services#service-solar" className="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-green-200 lg:col-span-2">
-                            <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors">
-                                <Sun className="w-8 h-8 animate-pulse" />
+                            <div className="grid grid-cols-2 gap-6 mb-8">
+                                <div className="flex items-center gap-3">
+                                    <div className="bg-green-100 p-2 rounded-lg text-green-600">
+                                        <Sun className="w-6 h-6" />
+                                    </div>
+                                    <span className="font-bold text-slate-800">綠電光儲建置</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="bg-orange-100 p-2 rounded-lg text-orange-600">
+                                        <Zap className="w-6 h-6" />
+                                    </div>
+                                    <span className="font-bold text-slate-800">機電節能工程</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="bg-blue-100 p-2 rounded-lg text-blue-600">
+                                        <Cpu className="w-6 h-6" />
+                                    </div>
+                                    <span className="font-bold text-slate-800">EMS 能源管理</span>
+                                </div>
+                                <div className="flex items-center gap-3">
+                                    <div className="bg-teal-100 p-2 rounded-lg text-teal-600">
+                                        <Sprout className="w-6 h-6" />
+                                    </div>
+                                    <span className="font-bold text-slate-800">智慧跨域應用</span>
+                                </div>
                             </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-green-600">綠能光儲建置</h4>
-                            <p className="inline-flex items-center gap-1 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wider">
-                                <Zap className="w-3 h-3" /> 微型光儲 · 5年回本，停電免驚！
-                            </p>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                                涵蓋太陽能電站、電網級儲能及家用光儲。提供一站式 EPC 服務。
-                            </p>
-                            <span className="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                了解詳情 <ArrowRight className="w-4 h-4" />
-                            </span>
-                        </Link>
 
-                        <Link to="/services#service-smart" className="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-green-200 lg:col-span-2">
-                            <div className="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center text-green-600 mb-6 group-hover:bg-green-600 group-hover:text-white transition-colors">
-                                <Sprout className="w-8 h-8 animate-pulse" />
+                            <Link to="/services" className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-green-500/30">
+                                探索 6 大核心服務 <ArrowRight className="w-5 h-5" />
+                            </Link>
+                        </div>
+                        <div className="md:w-1/2 relative">
+                            <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2574&auto=format&fit=crop" alt="Services Overview" className="w-full h-full object-cover" />
                             </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-1 group-hover:text-green-600">智慧農業與照護</h4>
-                            <p className="inline-flex items-center gap-1 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full mb-3 tracking-wider">
-                                <Shield className="w-3 h-3" /> 零年費系統 · 補助專案輔導
-                            </p>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                                結合 IoT 感測技術，應用於精準農業環控與長照機構安全監測。
-                            </p>
-                            <span className="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                了解詳情 <ArrowRight className="w-4 h-4" />
-                            </span>
-                        </Link>
-
-                        <Link to="/services#service-mep" className="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-orange-200">
-                            <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                                <Zap className="w-8 h-8 animate-pulse" />
-                            </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600">機電與節能工程</h4>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                                針對高耗能設備進行優化，包含冰水主機、儲冰系統與廢熱回收。
-                            </p>
-                            <span className="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                了解詳情 <ArrowRight className="w-4 h-4" />
-                            </span>
-                        </Link>
-
-                        <Link to="/services#service-ems" className="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-orange-200">
-                            <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                                <Cpu className="w-8 h-8 animate-pulse" />
-                            </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600">EMS 能源管理</h4>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                                獨家開發 EMS 系統，透過數據分析提升電力調度效率與決策品質。
-                            </p>
-                            <span className="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                了解詳情 <ArrowRight className="w-4 h-4" />
-                            </span>
-                        </Link>
-
-                        <Link to="/services#service-consult" className="cursor-pointer bg-white p-6 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all group border border-slate-100 hover:border-orange-200 lg:col-span-2">
-                            <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center text-orange-600 mb-6 group-hover:bg-orange-600 group-hover:text-white transition-colors">
-                                <BarChart3 className="w-8 h-8 animate-pulse" />
-                            </div>
-                            <h4 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-green-600">企業輔導與補助</h4>
-                            <p className="text-slate-600 text-sm mb-4 leading-relaxed">
-                                協助 RE100 目標、碳盤查體系，輔導申請政府補助與綠色金融。
-                            </p>
-                            <span className="text-orange-600 text-sm font-bold flex items-center gap-1 group-hover:gap-2 transition-all">
-                                了解詳情 <ArrowRight className="w-4 h-4" />
-                            </span>
-                        </Link>
+                            <div className="absolute -bottom-6 -left-6 w-2/3 aspect-video bg-orange-500 rounded-2xl -z-0"></div>
+                            <div className="absolute -top-6 -right-6 w-2/3 aspect-video bg-green-500 rounded-2xl -z-0"></div>
+                        </div>
                     </div>
                 </div>
             </section>
