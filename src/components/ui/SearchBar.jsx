@@ -23,6 +23,9 @@ const SEARCH_DATA = [
     { keyword: '智慧教育', url: '/services/smart-education', category: '智慧校園' },
     { keyword: '智慧黑板', url: '/services/smart-education', category: '智慧校園' },
     { keyword: '互動教學', url: '/services/smart-education', category: '智慧校園' },
+    { keyword: '鑫浩瀚', url: '/services/mep-engineering', category: '機電工程' },
+    { keyword: '鑫浩瀚企業', url: '/services/mep-engineering', category: '機電工程' },
+    { keyword: '工程', url: '/services/mep-engineering', category: '機電工程' },
 ];
 
 const POPULAR_SEARCHES = [
