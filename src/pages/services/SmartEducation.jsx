@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Download } from 'lucide-react';
 import EducationCarousel from '../../components/ui/EducationCarousel';
 import SEO from '../../components/common/SEO';
 
@@ -54,6 +54,27 @@ const SmartEducation = () => {
                             <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">觸控互動</span>
                             <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">無線投屏</span>
                             <span className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">多媒體教學</span>
+                        </div>
+
+                        <div className="flex flex-col sm:flex-row gap-4 mt-6 pt-6 border-t border-blue-200">
+                            <a
+                                href="https://files.shiheintelligent.com/V6%E5%9E%8B%E9%8C%84.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-medium shadow-sm"
+                            >
+                                <Download className="w-4 h-4" />
+                                下載 V6 智慧黑板型錄
+                            </a>
+                            <a
+                                href="https://files.shiheintelligent.com/%E5%A4%9A%E5%AA%92%E9%AB%94%E8%B3%87%E8%A8%8A%E6%8E%A8%E6%92%AD%E7%B3%BB%E7%B5%B1_%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8A.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-700 border border-blue-200 px-4 py-2 rounded-lg transition-colors font-medium shadow-sm"
+                            >
+                                <Download className="w-4 h-4" />
+                                下載多媒體系統操作手冊
+                            </a>
                         </div>
                     </div>
                 </div>
