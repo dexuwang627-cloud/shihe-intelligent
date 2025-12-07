@@ -1,22 +1,25 @@
-
+import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AnimatePresence } from 'framer-motion';
 import Layout from './components/layout/Layout';
-import Home from './pages/Home';
-import Services from './pages/Services';
-import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
-import SmartCare from './pages/SmartCare';
 import ErrorBoundary from './components/common/ErrorBoundary';
+import LoadingSpinner from './components/common/LoadingSpinner';
 
-// Service Sub-pages
-import GreenEnergy from './pages/services/GreenEnergy';
-import MEPEngineering from './pages/services/MEPEngineering';
-import EMS from './pages/services/EMS';
-import Consulting from './pages/services/Consulting';
-import SmartAgriculture from './pages/services/SmartAgriculture';
-import SmartEducation from './pages/services/SmartEducation';
+// Lazy Load Pages
+const Home = lazy(() => import('./pages/Home'));
+const Services = lazy(() => import('./pages/Services'));
+const Projects = lazy(() => import('./pages/Projects'));
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
+const SmartCare = lazy(() => import('./pages/SmartCare'));
+
+// Lazy Load Service Sub-pages
+const GreenEnergy = lazy(() => import('./pages/services/GreenEnergy'));
+const MEPEngineering = lazy(() => import('./pages/services/MEPEngineering'));
+const EMS = lazy(() => import('./pages/services/EMS'));
+const Consulting = lazy(() => import('./pages/services/Consulting'));
+const SmartAgriculture = lazy(() => import('./pages/services/SmartAgriculture'));
+const SmartEducation = lazy(() => import('./pages/services/SmartEducation'));
 
 function AppContent() {
   const location = useLocation();
@@ -25,31 +28,39 @@ function AppContent() {
     <Layout>
       <ErrorBoundary>
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/services/green-energy" element={<GreenEnergy />} />
-            <Route path="/services/mep-engineering" element={<MEPEngineering />} />
-            <Route path="/services/ems" element={<EMS />} />
-            <Route path="/services/consulting" element={<Consulting />} />
-            <Route path="/services/smart-agriculture" element={<SmartAgriculture />} />
-            <Route path="/services/smart-education" element={<SmartEducation />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/project-detail" element={<ProjectDetail />} />
-            <Route path="/smart-care" element={<SmartCare />} />
-          </Routes>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/services/green-energy" element={<GreenEnergy />} />
+              <Route path="/services/mep-engineering" element={<MEPEngineering />} />
+              <Route path="/services/ems" element={<EMS />} />
+              <Route path="/services/consulting" element={<Consulting />} />
+              <Route path="/services/smart-agriculture" element={<SmartAgriculture />} />
+              <Route path="/services/smart-education" element={<SmartEducation />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/project-detail" element={<ProjectDetail />} />
+              <Route path="/smart-care" element={<SmartCare />} />
+            </Routes>
+          </Suspense>
         </AnimatePresence>
       </ErrorBoundary>
     </Layout>
   );
 }
 
+import { ParallaxProvider } from 'react-scroll-parallax';
+import ScrollToTop from './components/common/ScrollToTop';
+
 function App() {
   return (
     <HelmetProvider>
-      <Router>
-        <AppContent />
-      </Router>
+      <ParallaxProvider>
+        <Router>
+          <ScrollToTop />
+          <AppContent />
+        </Router>
+      </ParallaxProvider>
     </HelmetProvider>
   );
 }

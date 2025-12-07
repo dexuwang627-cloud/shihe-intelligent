@@ -17,6 +17,10 @@ const ServiceCard = ({ service, index }) => {
     const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
     const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
 
+    // Holographic sheen position
+    const bgX = useTransform(mouseXSpring, [-0.5, 0.5], ["0%", "100%"]);
+    const bgY = useTransform(mouseYSpring, [-0.5, 0.5], ["0%", "100%"]);
+
     const handleMouseMove = (e) => {
         if (!ref.current) return;
 
@@ -66,12 +70,24 @@ const ServiceCard = ({ service, index }) => {
                 to={service.link}
                 className={`block h-full relative rounded-2xl bg-white p-8 border border-slate-200 shadow-sm transition-all duration-300 group overflow-hidden`}
                 style={{
-                    transform: "translateZ(0)", // Hardware acceleration
+                    transform: "translateZ(0)",
                 }}
             >
                 {/* Gradient Background on Hover */}
                 <div
                     className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br ${service.gradientFrom} ${service.gradientTo} -z-10`}
+                />
+
+                {/* Holographic Sheen */}
+                <motion.div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-40 transition-opacity duration-300 pointer-events-none z-0"
+                    style={{
+                        background: useTransform(
+                            [bgX, bgY],
+                            ([latestX, latestY]) => `radial-gradient(circle at ${latestX} ${latestY}, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 60%)`
+                        ),
+                        mixBlendMode: "overlay"
+                    }}
                 />
 
                 {/* Content */}

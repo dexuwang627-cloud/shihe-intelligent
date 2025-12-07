@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 
 import SearchBar from '../ui/SearchBar';
+import Magnetic from '../common/Magnetic';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,6 +30,22 @@ const Navbar = () => {
         setIsMenuOpen(false);
     }, [location]);
 
+    const isActive = (path, hash = '') => {
+        if (hash) {
+            return location.hash === hash;
+        }
+        if (path === '/') {
+            return location.pathname === '/' && !location.hash;
+        }
+        return location.pathname.startsWith(path);
+    };
+
+    const getLinkClass = (path, hash = '') => {
+        return isActive(path, hash)
+            ? "nav-link font-medium text-green-400 hover:text-orange-400 transition-colors font-bold"
+            : "nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors";
+    };
+
     return (
         <nav
             id="navbar"
@@ -37,7 +54,7 @@ const Navbar = () => {
         >
             <div className="w-full px-4 md:px-6 lg:px-8 flex justify-between items-center">
                 <Link to="/" className="flex items-center gap-2">
-                    <img src="/photos/logo.png" alt="世和智能 Logo" className="h-10 w-auto" width="40" height="40" />
+                    <img src="/photos/logo2.svg" alt="世和智能 Logo" className="h-10 w-auto" width="40" height="40" />
                     <div>
                         <h1 className="font-bold text-xl leading-tight text-white md:text-2xl">
                             世和智能 / 鑫浩瀚企業
@@ -49,15 +66,17 @@ const Navbar = () => {
                 </Link>
 
                 <div className="hidden md:flex items-center gap-6">
-                    <Link to="/" className="nav-link font-medium text-green-400 hover:text-orange-400 transition-colors font-bold">首頁</Link>
-                    <a href="/#about" className="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">關於我們</a>
-                    <Link to="/services" className="nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors">核心服務</Link>
+                    <Link to="/" className={getLinkClass('/')}>首頁</Link>
+                    <a href="/#about" className={getLinkClass('/', '#about')}>關於我們</a>
+                    <Link to="/services" className={getLinkClass('/services')}>核心服務</Link>
 
                     <SearchBar />
 
-                    <a href="/#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg hover:shadow-orange-500/30">
-                        立即諮詢
-                    </a>
+                    <Magnetic>
+                        <a href="/#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg hover:shadow-orange-500/30 inline-block">
+                            立即諮詢
+                        </a>
+                    </Magnetic>
                 </div>
 
                 <button
@@ -73,12 +92,14 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div id="mobile-menu" className="absolute top-full left-0 w-full bg-slate-800 shadow-lg md:hidden flex flex-col p-4 gap-4 border-t border-green-500/50">
                     <SearchBar className="mb-2" />
-                    <Link to="/" className="text-left font-medium text-green-400 py-2 border-b border-slate-700">首頁</Link>
-                    <a href="/#about" className="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">關於我們</a>
-                    <Link to="/services" className="text-left font-medium text-slate-200 hover:text-orange-400 py-2 border-b border-slate-700">核心服務</Link>
-                    <a href="/#contact" className="bg-orange-500 text-white py-3 rounded-lg font-medium text-center mt-2 hover:bg-orange-600">
-                        立即諮詢
-                    </a>
+                    <Link to="/" className={`text-left font-medium py-2 border-b border-slate-700 ${isActive('/') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>首頁</Link>
+                    <a href="/#about" className={`text-left font-medium py-2 border-b border-slate-700 ${isActive('/', '#about') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>關於我們</a>
+                    <Link to="/services" className={`text-left font-medium py-2 border-b border-slate-700 ${isActive('/services') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>核心服務</Link>
+                    <div className="mt-2">
+                        <a href="/#contact" className="bg-orange-500 text-white py-3 rounded-lg font-medium text-center block hover:bg-orange-600">
+                            立即諮詢
+                        </a>
+                    </div>
                 </div>
             )}
         </nav>

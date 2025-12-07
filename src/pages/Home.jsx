@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Building2, ShieldCheck, CheckCircle2, Sun, Zap, Sprout, Cpu, BarChart3, ArrowRight, Battery, Shield, Leaf, Award, Users, Globe, Wind } from 'lucide-react';
+import React, { lazy, Suspense } from 'react';
 import HeroCarousel from '../components/ui/HeroCarousel';
 import ContactForm from '../components/ui/ContactForm';
 import SEO from '../components/common/SEO';
 import FadeIn from '../components/common/FadeIn';
-import TechScene from '../components/three/TechScene';
+// import TechScene from '../components/three/TechScene';
+import TextReveal from '../components/common/TextReveal';
+import ParallaxSection from '../components/common/ParallaxSection';
+import CountUp from '../components/common/CountUp';
+
+const TechScene = lazy(() => import('../components/three/TechScene'));
 
 const Home = () => {
     return (
@@ -39,7 +45,9 @@ const Home = () => {
                                         </div>
                                         <div>
                                             <p className="text-sm text-slate-500">專案管理經驗</p>
-                                            <p className="text-2xl font-bold text-slate-800">17+ 年</p>
+                                            <p className="text-2xl font-bold text-slate-800">
+                                                <CountUp to={17} suffix="+ 年" />
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +61,7 @@ const Home = () => {
 
                         <FadeIn direction="left" delay={0.2}>
                             <div>
-                                <h2 className="text-green-600 font-bold tracking-wide uppercase mb-2">關於世和智能</h2>
+                                <TextReveal text="關於世和智能" className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
                                 <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">國家級戰略視野 <br />全省在地化專業服務</h3>
                                 <p className="text-slate-600 mb-6 leading-relaxed">
                                     世和智能定位為淨零轉型的領航者，團隊核心成員擁有中科院17年系統與專案管理經驗。我們不僅是工程建置商，更是企業的策略夥伴。
@@ -100,7 +108,7 @@ const Home = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-12">
                         <FadeIn direction="right" className="md:w-1/2">
-                            <h2 className="text-green-600 font-bold tracking-wide uppercase mb-2">核心服務</h2>
+                            <TextReveal text="核心服務" className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
                             <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">全方位能源與智慧解決方案</h3>
                             <p className="text-slate-600 mb-8 leading-relaxed text-lg">
                                 我們提供從綠能建置、機電節能到智慧跨域應用的完整生態系服務。無論是企業淨零轉型、工廠節能改造，或是智慧農業與校園數位化，世和智能都是您最值得信賴的合作夥伴。
@@ -154,7 +162,7 @@ const Home = () => {
                     <FadeIn direction="up">
                         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                             <div>
-                                <h2 className="text-green-600 font-bold tracking-wide uppercase mb-2">工程實績</h2>
+                                <TextReveal text="工程實績" className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
                                 <h3 className="text-3xl md:text-4xl font-bold text-slate-900">見證我們的專業成果</h3>
                             </div>
                             <Link to="/projects" className="text-orange-500 font-medium hover:text-orange-600 flex items-center gap-1 transition-colors">
@@ -203,7 +211,9 @@ const Home = () => {
             <section id="contact" className="py-20 bg-slate-900 text-white relative overflow-hidden">
                 {/* 3D Background */}
                 <div className="absolute inset-0 z-0">
-                    <TechScene className="w-full h-full" />
+                    <Suspense fallback={<div className="w-full h-full bg-slate-900" />}>
+                        <TechScene className="w-full h-full" />
+                    </Suspense>
                 </div>
 
                 {/* Background Image Overlay - kept low opacity as a texture */}
@@ -221,7 +231,9 @@ const Home = () => {
                                     </div>
                                     <div>
                                         <h4 className="text-xl font-bold mb-2">顯著降低營運成本</h4>
-                                        <p className="text-slate-300 text-sm">利用儲能削峰填谷與離峰電價優惠，最高可協助企業節省 76% 電費支出。</p>
+                                        <p className="text-slate-300 text-sm">
+                                            利用儲能削峰填谷與離峰電價優惠，最高可協助企業節省 <CountUp to={76} suffix="%" className="text-orange-400 font-bold" /> 電費支出。
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
