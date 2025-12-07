@@ -96,7 +96,7 @@ const ContactForm = () => {
             <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-green-500 to-orange-500 hover:from-green-600 hover:to-orange-600 text-white font-bold py-3 rounded-lg transition-all mt-4 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-shiny text-white font-bold py-3 rounded-lg mt-4 shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
             >
                 {isSubmitting ? '傳送中...' : '送出諮詢'}
             </button>

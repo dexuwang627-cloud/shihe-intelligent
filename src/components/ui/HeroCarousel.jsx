@@ -102,7 +102,7 @@ const HeroCarousel = () => {
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
                         <Link
                             to={currentData.link}
-                            className="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-white rounded-lg font-bold transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-orange-500/40"
+                            className="px-8 py-4 btn-shiny text-white rounded-full font-bold transition-all flex items-center justify-center gap-2 shadow-lg"
                         >
                             {currentData.linkText} <ArrowRight className="w-5 h-5" />
                         </Link>

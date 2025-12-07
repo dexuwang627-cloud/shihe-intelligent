@@ -133,7 +133,7 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            <Link to="/services" className="inline-flex items-center gap-2 bg-green-600 text-white px-8 py-4 rounded-full font-bold hover:bg-green-700 transition-all shadow-lg hover:shadow-green-500/30">
+                            <Link to="/services" className="inline-flex items-center gap-2 btn-shiny text-white px-8 py-4 rounded-full font-bold shadow-lg">
                                 探索 6 大核心服務 <ArrowRight className="w-5 h-5" />
                             </Link>
                         </FadeIn>
