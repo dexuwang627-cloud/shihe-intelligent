@@ -1,12 +1,14 @@
+
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+import { AnimatePresence } from 'framer-motion';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import SmartCare from './pages/SmartCare';
+import ErrorBoundary from './components/common/ErrorBoundary';
 
 // Service Sub-pages
 import GreenEnergy from './pages/services/GreenEnergy';
@@ -16,12 +18,14 @@ import Consulting from './pages/services/Consulting';
 import SmartAgriculture from './pages/services/SmartAgriculture';
 import SmartEducation from './pages/services/SmartEducation';
 
-function App() {
+function AppContent() {
+  const location = useLocation();
+
   return (
-    <HelmetProvider>
-      <Router>
-        <Layout>
-          <Routes>
+    <Layout>
+      <ErrorBoundary>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
             <Route path="/services/green-energy" element={<GreenEnergy />} />
@@ -34,7 +38,17 @@ function App() {
             <Route path="/project-detail" element={<ProjectDetail />} />
             <Route path="/smart-care" element={<SmartCare />} />
           </Routes>
-        </Layout>
+        </AnimatePresence>
+      </ErrorBoundary>
+    </Layout>
+  );
+}
+
+function App() {
+  return (
+    <HelmetProvider>
+      <Router>
+        <AppContent />
       </Router>
     </HelmetProvider>
   );

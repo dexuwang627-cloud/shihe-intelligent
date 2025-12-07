@@ -1,7 +1,9 @@
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Wind, Snowflake, Recycle, Check } from 'lucide-react';
 import SEO from '../../components/common/SEO';
+import ParticleBackground from '../../components/ui/ParticleBackground';
 
 const MEPEngineering = () => {
     useEffect(() => {
@@ -62,20 +64,23 @@ const MEPEngineering = () => {
                     </div>
                 </div>
 
-                <div className="bg-orange-50 p-8 rounded-2xl">
-                    <h3 className="text-2xl font-bold text-orange-900 mb-4">案例效益：某電子廠節能專案</h3>
-                    <div className="grid md:grid-cols-3 gap-6 text-center">
-                        <div className="bg-white p-6 rounded-xl">
-                            <p className="text-slate-500 text-sm">年節省電費</p>
-                            <p className="text-3xl font-bold text-orange-600">350 萬元</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl">
-                            <p className="text-slate-500 text-sm">投資回收期 (ROI)</p>
-                            <p className="text-3xl font-bold text-orange-600">2.8 年</p>
-                        </div>
-                        <div className="bg-white p-6 rounded-xl">
-                            <p className="text-slate-500 text-sm">減碳效益</p>
-                            <p className="text-3xl font-bold text-orange-600">480 噸/年</p>
+                <div className="bg-orange-50 p-8 rounded-2xl relative overflow-hidden">
+                    <ParticleBackground color="rgba(249, 115, 22, 0.2)" count={30} speed={0.3} />
+                    <div className="relative z-10">
+                        <h3 className="text-2xl font-bold text-orange-900 mb-4">案例效益：某電子廠節能專案</h3>
+                        <div className="grid md:grid-cols-3 gap-6 text-center">
+                            <div className="bg-white p-6 rounded-xl">
+                                <p className="text-slate-500 text-sm">年節省電費</p>
+                                <p className="text-3xl font-bold text-orange-600">350 萬元</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-xl">
+                                <p className="text-slate-500 text-sm">投資回收期 (ROI)</p>
+                                <p className="text-3xl font-bold text-orange-600">2.8 年</p>
+                            </div>
+                            <div className="bg-white p-6 rounded-xl">
+                                <p className="text-slate-500 text-sm">減碳效益</p>
+                                <p className="text-3xl font-bold text-orange-600">480 噸/年</p>
+                            </div>
                         </div>
                     </div>
                 </div>

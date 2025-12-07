@@ -1,8 +1,10 @@
+
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft, Download } from 'lucide-react';
 import EducationCarousel from '../../components/ui/EducationCarousel';
 import SEO from '../../components/common/SEO';
+import ParticleBackground from '../../components/ui/ParticleBackground';
 
 const SmartEducation = () => {
     useEffect(() => {
@@ -84,14 +86,17 @@ const SmartEducation = () => {
                     <EducationCarousel />
                 </div>
 
-                <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12 text-center">
-                    <h2 className="text-3xl font-bold mb-4">3000 間智慧教室的成功見證</h2>
-                    <p className="text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
-                        這不僅印證了我們在技術實力、項目管理與服務品質上的硬實力，更積累了大量針對不同教學場景（如普通教室、多媒體教室、實驗室、階梯教室等）的成熟解決方案與應對經驗，能夠靈活應對項目實施中可能出現的各類複雜問題，確保每一個項目都能高標準、高質量交付。
-                    </p>
-                    <p className="text-green-400 font-bold text-lg">
-                        未來，我們將持續深耕智慧教育領域，為更多學校打造高品質、智能化的教學空間，助力教育數位化轉型與高質量發展。
-                    </p>
+                <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12 text-center relative overflow-hidden">
+                    <ParticleBackground color="rgba(255, 255, 255, 0.15)" count={60} speed={0.4} />
+                    <div className="relative z-10">
+                        <h2 className="text-3xl font-bold mb-4">3000 間智慧教室的成功見證</h2>
+                        <p className="text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                            這不僅印證了我們在技術實力、項目管理與服務品質上的硬實力，更積累了大量針對不同教學場景（如普通教室、多媒體教室、實驗室、階梯教室等）的成熟解決方案與應對經驗，能夠靈活應對項目實施中可能出現的各類複雜問題，確保每一個項目都能高標準、高質量交付。
+                        </p>
+                        <p className="text-green-400 font-bold text-lg">
+                            未來，我們將持續深耕智慧教育領域，為更多學校打造高品質、智能化的教學空間，助力教育數位化轉型與高質量發展。
+                        </p>
+                    </div>
                 </div>
             </div >
         </div >

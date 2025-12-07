@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin, Calendar, Tag, Grid, List, Filter } from 'lucide-react';
+import { ArrowRight, ArrowLeft, LayoutGrid, List } from 'lucide-react';
 import { projectData } from '../data/projects';
 import SEO from '../components/common/SEO';
 
