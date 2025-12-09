@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { projectData } from '../data/projects';
+import SEO from '../components/common/SEO';
 
 const ProjectDetail = () => {
     const [searchParams] = useSearchParams();
@@ -26,6 +27,12 @@ const ProjectDetail = () => {
 
     return (
         <div className="fade-in pt-24 min-h-screen bg-slate-50">
+            <SEO
+                title={project.title}
+                description={project.summary}
+                keywords={`${project.category}, 工程實績, 世和智能, ${project.title}`}
+                url={`/project-detail?id=${projectId}`}
+            />
             <div className="container mx-auto px-4">
                 <div className="mb-8">
                     <Link to="/projects" className="flex items-center gap-2 text-slate-500 hover:text-orange-600 transition-colors font-medium mb-4">

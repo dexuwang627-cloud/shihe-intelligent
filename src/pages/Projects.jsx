@@ -58,6 +58,12 @@ const Projects = () => {
 
     return (
         <div className="fade-in">
+            <SEO
+                title="工程實績"
+                description="世和智能工程實績總覽：大型旗艦案場與微型智慧應用案場，橫跨太陽能、儲能、機電工程與智慧農業。"
+                keywords="工程實績, 太陽能案場, 儲能建置, 機電工程, 智慧農業案例"
+                url="/projects"
+            />
             <div id="projects-list" className="page-section pt-24 bg-slate-50 min-h-screen">
                 <div className="container mx-auto px-4">
                     <div className="mb-8">

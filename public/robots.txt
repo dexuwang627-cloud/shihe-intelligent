@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.shiheintelligent.com/sitemap.xml
+
+# Disallow admin or internal paths (none currently)
+# Disallow: /admin/

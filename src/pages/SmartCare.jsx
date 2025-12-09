@@ -1,9 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Download, CheckCircle, HeartPulse, Check, ShieldAlert, ScanFace } from 'lucide-react';
+import SEO from '../components/common/SEO';
 
 const SmartCare = () => {
     return (
         <div className="fade-in pt-24">
+            <SEO
+                title="智慧照顧管理系統 2025"
+                description="結合 AIoT 生理監測、電子圍籬與毫米波雷達技術。專為長照機構打造的零年費、高隱私智慧照護解決方案。"
+                keywords="智慧照護, 長照系統, 生理監測, 電子圍籬, 跌倒偵測, AIoT照護"
+                url="/smart-care"
+            />
             <section className="relative bg-slate-900 text-white py-20 overflow-hidden">
                 <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2670')] bg-cover bg-center opacity-20"></div>
                 <div className="container mx-auto px-4 relative z-10 text-center">

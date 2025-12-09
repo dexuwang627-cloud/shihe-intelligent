@@ -8,6 +8,8 @@ import LoadingSpinner from './components/common/LoadingSpinner';
 
 // Lazy Load Pages
 const Home = lazy(() => import('./pages/Home'));
+const TechScene = lazy(() => import('./components/three/TechScene'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 const Services = lazy(() => import('./pages/Services'));
 const Projects = lazy(() => import('./pages/Projects'));
 const ProjectDetail = lazy(() => import('./pages/ProjectDetail'));
@@ -41,6 +43,7 @@ function AppContent() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/project-detail" element={<ProjectDetail />} />
               <Route path="/smart-care" element={<SmartCare />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </AnimatePresence>

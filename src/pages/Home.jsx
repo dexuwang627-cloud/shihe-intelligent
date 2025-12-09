@@ -20,6 +20,8 @@ const Home = () => {
                 description="世和智能致力於提供全方位的綠能光儲、機電工程、EMS能源管理及智慧農業解決方案，協助企業達成淨零碳排目標。"
             />
 
+            {/* Hidden H1 for SEO structure, as the visual hero title is in the carousel */}
+            <h1 className="visually-hidden">世和智能 - 綠能光儲與智慧農業專家</h1>
             <HeroCarousel />
 
             <section id="about" className="py-20 bg-white">
@@ -33,7 +35,7 @@ const Home = () => {
                                     </div>
                                     <img
                                         src="/photos/award1.webp"
-                                        alt="Company Award"
+                                        alt="世和智能綠色科技創新獎座"
                                         className="absolute inset-0 w-full h-full object-cover object-top"
                                         loading="lazy"
                                     />
@@ -148,7 +150,7 @@ const Home = () => {
 
                         <FadeIn direction="left" delay={0.2} className="md:w-1/2 relative">
                             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl relative z-10">
-                                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2574&auto=format&fit=crop" alt="Services Overview" className="w-full h-full object-cover" />
+                                <img src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2574&auto=format&fit=crop" alt="世和智能全方位能源服務" className="w-full h-full object-cover" />
                             </div>
                             <div className="absolute -bottom-6 -left-6 w-2/3 aspect-video bg-orange-500 rounded-2xl -z-0"></div>
                             <div className="absolute -top-6 -right-6 w-2/3 aspect-video bg-green-500 rounded-2xl -z-0"></div>
@@ -175,7 +177,7 @@ const Home = () => {
                         <FadeIn delay={0.1}>
                             <Link to="/project-detail?id=yanghwa" className="group cursor-pointer">
                                 <div className="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
-                                    <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2670&auto=format&fit=crop" alt="Solar Project" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
+                                    <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2670&auto=format&fit=crop" alt="太陽能光電案場" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
                                     <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">太陽能</div>
                                 </div>
                                 <h4 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">洋華光電 996KW 案場</h4>
@@ -186,7 +188,7 @@ const Home = () => {
                         <FadeIn delay={0.2}>
                             <Link to="/project-detail?id=taipeidome" className="group cursor-pointer">
                                 <div className="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
-                                    <img src="/photos/egg.jpg" alt="MEP Project" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
+                                    <img src="/photos/egg.jpg" alt="台北大巨蛋機電工程" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
                                     <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">機電工程</div>
                                 </div>
                                 <h4 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">台北大巨蛋機電工程</h4>
@@ -197,7 +199,7 @@ const Home = () => {
                         <FadeIn delay={0.3}>
                             <Link to="/project-detail?id=smartfarm" className="group cursor-pointer">
                                 <div className="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
-                                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2532&auto=format&fit=crop" alt="Smart Agriculture" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
+                                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2532&auto=format&fit=crop" alt="智慧農業應用" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
                                     <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">智慧整合</div>
                                 </div>
                                 <h4 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">鮮一有機智慧農場</h4>

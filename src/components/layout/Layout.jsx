@@ -56,9 +56,9 @@ const Navbar = () => {
                 <Link to="/" className="flex items-center gap-2">
                     <img src="/photos/logo2.svg" alt="世和智能 Logo" className="h-10 w-auto" width="40" height="40" />
                     <div>
-                        <h1 className="font-bold text-xl leading-tight text-white md:text-2xl">
+                        <div className="font-bold text-xl leading-tight text-white md:text-2xl">
                             世和智能 / 鑫浩瀚企業
-                        </h1>
+                        </div>
                         <p className="text-xs tracking-wider text-slate-400">
                             Shi-He Intelligent
                         </p>
