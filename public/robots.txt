@@ -4,9 +4,6 @@ Allow: /
 # Sitemap location
 Sitemap: https://www.shiheintelligent.com/sitemap.xml
 
-# Disallow admin or internal paths (none currently)
-# Disallow: /admin/
-
 # Block AI Training & Scraping Bots
 User-agent: GPTBot
 Disallow: /
