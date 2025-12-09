@@ -11,18 +11,21 @@ import ParallaxSection from '../components/common/ParallaxSection';
 import CountUp from '../components/common/CountUp';
 import LazyLoad from '../components/common/LazyLoad';
 
+import { useTranslation, Trans } from 'react-i18next';
+
 const TechScene = lazy(() => import('../components/three/TechScene'));
 
 const Home = () => {
+    const { t } = useTranslation();
     return (
         <div id="page-home" className="page-section">
             <SEO
-                title="首頁"
-                description="世和智能致力於提供全方位的綠能光儲、機電工程、EMS能源管理及智慧農業解決方案，協助企業達成淨零碳排目標。"
+                title={t('home.seo.title')}
+                description={t('home.seo.description')}
             />
 
             {/* Hidden H1 for SEO structure, as the visual hero title is in the carousel */}
-            <h1 className="visually-hidden">世和智能 - 綠能光儲與智慧農業專家</h1>
+            <h1 className="visually-hidden">{t('home.hero.hidden_title')}</h1>
             <HeroCarousel />
 
             <section id="about" className="py-20 bg-white">
@@ -36,7 +39,7 @@ const Home = () => {
                                     </div>
                                     <img
                                         src="/photos/award1.webp"
-                                        alt="世和智能綠色科技創新獎座"
+                                        alt="Award"
                                         className="absolute inset-0 w-full h-full object-cover object-top"
                                         loading="lazy"
                                         width="800"
@@ -49,9 +52,9 @@ const Home = () => {
                                             <ShieldCheck className="w-8 h-8" />
                                         </div>
                                         <div>
-                                            <p className="text-sm text-slate-500">專案管理經驗</p>
+                                            <p className="text-sm text-slate-500">{t('home.about.exp_label')}</p>
                                             <p className="text-2xl font-bold text-slate-800">
-                                                <CountUp to={17} suffix="+ 年" />
+                                                <CountUp to={17} suffix={`+ ${t('home.about.exp_years')}`} />
                                             </p>
                                         </div>
                                     </div>
@@ -59,49 +62,40 @@ const Home = () => {
                             </div>
 
                             <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-r-xl shadow-sm">
-                                <p className="text-green-800 font-bold text-lg mb-1">2023 綠色科技創新獎</p>
-                                <p className="text-green-700">肯定我們在能源數據應用上的領先地位。</p>
+                                <p className="text-green-800 font-bold text-lg mb-1">{t('home.about.award_title')}</p>
+                                <p className="text-green-700">{t('home.about.award_desc')}</p>
                             </div>
                         </FadeIn>
 
                         <FadeIn direction="left" delay={0.2}>
                             <div>
-                                <TextReveal text="關於世和智能" className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
-                                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">國家級戰略視野 <br />全省在地化專業服務</h2>
+                                <TextReveal text={t('home.about.reveal_text')} className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
+                                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6" dangerouslySetInnerHTML={{ __html: t('home.about.title') }}></h2>
                                 <p className="text-slate-600 mb-6 leading-relaxed">
-                                    世和智能定位為淨零轉型的領航者，團隊核心成員擁有中科院17年系統與專案管理經驗。我們不僅是工程建置商，更是企業的策略夥伴。
+                                    {t('home.about.p1')}
                                 </p>
                                 <p className="text-slate-600 mb-6 leading-relaxed">
-                                    我們的願景是成為亞洲地區綠色能源數據應用的領導者，將複雜的能源管理轉化為簡單、高效且具備 AI 預測能力的智能系統，為客戶資產創造長期的永續價值。
+                                    {t('home.about.p2')}
                                 </p>
                                 <ul className="space-y-4 mb-8">
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                        <span className="text-slate-700">國科會淨零成員；ESCO協會成員、軟協成員：參與國家級戰略，掌握前沿科技</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                        <span className="text-slate-700">一站式服務：提供從規劃、申請、施工到維運的完整 EPC 服務</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                        <span className="text-slate-700">跨域整合能力：擁有強大的 IT 軟體研發與系統整合實力</span>
-                                    </li>
+                                    {(t('home.about.list', { returnObjects: true }) || []).map((item, index) => (
+                                        <li key={index} className="flex items-start gap-3">
+                                            <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
+                                            <span className="text-slate-700">{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">核心技術優勢</h3>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">{t('home.about.tech_title')}</h3>
                                 <ul className="space-y-4">
-                                    <li className="flex items-start gap-3">
-                                        <ShieldCheck className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                        <span className="text-slate-700">數據驅動：獨家 EMS 系統實現秒級能源監控與自動化調度。</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                        <span className="text-slate-700">彈性架構：系統採用微服務架構，可快速適應新設備與法規變更。</span>
-                                    </li>
-                                    <li className="flex items-start gap-3">
-                                        <Building2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
-                                        <span className="text-slate-700">高標準安全：儲能建置安全超越業界標準，除了BMS/EMS電池管理系統外，加裝物理性監測器搭配系統預警、智慧消防系統及獨家的盤體設計，確保專案資產與運營安全。</span>
-                                    </li>
+                                    {(t('home.about.tech_list', { returnObjects: true }) || []).map((item, index) => {
+                                        const Icon = index === 0 ? ShieldCheck : index === 1 ? CheckCircle2 : Building2;
+                                        return (
+                                            <li key={index} className="flex items-start gap-3">
+                                                <Icon className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
+                                                <span className="text-slate-700">{item}</span>
+                                            </li>
+                                        );
+                                    })}
                                 </ul>
                             </div>
                         </FadeIn>
@@ -113,10 +107,10 @@ const Home = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-12">
                         <FadeIn direction="right" className="md:w-1/2">
-                            <TextReveal text="核心服務" className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
-                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">全方位能源與智慧解決方案</h2>
+                            <TextReveal text={t('home.services.reveal_text')} className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t('home.services.title')}</h2>
                             <p className="text-slate-600 mb-8 leading-relaxed text-lg">
-                                我們提供從綠能建置、機電節能到智慧跨域應用的完整生態系服務。無論是企業淨零轉型、工廠節能改造，或是智慧農業與校園數位化，世和智能都是您最值得信賴的合作夥伴。
+                                {t('home.services.description')}
                             </p>
 
                             <div className="grid grid-cols-2 gap-6 mb-8">
@@ -124,30 +118,30 @@ const Home = () => {
                                     <div className="bg-green-100 p-2 rounded-lg text-green-600">
                                         <Sun className="w-6 h-6" />
                                     </div>
-                                    <span className="font-bold text-slate-800">綠電光儲建置</span>
+                                    <span className="font-bold text-slate-800">{t('home.services.items.green')}</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <div className="bg-orange-100 p-2 rounded-lg text-orange-600">
                                         <Zap className="w-6 h-6" />
                                     </div>
-                                    <span className="font-bold text-slate-800">機電節能工程</span>
+                                    <span className="font-bold text-slate-800">{t('home.services.items.mep')}</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <div className="bg-blue-100 p-2 rounded-lg text-blue-600">
                                         <Cpu className="w-6 h-6" />
                                     </div>
-                                    <span className="font-bold text-slate-800">EMS 能源管理</span>
+                                    <span className="font-bold text-slate-800">{t('home.services.items.ems')}</span>
                                 </div>
                                 <div className="flex items-center gap-3">
                                     <div className="bg-teal-100 p-2 rounded-lg text-teal-600">
                                         <Sprout className="w-6 h-6" />
                                     </div>
-                                    <span className="font-bold text-slate-800">智慧跨域應用</span>
+                                    <span className="font-bold text-slate-800">{t('home.services.items.smart')}</span>
                                 </div>
                             </div>
 
                             <Link to="/services" className="inline-flex items-center gap-2 btn-shiny text-white px-8 py-4 rounded-full font-bold shadow-lg">
-                                探索 6 大核心服務 <ArrowRight className="w-5 h-5" />
+                                {t('home.services.cta')} <ArrowRight className="w-5 h-5" />
                             </Link>
                         </FadeIn>
 
@@ -155,7 +149,7 @@ const Home = () => {
                             <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl relative z-10">
                                 <img
                                     src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2574&auto=format&fit=crop"
-                                    alt="世和智能全方位能源服務"
+                                    alt="Services"
                                     className="w-full h-full object-cover"
                                     width="800"
                                     height="800"
@@ -174,11 +168,11 @@ const Home = () => {
                     <FadeIn direction="up">
                         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                             <div>
-                                <TextReveal text="工程實績" className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
-                                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">見證我們的專業成果</h2>
+                                <TextReveal text={t('home.projects.reveal_text')} className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
+                                <h2 className="text-3xl md:text-4xl font-bold text-slate-900">{t('home.projects.title')}</h2>
                             </div>
                             <Link to="/projects" className="text-orange-500 font-medium hover:text-orange-600 flex items-center gap-1 transition-colors">
-                                查看更多案例 <ArrowRight className="w-4 h-4" />
+                                {t('home.projects.cta_more')} <ArrowRight className="w-4 h-4" />
                             </Link>
                         </div>
                     </FadeIn>
@@ -187,33 +181,33 @@ const Home = () => {
                         <FadeIn delay={0.1}>
                             <Link to="/project-detail?id=yanghwa" className="group cursor-pointer">
                                 <div className="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
-                                    <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2670&auto=format&fit=crop" alt="太陽能光電案場" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" />
-                                    <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">太陽能</div>
+                                    <img src="https://images.unsplash.com/photo-1611365892117-00ac5ef43c90?q=80&w=2670&auto=format&fit=crop" alt="Yanghwa" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" />
+                                    <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">{t('home.projects.cases.yanghwa.tag')}</div>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">洋華光電 996KW 案場</h3>
-                                <p className="text-slate-600 text-sm">導入高效能模組與 SolarEdge 優化器，大幅提升發電效率。</p>
+                                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{t('home.projects.cases.yanghwa.title')}</h3>
+                                <p className="text-slate-600 text-sm">{t('home.projects.cases.yanghwa.desc')}</p>
                             </Link>
                         </FadeIn>
 
                         <FadeIn delay={0.2}>
                             <Link to="/project-detail?id=taipeidome" className="group cursor-pointer">
                                 <div className="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
-                                    <img src="/photos/egg.jpg" alt="台北大巨蛋機電工程" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" />
-                                    <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">機電工程</div>
+                                    <img src="/photos/egg.jpg" alt="Taipei Dome" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" />
+                                    <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">{t('home.projects.cases.taipeidome.tag')}</div>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">台北大巨蛋機電工程</h3>
-                                <p className="text-slate-600 text-sm">承攬 15 個電氣室及 4 個變電站之高規格機電建置工程。</p>
+                                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{t('home.projects.cases.taipeidome.title')}</h3>
+                                <p className="text-slate-600 text-sm">{t('home.projects.cases.taipeidome.desc')}</p>
                             </Link>
                         </FadeIn>
 
                         <FadeIn delay={0.3}>
                             <Link to="/project-detail?id=smartfarm" className="group cursor-pointer">
                                 <div className="aspect-[4/3] bg-slate-200 rounded-xl overflow-hidden mb-4 relative">
-                                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2532&auto=format&fit=crop" alt="智慧農業應用" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" />
-                                    <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">智慧整合</div>
+                                    <img src="https://images.unsplash.com/photo-1562654501-a0ccc0fc3fb1?q=80&w=2532&auto=format&fit=crop" alt="Smart Farm" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="800" height="600" loading="lazy" />
+                                    <div className="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">{t('home.projects.cases.smartfarm.tag')}</div>
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">鮮一有機智慧農場</h3>
-                                <p className="text-slate-600 text-sm">建置環境監控、土壤偵測與智慧澆灌系統，實現精準農業。</p>
+                                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-orange-600 transition-colors">{t('home.projects.cases.smartfarm.title')}</h3>
+                                <p className="text-slate-600 text-sm">{t('home.projects.cases.smartfarm.desc')}</p>
                             </Link>
                         </FadeIn>
                     </div>
@@ -236,43 +230,28 @@ const Home = () => {
                 <div className="container mx-auto px-4 relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <FadeIn direction="right">
-                            <div className="text-green-400 font-bold tracking-wide uppercase mb-2 text-lg">為何選擇世和智能</div>
-                            <h2 className="text-3xl md:text-4xl font-bold mb-6">不只是設備供應商<br />更是您的淨零轉型顧問</h2>
+                            <div className="text-green-400 font-bold tracking-wide uppercase mb-2 text-lg">{t('home.why_us.subtitle')}</div>
+                            <h2 className="text-3xl md:text-4xl font-bold mb-6" dangerouslySetInnerHTML={{ __html: t('home.why_us.title') }}></h2>
                             <div className="space-y-6">
-                                <div className="flex gap-4">
-                                    <div className="bg-white/10 p-3 rounded-lg h-fit">
-                                        <Battery className="text-orange-400 w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold mb-2">顯著降低營運成本</h3>
-                                        <p className="text-slate-300 text-sm">
-                                            利用儲能削峰填谷與離峰電價優惠，最高可協助企業節省 <CountUp to={76} suffix="%" className="text-orange-400 font-bold" /> 電費支出。
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    <div className="bg-white/10 p-3 rounded-lg h-fit">
-                                        <BarChart3 className="text-orange-400 w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold mb-2">降低轉型門檻</h3>
-                                        <p className="text-slate-300 text-sm">提供完整補助申請規劃與 ESCO 模式，減輕企業初期資本投入壓力。</p>
-                                    </div>
-                                </div>
-                                <div className="flex gap-4">
-                                    <div className="bg-white/10 p-3 rounded-lg h-fit">
-                                        <ShieldCheck className="text-orange-400 w-6 h-6" />
-                                    </div>
-                                    <div>
-                                        <h3 className="text-xl font-bold mb-2">最高安全規格</h3>
-                                        <p className="text-slate-300 text-sm">儲能系統採多維度消防設計（氣體偵測、自動滅火），確保資產與人員安全。</p>
-                                    </div>
-                                </div>
+                                {(t('home.why_us.reasons', { returnObjects: true }) || []).map((reason, index) => {
+                                    const Icon = index === 0 ? Battery : index === 1 ? BarChart3 : ShieldCheck;
+                                    return (
+                                        <div key={index} className="flex gap-4">
+                                            <div className="bg-white/10 p-3 rounded-lg h-fit">
+                                                <Icon className="text-orange-400 w-6 h-6" />
+                                            </div>
+                                            <div>
+                                                <h3 className="text-xl font-bold mb-2">{reason.title}</h3>
+                                                <p className="text-slate-300 text-sm" dangerouslySetInnerHTML={{ __html: reason.desc }}></p>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </FadeIn>
 
                         <FadeIn direction="left" delay={0.2} className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-                            <h2 className="text-2xl font-bold mb-6 text-center">立即開始您的綠色轉型</h2>
+                            <h2 className="text-2xl font-bold mb-6 text-center">{t('home.why_us.form_title')}</h2>
                             <ContactForm />
                         </FadeIn>
                     </div>

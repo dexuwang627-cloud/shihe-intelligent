@@ -1,0 +1,618 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact Us",
+        "subtitle": "Shi-He Intelligent"
+    },
+    "home": {
+        "seo": {
+            "title": "Home",
+            "description": "Shi-He Intelligent provides comprehensive green energy, MEP engineering, EMS energy management, and smart agriculture solutions to help enterprises achieve net-zero carbon emission goals."
+        },
+        "hero": {
+            "hidden_title": "Shi-He Intelligent - Green Energy & Smart Agriculture Experts",
+            "cta_consult": "Book Free Consultant"
+        },
+        "carousel": [
+            {
+                "subtitle": "Smart Agriculture | Tech Farming",
+                "title": "AI Precision Control & Irrigation, Increasing Yield by 20%",
+                "linkText": "View Case Study"
+            },
+            {
+                "subtitle": "Net Zero | Energy Saving",
+                "title": "AI Smart Energy Saving System, Reducing Opex by 30%+",
+                "linkText": "Explore Solutions"
+            },
+            {
+                "subtitle": "Energy Data | Digital Core",
+                "title": "Exclusive EMS System, Precise Demand Prediction, Zero Penalties",
+                "linkText": "Learn EMS Tech"
+            }
+        ],
+        "about": {
+            "exp_label": "Project Mgmt Exp.",
+            "exp_years": "Years",
+            "award_title": "2023 Green Tech Innovation Award",
+            "award_desc": "Recognized for leadership in energy data applications.",
+            "reveal_text": "ABOUT SHI-HE",
+            "title": "National Strategic Vision, <br />Localized Professional Service",
+            "p1": "Shi-He Intelligent positions itself as a leader in net-zero transformation. Our core team possesses 17 years of system and project management experience from CSIST. We are not just contractors, but strategic partners for enterprises.",
+            "p2": "Our vision is to become the leader in green energy data applications in Asia, transforming complex energy management into simple, efficient, and AI-predictive smart systems, creating long-term sustainable value for client assets.",
+            "list": [
+                "NSTC Net-Zero Member; ESCO Association Member: National-level strategy participation, mastering frontier tech",
+                "One-Stop Service: Complete EPC service from planning, application, construction to O&M",
+                "Cross-Domain Integration: Strong IT software R&D and system integration capabilities"
+            ],
+            "tech_title": "Core Technical Advantages",
+            "tech_list": [
+                "Data-Driven: Exclusive EMS system achieves second-level monitoring and automated dispatch.",
+                "Flexible Architecture: Microservices architecture adapts quickly to new equipment and regulations.",
+                "High Safety Standards: Energy storage safety exceeds industry standards with BMS/EMS, physical monitoring, early warning, smart fire suppression, and exclusive panel design."
+            ]
+        },
+        "services": {
+            "reveal_text": "CORE SERVICES",
+            "title": "Comprehensive Energy & Smart Solutions",
+            "description": "We provide a complete ecosystem from green energy construction and MEP energy saving to smart cross-domain applications. Whether it's enterprise net-zero transformation, factory energy saving, or smart agriculture and campus digitization, Shi-He Intelligent is your most trusted partner.",
+            "items": {
+                "green": "Green Energy & Storage",
+                "mep": "MEP & Energy Saving",
+                "ems": "EMS Energy Management",
+                "smart": "Smart Applications"
+            },
+            "cta": "Explore 6 Core Services"
+        },
+        "projects": {
+            "reveal_text": "PROJECTS",
+            "title": "Witness Our Professional Results",
+            "cta_more": "View More Cases",
+            "cases": {
+                "yanghwa": {
+                    "tag": "Solar Energy",
+                    "title": "Yanghwa Optoelectronics 996KW",
+                    "desc": "High-efficiency modules with SolarEdge optimizers, maximizing power generation."
+                },
+                "taipeidome": {
+                    "tag": "MEP Engineering",
+                    "title": "Taipei Dome MEP",
+                    "desc": "High-spec MEP construction for 15 electrical rooms and 4 substations."
+                },
+                "smartfarm": {
+                    "tag": "Smart Integration",
+                    "title": "Xian-Yi Organic Smart Farm",
+                    "desc": "Environmental monitoring, soil detection, and smart irrigation for precision agriculture."
+                }
+            }
+        },
+        "why_us": {
+            "subtitle": "WHY CHOOSE US",
+            "title": "Not Just a Vendor, <br />But Your Net-Zero Consultant",
+            "reasons": [
+                {
+                    "title": "Significantly Reduce Opex",
+                    "desc": "Save up to <span class=\"highlight\">76%</span> on electricity bills using peak shaving and off-peak rates."
+                },
+                {
+                    "title": "Lower Transition Barrier",
+                    "desc": "Complete subsidy planning and ESCO model to reduce initial capital pressure."
+                },
+                {
+                    "title": "Highest Safety Specs",
+                    "desc": "Multi-dimensional fire suppression (gas detection, auto extinguishing) ensuring asset and personnel safety."
+                }
+            ],
+            "form_title": "Start Your Green Transition"
+        }
+    },
+    "contact_form": {
+        "company": {
+            "label": "Company Name",
+            "placeholder": "Enter company name"
+        },
+        "contact_person": {
+            "label": "Contact Person",
+            "placeholder": "John Doe"
+        },
+        "phone": {
+            "label": "Phone",
+            "placeholder": "0912-345-678"
+        },
+        "inquiry_type": {
+            "label": "Inquiry Type",
+            "options": {
+                "solar_storage": "Solar / Energy Storage",
+                "mep_hvac": "MEP / HVAC Energy Saving",
+                "system_integration": "Smart System Integration",
+                "other": "Other Inquiry"
+            }
+        },
+        "details": {
+            "label": "Details (Optional)",
+            "placeholder": "Briefly describe your project scale, goals, or any special requirements."
+        },
+        "submit_btn": {
+            "sending": "Sending...",
+            "default": "Submit Inquiry"
+        },
+        "alerts": {
+            "success": "✅ Inquiry sent successfully! Thank you for contacting us.",
+            "error": "❌ Send failed"
+        }
+    },
+    "footer": {
+        "description": "Dedicated to using advanced technology to solve energy and environmental problems, creating maximum value for customers while contributing to global sustainability.",
+        "services": "Services",
+        "contact": "Contact Us",
+        "rights": "© {{year}} Shi-He Intelligent Technology Co., Ltd. All rights reserved.",
+        "service_items": {
+            "green": "Green Energy",
+            "mep": "MEP Engineering",
+            "ems": "Enery Management",
+            "smart": "Smart Applications"
+        },
+        "manager": "General Manager",
+        "address": "Address"
+    },
+    "projects_page": {
+        "seo": {
+            "title": "Projects",
+            "description": "Shi-He Intelligent Project Overview: Large-scale flagship projects and micro smart applications, spanning solar, storage, MEP, and smart agriculture.",
+            "keywords": "Projects, Solar, Energy Storage, MEP, Smart Agriculture"
+        },
+        "back_link": "Back to Projects",
+        "filter_all": "All Projects",
+        "title": "Project Overview: Scalable Solutions",
+        "subtitle": "From megawatt-scale grid implementations to micro-scale enterprise energy saving, demonstrating our true capabilities.",
+        "view_grid": "Grid",
+        "view_list": "List",
+        "section_large": "Megawatt Scale & Key Projects",
+        "section_micro": "Micro & Smart Solutions",
+        "cta_box": {
+            "title": "Can't find a case matching your scale?",
+            "text": "Our solutions are fully customizable. Contact us now for a tailored energy-saving proposal.",
+            "button": "Book 1-on-1 Consultation"
+        }
+    },
+    "project_detail": {
+        "not_found": {
+            "title": "404 Project Not Found",
+            "text": "The project information you requested could not be found.",
+            "back": "Back to Projects"
+        },
+        "back_link": "Back to Projects",
+        "specs_title": "Key Indicators & Tech Specs",
+        "desc_title": "Project Intro & Challenges",
+        "benefits_title": "Client Benefits Feedback",
+        "cta_box": {
+            "title": "Have similar project needs?",
+            "text": "We can tailor a customized solution that meets your ESG goals and energy-saving needs.",
+            "button": "Book 1-on-1 Consultation"
+        }
+    },
+    "services_page": {
+        "seo": {
+            "title": "Core Services",
+            "description": "Shi-He Intelligent offers six core services: Green Energy, MEP Engineering, EMS, Consulting, Smart Agriculture, and Smart Education."
+        },
+        "title": "Core Services & Solutions",
+        "subtitle": "Shi-He Intelligent is dedicated to providing comprehensive energy and smart solutions, from green energy construction and energy-saving engineering to cross-domain AI applications, helping clients achieve sustainable development goals.",
+        "items": {
+            "green-energy": {
+                "title": "Green Energy Construction",
+                "description": "One-stop solution for solar, BESS, microgrids, and wind-solar hybrid generation, from development to O&M."
+            },
+            "mep-engineering": {
+                "title": "MEP & Energy Saving",
+                "description": "HVAC saving, ice storage, waste heat recovery, and whole-plant MEP planning, optimizing high-energy-consuming equipment."
+            },
+            "ems": {
+                "title": "EMS Energy Management",
+                "description": "Full-field visual monitoring, AI demand prediction, and automated reporting, making energy data the core of business decisions."
+            },
+            "consulting": {
+                "title": "Consulting & Subsidy",
+                "description": "Carbon inventory (ISO 14064), carbon footprint (ISO 14067), and government subsidy application assistance for painless transition."
+            },
+            "smart-agriculture": {
+                "title": "Smart Agriculture/Care",
+                "description": "AIoT applications including smart greenhouse control, long-term care monitoring, and electronic fencing to solve labor shortages."
+            },
+            "smart-education": {
+                "title": "Smart Education & Campus",
+                "description": "Smart blackboards, interactive teaching systems, and campus digitalization solutions for modern efficient learning environments."
+            }
+        }
+    },
+    "smart_care": {
+        "seo": {
+            "title": "Smart Care Management System 2025",
+            "description": "Combining AIoT monitoring, electronic fencing, and mmWave radar. A zero-annual-fee, high-privacy smart care solution for long-term care facilities.",
+            "keywords": "Smart Care, Long-term Care, Physiological Monitoring, Electronic Fencing, Fall Detection, AIoT Care"
+        },
+        "hero": {
+            "badge": "2025 Latest Release",
+            "title_prefix": "Smart Care Management System",
+            "title_suffix": "2.0",
+            "description": "Combining AIoT physiologic monitoring, electronic fencing, and mmWave radar technology. A <span class='text-white font-bold'>Zero Annual Fee</span>, <span class='text-white font-bold'>High Privacy</span> smart solution built for long-term care facilities.",
+            "download_btn": "Download 2025 Full Catalog (PDF)",
+            "compliance": "Compliant with 2026-2027 Government Subsidy Standards"
+        },
+        "features": {
+            "title": "Technology with Warmth",
+            "subtitle": "We selected the three most popular application packages from our catalog to help facilities reduce the burden of rounds and improve resident safety.",
+            "health": {
+                "title": "24H Health Monitoring",
+                "desc": "Real-time monitoring of <span class='font-bold text-slate-800'>heart rate, blood oxygen, and body temperature</span> via lightweight smart bands. Alerts sent to nursing stations upon abnormalities.",
+                "list": [
+                    "2-week long battery life",
+                    "IP67 waterproof and dustproof"
+                ],
+                "badge": "Package 1"
+            },
+            "fence": {
+                "title": "Anti-Wandering Fence",
+                "desc": "Bluetooth sensors at exits. When a resident with a band approaches restricted areas, the system triggers <span class='font-bold text-slate-800'>audio-visual alerts and push notifications</span>.",
+                "list": [
+                    "Supports multi-point detection",
+                    "Instant Line group notification"
+                ],
+                "badge": "Package 4"
+            },
+            "radar": {
+                "title": "Privacy Fall Detection",
+                "desc": "Using advanced <span class='font-bold text-slate-800'>mmWave radar</span>, precisely detects falls or abnormal inactivity in bathrooms without cameras, fully protecting privacy.",
+                "list": [
+                    "No video privacy issues",
+                    "Resistance to water vapor interference"
+                ],
+                "badge": "Package 10"
+            }
+        },
+        "catalog": {
+            "title": "Meeting All Accreditation Needs",
+            "description": "Our 2025 catalog includes 13 complete care packages, from basic emergency calls to advanced AI video analysis, which can be combined flexibly.",
+            "tags": [
+                "Bed/Exit Management",
+                "Smart Wetness Sensing",
+                "Air Quality Monitoring",
+                "IV/Stove Safety"
+            ]
+        },
+        "footer_cta": {
+            "title": "Seize the Last Subsidy Opportunity (2026-2027)",
+            "description": "As long as data is complete and executed properly, government grants are disbursed upon acceptance. Our system has no annual fee, making it your best partner for upgrading.",
+            "button": "Book Expert Consultation"
+        }
+    },
+    "consulting": {
+        "seo": {
+            "title": "Corporate Consulting & Subsidy Application",
+            "description": "Professional carbon inventory consulting and government subsidy application assistance. Helping companies with ISO 14064 certification and SBIR/SIIR R&D grants.",
+            "keywords": "Carbon Inventory, ISO 14064, Carbon Footprint, Subsidy Application, SBIR, SIIR, ESG Consulting"
+        },
+        "badge": "Consulting Services",
+        "title": "Corporate Consulting & Subsidy Application",
+        "description": "Net-zero transition is not a cost, but a competitive advantage. We help companies assess status, plan pathways, and introduce government subsidies and green finance to reduce transition pain points. Our services cover the full process: 'Carbon Data Inventory - Reduction Strategy - Government Subsidy Implementation - AI Monitoring for Energy Saving - Value Conversion for Corporate Image'.",
+        "back_link": "Back to Core Services",
+        "carbon": {
+            "title": "Carbon Management Consulting",
+            "iso14064": {
+                "title": "ISO 14064-1 GHG Inventory",
+                "desc": "Assist in defining inventory boundaries, identifying emission sources, collecting data, and writing reports."
+            },
+            "iso14067": {
+                "title": "ISO 14067 Product Carbon Footprint",
+                "desc": "Lifecycle carbon footprint calculation for export-oriented products to meet CBAM regulations."
+            }
+        },
+        "subsidy": {
+            "title": "Success & Green Finance",
+            "description": "The government allocates budgets annually to subsidize equipment replacement and energy-saving systems. Our professional team assists in writing proposals, significantly increasing approval rates.",
+            "common_items_title": "Common Subsidy Items:",
+            "items": [
+                "MOEA Energy Saving Performance Guarantee",
+                "Waste Heat Recovery Subsidy",
+                "Service Industry Equipment Replacement",
+                "Smart Machinery Investment Tax Credit",
+                "SBIR - Corporate Cross-Domain R&D",
+                "SIIR"
+            ],
+            "finance_note": "We also cooperate with multiple public banks to assist clients in applying for 'Green Finance', enjoying lower interest rates and higher loan-to-value ratios."
+        }
+    },
+    "ems": {
+        "seo": {
+            "title": "EMS Energy Management System",
+            "description": "Implement AI Smart Energy Management System (EMS) to monitor power data in real-time, predict demand, and optimize energy usage, helping companies reduce contract capacity overrun risks.",
+            "keywords": "EMS, Energy Management System, Demand Response, Power Monitoring, Energy Saving Management, AI Energy"
+        },
+        "badge": "Digital Transformation Core",
+        "title": "EMS Energy Management System",
+        "description": "Invisible energy waste is the most terrifying. Shi-He Intelligent EMS visualizes energy data and uses AI algorithms for precise prediction, achieving automated optimal dispatch.",
+        "back_link": "Back to Core Services",
+        "features": {
+            "visual": {
+                "title": "Full-Field Visual Monitoring",
+                "desc": "Integrates solar, storage, and load into a single dashboard. Supports real-time mobile push notifications for instant anomaly awareness."
+            },
+            "prediction": {
+                "title": "AI Demand Prediction & Shedding",
+                "desc": "System automatically learns usage patterns to predict overrun risks. Automatically dispatches storage discharge or sheds non-critical loads before overrun occurs to avoid high penalties."
+            },
+            "report": {
+                "title": "Automated Report Generation",
+                "desc": "One-click export of daily/monthly/annual energy reports. Can generate energy consumption analysis reports in ISO 50001 format, significantly reducing management workload."
+            }
+        }
+    },
+    "green_energy": {
+        "seo": {
+            "title": "Green Energy & Storage Construction",
+            "description": "One-stop solar PV and storage system construction services, including site assessment, engineering design, construction, and O&M, assisting companies in green energy transition.",
+            "keywords": "Solar Installation, Storage System, Green Energy, PV Engineering, Microgrid, Fishery-Solar Hybrid"
+        },
+        "badge": "EPC Turnkey Service",
+        "title": "Green Energy & Storage Construction",
+        "description": "From site development, planning & design, construction to O&M, providing a comprehensive one-stop solution to ensure long-term stable profitability of your green assets.",
+        "back_link": "Back to Core Services",
+        "cards": {
+            "solar": {
+                "title": "Solar Power System",
+                "desc": "For rooftop, ground-mounted, and fishery-solar sites. Using Tier 1 high-efficiency modules and smart inverters like SolarEdge/Enphase with arc detection and rapid shutdown for highest safety."
+            },
+            "storage": {
+                "title": "Energy Storage System (BESS)",
+                "desc": "Providing dReg/E-dReg frequency regulation ancillary services and C&I user-side storage (behind-the-meter) to help peak shaving and reduce contract capacity and electricity costs."
+            },
+            "om": {
+                "title": "Smart O&M",
+                "desc": "Combining drone infrared thermal inspection with 24/7 remote monitoring center to actively detect module anomalies and ensure generation efficiency."
+            }
+        },
+        "hybrid": {
+            "title": "Wind-Solar Hybrid & Microgrid",
+            "description": "For islands or remote areas, we provide 'Wind-Solar Hybrid' solutions combining small wind turbines and solar power. Utilizing distributed microgrid technology to integrate various renewable energies and storage, achieving energy self-sufficiency and significantly reducing reliance on diesel generators.",
+            "list": [
+                "All-weather generation: Solar by day, wind by night",
+                "Energy Independence: Suitable for off-grid or unstable grid areas"
+            ]
+        },
+        "micro": {
+            "title": "Micro Home/Small C&I Storage",
+            "description": "Residential and small C&I are our most important future service targets. We define bringing green energy into every home, especially remote mountains and disadvantaged groups, improving quality of life through technology as energy equity.",
+            "charity": {
+                "title": "Charity & Remote Support",
+                "desc": "For intergenerational families in mountains, we provide project subsidies and corporate sponsorship to improve living environments for grandparents and children, significantly reducing electricity burdens."
+            },
+            "roi": {
+                "title": "5-Year ROI & UPS",
+                "desc": "General users can expect a return on investment within 5 years with government subsidies. The system provides continuous cost-saving benefits and ensures stable power supply during grid instability."
+            },
+            "safety": {
+                "title": "Best Fire Protection",
+                "desc": "Filling gaps in industry safety standards. Whether micro or SME storage, all equipped with remote monitoring and exclusive physical detectors, fully compliant with fire regulations to ensure user safety."
+            },
+            "toggle": "View Micro-Storage Details (Core Tech & Safety Standards)",
+            "details": {
+                "intro": "Under global energy transition and net-zero trends, energy storage will become critical core infrastructure. We continue to invest in high-safety cell technology, modular flexible architecture, and AI predictive O&M to plan ahead for clients' energy transition needs for the next 10 years.",
+                "standards_title": "International High-Spec Safety Standards",
+                "standards_list": [
+                    "UL 1973 / UL 9540A: Storage system & thermal runaway/fire safety testing certification.",
+                    "IEC 62619 / CNS 62619: Battery module safety standards (Europe/Taiwan).",
+                    "CE / CE-EMC: EU product compliance and electromagnetic compatibility.",
+                    "UN38.3: Global battery transport testing for compliant export."
+                ],
+                "cert_note": "Verified by multi-country high-spec standards, products can be stably applied in industrial, building, microgrid, and medical fields worldwide.",
+                "highlights_title": "Tech Highlights & Smart O&M",
+                "highlights_list": [
+                    "High Safety Design: Low voltage modules, independent thermal cut-off, hot-swappable, enhancing safety and stability.",
+                    "Smart O&M: Module-level monitoring, cloud data analysis, SOH prediction, creating preventative maintenance mechanisms.",
+                    "Global Regulation Layout: Mastering IEC/UL/CE trends to meet export market certification needs."
+                ]
+            }
+        },
+        "footer_cta": {
+            "title": "Ready to Start Your Green Energy Project?",
+            "description": "We provide free site assessment and financial model calculation to let you clearly understand the ROI.",
+            "button": "Book Assessment Now"
+        }
+    },
+    "mep_engineering": {
+        "seo": {
+            "title": "MEP & Energy Saving Engineering",
+            "description": "Professional MEP engineering integration and energy saving improvement services, covering power systems, HVAC saving, lighting improvement, and smart monitoring.",
+            "keywords": "MEP Engineering, Energy Saving, HVAC Saving, Power System, Waste Heat Recovery, Chiller"
+        },
+        "badge": "Energy Saving Retrofit",
+        "title": "MEP & Energy Saving Engineering",
+        "description": "Systematic optimization for high-energy-consuming equipment. Not only saving electricity costs but also extending equipment life, the first step for companies to implement ESG.",
+        "back_link": "Back to Core Services",
+        "cards": {
+            "hvac": {
+                "title": "HVAC Energy Saving Retrofit",
+                "list": [
+                    "Magnetic bearing chiller replacement",
+                    "Cooling tower and pump VFD control",
+                    "AI optimized control parameters"
+                ]
+            },
+            "ice": {
+                "title": "Ice Storage System Engineering",
+                "list": [
+                    "Ice making during off-peak low rates",
+                    "Melting ice for cooling during peak hours",
+                    "Shifting peak load by over 30%"
+                ]
+            },
+            "heat": {
+                "title": "Waste Heat & Air Pressure Recovery",
+                "list": [
+                    "Compressor waste heat recovery for hot water",
+                    "Process waste gas heat reuse",
+                    "Whole-plant energy flow analysis"
+                ]
+            }
+        },
+        "case_study": {
+            "title": "Case Benefit: Electronics Factory Project",
+            "saving": {
+                "label": "Annual Bill Saving",
+                "value": "3.5M TWD"
+            },
+            "roi": {
+                "label": "ROI Period",
+                "value": "2.8 Years"
+            },
+            "carbon": {
+                "label": "Carbon Reduction",
+                "value": "480 Tons/Year"
+            }
+        }
+    },
+    "smart_agriculture": {
+        "seo": {
+            "title": "Smart Agriculture/Smart Care",
+            "description": "Smart agriculture solutions combining IoT and AI, including environmental monitoring, automated irrigation, and control systems. Extended to long-term care for safety monitoring.",
+            "keywords": "Smart Agriculture, Smart Greenhouse, Environmental Monitoring, Automated Irrigation, Smart Care, IoT Agriculture"
+        },
+        "badge": "Cross-Domain Application",
+        "title": "Smart Agriculture/Smart Care",
+        "description": "Extending core AIoT technologies to agriculture and care sectors, using technology to solve labor shortages and improve production efficiency and care quality. We understand farmers' hard work and fully assist in utilizing government subsidies to provide better planting environments.",
+        "back_link": "Back to Core Services",
+        "intro_box": {
+            "title": "Friendly Operation: Gov Grants & Zero Annual Fee",
+            "text": "We think for owners. Our smart systems have <span class='font-bold text-orange-600'>NO Annual Fees</span>. Additionally, existing long-term care smart subsidies will enter the <span class='font-bold'>final phase in 2026-2027</span>. As long as executed properly with complete data, government grants are disbursed upon acceptance. We will fully assist you in securing this resource."
+        },
+        "cards": {
+            "agri": {
+                "title": "Smart Agriculture Control",
+                "monitor": {
+                    "title": "Microclimate Precision Monitoring",
+                    "desc": "Real-time monitoring of temp, humidity, light, soil EC/pH. Data uploaded to cloud war room.",
+                    "tag": "Energy Independent Solution"
+                },
+                "ai": {
+                    "title": "AI Smart Management System",
+                    "desc": "AI crop growth prediction, harvest warning, security management (optical storage surveillance)."
+                },
+                "light": {
+                    "title": "Smart Lighting & Wavelength Optimization",
+                    "desc": "Professional advice on light wavelengths for different crops. Combined with smart lighting, can advance harvest by 7-10 days."
+                }
+            },
+            "care": {
+                "title": "Long-term Care Smart Monitoring",
+                "contactless": {
+                    "title": "Contactless Physiological Monitoring",
+                    "desc": "Using mmWave radar to detect senior's breathing and heart rate without wearables. High comfort."
+                },
+                "fall": {
+                    "title": "Fall Detection & Bed Exit Alert",
+                    "desc": "AI image recognition or radar detecting abnormal postures, instantly notifying nursing stations to grasp golden rescue time."
+                },
+                "fence": {
+                    "title": "Electronic Fence & Zone Alert",
+                    "desc": "Seniors wear watches; if exceeding safe zones, system triggers alarms and notifications for staff."
+                },
+                "button": "View 2025 Full Care Catalog"
+            }
+        }
+    },
+    "smart_education": {
+        "seo": {
+            "title": "Smart Education & Campus Digitalization",
+            "description": "Building modern smart campuses, providing smart blackboards, interactive teaching systems, and campus energy management solutions.",
+            "keywords": "Smart Education, Smart Blackboard, Interactive Teaching, Smart Campus, Digital Learning, Campus Energy Saving"
+        },
+        "badge": "Smart Campus",
+        "title": "Smart Education & Campus Digitalization",
+        "description": "Deeply cultivating smart education for over 7 years, focusing on smart classroom solutions, smart blackboards, and one-stop installation. With rich experience and technical accumulation, no field is too difficult for us.",
+        "back_link": "Back to Core Services",
+        "intro": {
+            "tech": {
+                "title": "Tech-Empowered Education",
+                "desc": "For 7 years, our mission has been 'Tech-Empowered Education'. With deep understanding of education scenes, mature tech teams, and strict quality control, we have built 3000 smart classrooms for schools across Taiwan (kindergartens to universities), serving huge numbers of teachers and students."
+            },
+            "custom": {
+                "title": "Customized Full Lifecycle Service",
+                "desc": "We persist in 'tailor-made' planning. Based on different needs, site conditions, and budgets, we provide full lifecycle services from survey, design, selection, integration, to installation, training, and maintenance."
+            }
+        },
+        "product": {
+            "title": "Core Product: Smart Blackboard",
+            "desc": "Integrating HD display, touch interaction, multimedia teaching, and wireless casting. Compatible with traditional writing and modern digital teaching. Seamlessly connects with campus management platforms, breaking traditional limits and improving efficiency.",
+            "tags": [
+                "HD Display",
+                "Touch Interaction",
+                "Wireless Casting",
+                "Multimedia Teaching"
+            ],
+            "btn_catalog": "Download V6 Smart Blackboard Catalog",
+            "btn_manual": "Download Multimedia System Manual"
+        },
+        "carousel": {
+            "title": "Smart Classroom Scenarios",
+            "slides": [
+                {
+                    "title": "Standard Smart Classroom",
+                    "desc": "Dual sliding blackboard, compatible with traditional writing and modern touch teaching.",
+                    "tag": "HW/SW Integration"
+                },
+                {
+                    "title": "Digital Teaching Core",
+                    "desc": "Embedded smart screen, eye-care 4K display integrated with multimedia teaching.",
+                    "tag": "4K Eye-Care"
+                },
+                {
+                    "title": "Large Teaching Space",
+                    "desc": "Dual screen sync display ensuring clarity over long distances, improving interaction in large classrooms.",
+                    "tag": "Broadcast & Playback"
+                },
+                {
+                    "title": "Corporate Info Push",
+                    "desc": "Office or meeting room wall-mount application, serving as real-time bulletin and message center.",
+                    "tag": "Centralized Management"
+                },
+                {
+                    "title": "Outdoor/Assembly Use",
+                    "desc": "Mobile stand with external 20W surround sound, meeting non-fixed venue needs.",
+                    "tag": "Mobile Deployment"
+                },
+                {
+                    "title": "Professional Training",
+                    "desc": "Interactive teaching demo, showcasing IR light wave 40-point high-precision touch technology.",
+                    "tag": "40-Point Touch"
+                },
+                {
+                    "title": "Installation & Debugging",
+                    "desc": "Ensuring stability, organizing power and signal lines according to environment, meeting school needs.",
+                    "tag": "Installation Service"
+                },
+                {
+                    "title": "Ultra-Large Size App",
+                    "desc": "Supporting 75\"/86\" series, featuring Android 14.0 system and multiple teaching software.",
+                    "tag": "Android 14.0"
+                },
+                {
+                    "title": "Rapid Mobile Deployment",
+                    "desc": "Suitable for high-mobility classrooms or cram schools, quick boot to use electronic whiteboard functions.",
+                    "tag": "Quick Deployment"
+                },
+                {
+                    "title": "Intuitive Operation",
+                    "desc": "Simple friendly interface, supporting long-press commands and two-finger floating ball for easy teacher adoption.",
+                    "tag": "User Experience"
+                }
+            ]
+        },
+        "footer": {
+            "title": "Witness to 3000 Smart Classrooms",
+            "desc": "This proves our hard power in technology, project management, and service quality. We have accumulated mature solutions for various scenes (classrooms, labs, lecture halls), ensuring high-standard delivery.",
+            "highlight": "In the future, we will continue to deepen smart education, creating high-quality smart teaching spaces for more schools."
+        }
+    }
+}

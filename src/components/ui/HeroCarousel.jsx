@@ -1,34 +1,36 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Leaf, ArrowRight } from 'lucide-react';
-
-const carouselData = [
-    {
-        subtitle: "智慧農業 | 科技種植",
-        title: "AI 精準環控與澆灌，提升作物產量 20%",
-        link: "/project-detail?id=smartfarm",
-        linkText: "查看智慧農業案例",
-        image: "/photos/carousel-1.jpg"
-    },
-    {
-        subtitle: "淨零轉型 | 節能優化",
-        title: "AI 智慧節能系統，降低營運成本 30% 以上",
-        link: "/services#service-mep",
-        linkText: "探索節能方案",
-        image: "/photos/carousel-2.jpg"
-    },
-    {
-        subtitle: "能源數據 | 數位核心",
-        title: "獨家 EMS 系統，精準預測需量，杜絕超約罰款",
-        link: "/services#service-ems",
-        linkText: "了解 EMS 技術",
-        image: "/photos/carousel-3.jpg"
-    }
-];
+import { useTranslation } from 'react-i18next';
 
 const HeroCarousel = () => {
+    const { t } = useTranslation();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
+
+    const carouselData = [
+        {
+            subtitle: t('home.carousel.0.subtitle'),
+            title: t('home.carousel.0.title'),
+            link: "/project-detail?id=smartfarm",
+            linkText: t('home.carousel.0.linkText'),
+            image: "/photos/carousel-1.jpg"
+        },
+        {
+            subtitle: t('home.carousel.1.subtitle'),
+            title: t('home.carousel.1.title'),
+            link: "/services#service-mep",
+            linkText: t('home.carousel.1.linkText'),
+            image: "/photos/carousel-2.jpg"
+        },
+        {
+            subtitle: t('home.carousel.2.subtitle'),
+            title: t('home.carousel.2.title'),
+            link: "/services#service-ems",
+            linkText: t('home.carousel.2.linkText'),
+            image: "/photos/carousel-3.jpg"
+        }
+    ];
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -89,7 +91,7 @@ const HeroCarousel = () => {
                         onClick={() => handleDotClick(index)}
                         className={`h-2 rounded-full transition-all ${index === currentIndex ? 'bg-white w-4' : 'bg-white/50 w-2'
                             }`}
-                        aria-label={`切換至第 ${index + 1} 張投影片`}
+                        aria-label={`Switch to slide ${index + 1}`}
                     />
                 ))}
             </div>
@@ -115,7 +117,7 @@ const HeroCarousel = () => {
                             href="#contact"
                             className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-sm rounded-lg font-bold transition-all flex items-center justify-center gap-2"
                         >
-                            預約免費諮詢
+                            {t('home.hero.cta_consult')}
                         </a>
                     </div>
                 </div>
