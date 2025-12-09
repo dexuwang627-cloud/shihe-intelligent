@@ -20,7 +20,7 @@ const Projects = () => {
                 <Link to={`/project-detail?id=${id}`} className="group block bg-white rounded-xl shadow-sm hover:shadow-md transition-all border border-slate-100 overflow-hidden mb-4">
                     <div className="flex flex-col sm:flex-row">
                         <div className="sm:w-48 h-48 sm:h-auto shrink-0 relative">
-                            <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                            <img src={project.image} alt={project.title} className="w-full h-full object-cover" width="300" height="300" loading="lazy" />
                             <div className={`absolute top-2 left-2 text-xs font-bold px-2 py-1 rounded-full text-white ${['microbess', 'officebess'].includes(id) ? 'bg-orange-500' : 'bg-green-500'}`}>
                                 {project.category.split('/')[0]}
                             </div>
@@ -43,7 +43,7 @@ const Projects = () => {
         return (
             <Link to={`/project-detail?id=${id}`} className="group cursor-pointer bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all">
                 <div className="aspect-[4/3] bg-slate-200 overflow-hidden relative">
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" width="400" height="300" loading="lazy" />
                     <div className={`absolute top-3 left-3 text-white text-xs font-bold px-2 py-0.5 rounded-full ${['microbess', 'officebess'].includes(id) ? 'bg-orange-500' : 'bg-green-500'}`}>
                         {project.category}
                     </div>
