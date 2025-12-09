@@ -29,7 +29,7 @@ const ParticleSphere = () => {
     );
 };
 
-const MovingParticles = ({ count = 200 }) => {
+const MovingParticles = ({ count = 100 }) => {
     const points = useRef();
     const { viewport } = useThree();
 

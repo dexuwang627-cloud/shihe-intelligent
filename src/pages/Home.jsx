@@ -9,6 +9,7 @@ import FadeIn from '../components/common/FadeIn';
 import TextReveal from '../components/common/TextReveal';
 import ParallaxSection from '../components/common/ParallaxSection';
 import CountUp from '../components/common/CountUp';
+import LazyLoad from '../components/common/LazyLoad';
 
 const TechScene = lazy(() => import('../components/three/TechScene'));
 
@@ -222,9 +223,11 @@ const Home = () => {
             <section id="contact" className="py-20 bg-slate-900 text-white relative overflow-hidden">
                 {/* 3D Background */}
                 <div className="absolute inset-0 z-0">
-                    <Suspense fallback={<div className="w-full h-full bg-slate-900" />}>
-                        <TechScene className="w-full h-full" />
-                    </Suspense>
+                    <LazyLoad>
+                        <Suspense fallback={<div className="w-full h-full bg-slate-900" />}>
+                            <TechScene className="w-full h-full" />
+                        </Suspense>
+                    </LazyLoad>
                 </div>
 
                 {/* Background Image Overlay - kept low opacity as a texture */}
