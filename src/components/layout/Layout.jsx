@@ -83,6 +83,8 @@ const Navbar = () => {
                     id="mobile-menu-btn"
                     className="md:hidden p-2 text-white"
                     onClick={toggleMenu}
+                    aria-label={isMenuOpen ? "關閉選單" : "開啟選單"}
+                    aria-expanded={isMenuOpen}
                 >
                     {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
@@ -92,11 +94,11 @@ const Navbar = () => {
             {isMenuOpen && (
                 <div id="mobile-menu" className="absolute top-full left-0 w-full bg-slate-800 shadow-lg md:hidden flex flex-col p-4 gap-4 border-t border-green-500/50">
                     <SearchBar className="mb-2" />
-                    <Link to="/" className={`text-left font-medium py-2 border-b border-slate-700 ${isActive('/') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>首頁</Link>
-                    <a href="/#about" className={`text-left font-medium py-2 border-b border-slate-700 ${isActive('/', '#about') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>關於我們</a>
-                    <Link to="/services" className={`text-left font-medium py-2 border-b border-slate-700 ${isActive('/services') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>核心服務</Link>
-                    <div className="mt-2">
-                        <a href="/#contact" className="bg-orange-500 text-white py-3 rounded-lg font-medium text-center block hover:bg-orange-600">
+                    <Link to="/" className={`text-left font-medium py-3 border-b border-slate-700 ${isActive('/') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>首頁</Link>
+                    <a href="/#about" className={`text-left font-medium py-3 border-b border-slate-700 ${isActive('/', '#about') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>關於我們</a>
+                    <Link to="/services" className={`text-left font-medium py-3 border-b border-slate-700 ${isActive('/services') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>核心服務</Link>
+                    <div className="mt-2 text-center">
+                        <a href="/#contact" className="bg-orange-500 text-white py-4 rounded-lg font-medium block hover:bg-orange-600 min-h-[48px] flex items-center justify-center">
                             立即諮詢
                         </a>
                     </div>
@@ -126,12 +128,12 @@ const Footer = () => {
                     <div>
                         <h3 className="font-bold text-slate-900 mb-4">服務項目</h3>
                         <ul className="space-y-2 text-sm text-slate-600">
-                            <li><Link to="/services/green-energy" className="hover:text-orange-500 transition-colors">綠能光儲建置</Link></li>
-                            <li><Link to="/services/mep-engineering" className="hover:text-orange-500 transition-colors">機電節能工程</Link></li>
-                            <li><Link to="/services/ems" className="hover:text-orange-500 transition-colors">EMS 能源管理</Link></li>
-                            <li><Link to="/services/consulting" className="hover:text-orange-500 transition-colors">企業輔助輔導</Link></li>
-                            <li><Link to="/services/smart-agriculture" className="hover:text-orange-500 transition-colors">智慧農業/照護</Link></li>
-                            <li><Link to="/services/smart-education" className="hover:text-orange-500 transition-colors">智慧教育/校園</Link></li>
+                            <li><Link to="/services/green-energy" className="hover:text-orange-500 transition-colors py-1.5 block">綠能光儲建置</Link></li>
+                            <li><Link to="/services/mep-engineering" className="hover:text-orange-500 transition-colors py-1.5 block">機電節能工程</Link></li>
+                            <li><Link to="/services/ems" className="hover:text-orange-500 transition-colors py-1.5 block">EMS 能源管理</Link></li>
+                            <li><Link to="/services/consulting" className="hover:text-orange-500 transition-colors py-1.5 block">企業輔助輔導</Link></li>
+                            <li><Link to="/services/smart-agriculture" className="hover:text-orange-500 transition-colors py-1.5 block">智慧農業/照護</Link></li>
+                            <li><Link to="/services/smart-education" className="hover:text-orange-500 transition-colors py-1.5 block">智慧教育/校園</Link></li>
                         </ul>
                     </div>
 
@@ -144,7 +146,7 @@ const Footer = () => {
                             </li>
                             <li className="flex items-start gap-3">
                                 <Mail className="text-green-500 flex-shrink-0 mt-0.5 w-4 h-4" />
-                                <a href="mailto:longletter123@gmail.com" className="hover:text-green-600 transition-colors">
+                                <a href="mailto:longletter123@gmail.com" className="hover:text-green-600 transition-colors py-1 block">
                                     longletter123@gmail.com
                                 </a>
                             </li>

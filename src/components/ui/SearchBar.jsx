@@ -88,12 +88,14 @@ const SearchBar = ({ className = "" }) => {
     return (
         <div ref={wrapperRef} className={`relative transition-all duration-300 ease-in-out ${isExpanded ? 'w-64 md:w-80' : 'w-10'} ${className}`}>
             {/* Collapsed State (Icon) */}
-            <div
+            <button
+                type="button"
                 className={`absolute right-0 top-0 h-10 w-10 flex items-center justify-center cursor-pointer rounded-full hover:bg-slate-800 transition-all ${isExpanded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
                 onClick={toggleSearch}
+                aria-label="開啟搜尋"
             >
                 <Search className="w-5 h-5 text-slate-200 hover:text-orange-400 transition-colors" />
-            </div>
+            </button>
 
             {/* Expanded State (Input) */}
             <form
@@ -113,6 +115,7 @@ const SearchBar = ({ className = "" }) => {
                     type="button"
                     onClick={() => { setQuery(''); setIsExpanded(false); }}
                     className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white p-1"
+                    aria-label="清除搜尋並關閉"
                 >
                     <X className="w-3 h-3" />
                 </button>

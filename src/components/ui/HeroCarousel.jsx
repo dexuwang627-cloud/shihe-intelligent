@@ -65,12 +65,17 @@ const HeroCarousel = () => {
                     <div
                         key={index}
                         className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
-                        style={{
-                            backgroundImage: `url('${data.image}')`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center',
-                        }}
-                    />
+                    >
+                        <img
+                            src={data.image}
+                            alt={data.title}
+                            className="absolute inset-0 w-full h-full object-cover"
+                            fetchPriority={index === 0 ? "high" : "auto"}
+                            loading={index === 0 ? "eager" : "lazy"}
+                            width="1920"
+                            height="1080"
+                        />
+                    </div>
                 ))}
             </div>
 
@@ -84,7 +89,7 @@ const HeroCarousel = () => {
                         onClick={() => handleDotClick(index)}
                         className={`h-2 rounded-full transition-all ${index === currentIndex ? 'bg-white w-4' : 'bg-white/50 w-2'
                             }`}
-                        aria-label={`Go to slide ${index + 1}`}
+                        aria-label={`切換至第 ${index + 1} 張投影片`}
                     />
                 ))}
             </div>
