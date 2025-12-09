@@ -13,11 +13,20 @@ const Navbar = () => {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            if (window.scrollY > 10) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    if (window.scrollY > 10) {
+                        setIsScrolled(true);
+                    } else {
+                        setIsScrolled(false);
+                    }
+                    ticking = false;
+                });
+
+                ticking = true;
             }
         };
 

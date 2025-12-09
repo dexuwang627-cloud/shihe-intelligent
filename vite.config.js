@@ -21,7 +21,8 @@ export default defineConfig({
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
-          ui: ['lucide-react']
+          ui: ['lucide-react', 'framer-motion'],
+          three: ['three', '@react-three/fiber', '@react-three/drei']
         }
       }
     },
