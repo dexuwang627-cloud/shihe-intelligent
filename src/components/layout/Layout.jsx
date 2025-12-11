@@ -59,7 +59,7 @@ const Navbar = () => {
             <div className="w-full px-4 md:px-6 lg:px-8 py-3 flex justify-between items-center max-w-7xl mx-auto">
                 <Link to="/" className="flex items-center gap-2 group z-50">
                     <img
-                        src="/photos/logo1.svg"
+                        src="/photos/logo.svg?v=clean"
                         alt="世和智能 Logo"
                         className="h-10 w-auto transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
                         width="40"
