@@ -276,15 +276,19 @@ const Footer = () => {
     );
 };
 
+import SmoothScroll from '../common/SmoothScroll';
+
 const Layout = ({ children }) => {
     return (
-        <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col">
-            <Navbar />
-            <main className="flex-grow">
-                {children}
-            </main>
-            <Footer />
-        </div>
+        <SmoothScroll>
+            <div className="min-h-screen bg-slate-50 font-sans text-slate-800 flex flex-col">
+                <Navbar />
+                <main className="flex-grow">
+                    {children}
+                </main>
+                <Footer />
+            </div>
+        </SmoothScroll>
     );
 };
 

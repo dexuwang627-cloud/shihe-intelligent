@@ -4,10 +4,12 @@ import { ArrowLeft, Phone, Sun, Battery, Settings, CloudLightning, Home, Heart, 
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../../components/common/SEO';
 import { useTranslation } from 'react-i18next';
+import { useAutoAnimate } from '@formkit/auto-animate/react';
 
 const GreenEnergy = () => {
     const { t } = useTranslation();
     const [isExpanded, setIsExpanded] = useState(false);
+    const [parent] = useAutoAnimate();
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -282,11 +284,9 @@ const GreenEnergy = () => {
                                                 </div>
                                             </div>
 
-                                            <div>
-                                                <h4 className="font-bold text-slate-900 mb-6 flex items-center gap-3 text-xl">
-                                                    <div className="bg-blue-100 p-2 rounded-lg">
-                                                        <Globe className="w-5 h-5 text-blue-600" />
-                                                    </div>
+                                            <div ref={parent}>
+                                                <h4 className="font-bold text-slate-900 mb-4 flex items-center gap-2">
+                                                    <span className="w-1.5 h-6 bg-orange-500 rounded-full"></span>
                                                     {t('green_energy.micro.details.highlights_title')}
                                                 </h4>
                                                 <ul className="space-y-4">
