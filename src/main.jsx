@@ -25,13 +25,13 @@ if (loaderElement) {
     // Mark as loaded for this session
     sessionStorage.setItem('hasLoaded', 'true');
 
-    // Wait for 1.5 seconds to let the animation breathe
+    // Wait for 0.8 seconds to let the animation breathe (reduced from 1.5s for better LCP)
     setTimeout(() => {
       loaderElement.classList.add('fade-out');
-      // Remove from DOM after transition matches CSS (1.5s)
+      // Remove from DOM after transition matches CSS (0.5s)
       setTimeout(() => {
         loaderElement.remove();
-      }, 1500);
-    }, 1500);
+      }, 500);
+    }, 800);
   }
 }
