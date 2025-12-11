@@ -59,7 +59,7 @@ const Navbar = () => {
             <div className="w-full px-4 md:px-6 lg:px-8 py-3 flex justify-between items-center max-w-7xl mx-auto">
                 <Link to="/" className="flex items-center gap-2 group z-50">
                     <img
-                        src="/photos/logo.svg"
+                        src="/photos/logo1.svg"
                         alt="世和智能 Logo"
                         className="h-10 w-auto transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
                         width="40"
@@ -180,8 +180,8 @@ const Navbar = () => {
                                         <Link
                                             to={item.path}
                                             className={`block px-4 py-3 rounded-xl font-medium transition-all ${isActive(item.path)
-                                                    ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                                                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                                                ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                                                : 'text-slate-300 hover:bg-white/5 hover:text-white'
                                                 }`}
                                         >
                                             {item.label}
