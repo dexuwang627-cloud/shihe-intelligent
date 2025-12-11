@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
-import { Plus, Edit, Trash2, Eye, LogOut, Loader2 } from 'lucide-react';
+import { Plus, Edit, Trash2, Eye, LogOut, Loader2, MessageSquare } from 'lucide-react';
 import SEO from '../../components/common/SEO';
 import { useTranslation } from 'react-i18next';
 
@@ -62,6 +62,9 @@ const AdminDashboard = () => {
                 <div className="flex justify-between items-center mb-8">
                     <h1 className="text-3xl font-bold text-slate-900">{t('admin.dashboard.title')}</h1>
                     <div className="flex gap-4">
+                        <Link to="/admin/inquiries" className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all">
+                            <MessageSquare className="w-4 h-4" /> Inquiries
+                        </Link>
                         <Link to="/admin/projects/new" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all">
                             <Plus className="w-4 h-4" /> {t('admin.dashboard.new_project')}
                         </Link>

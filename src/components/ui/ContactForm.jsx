@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { supabase } from '../../lib/supabase';
 
 const ContactForm = () => {
     const { t } = useTranslation();
@@ -14,6 +15,23 @@ const ContactForm = () => {
         const data = Object.fromEntries(formData.entries());
 
         try {
+            // 1. Save to Supabase
+            const { error: dbError } = await supabase
+                .from('inquiries')
+                .insert([{
+                    company: data.company,
+                    contact_person: data.contact_person,
+                    phone: data.phone,
+                    inquiry_type: data.inquiry_type,
+                    details: data.details
+                }]);
+
+            if (dbError) {
+                console.error('Supabase Error:', dbError);
+                // We don't block email sending on DB error, but we log it.
+            }
+
+            // 2. Send Email
             const response = await fetch('/api/send-email', {
                 method: 'POST',
                 headers: {

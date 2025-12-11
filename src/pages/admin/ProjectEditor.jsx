@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
-import { ArrowLeft, Save, Plus, Trash2, Loader2, Globe } from 'lucide-react';
+import { ArrowLeft, Save, Plus, Trash2, Loader2, Globe, Upload } from 'lucide-react';
 import SEO from '../../components/common/SEO';
 import { useTranslation } from 'react-i18next';
 
@@ -13,6 +13,7 @@ const ProjectEditor = () => {
 
     const [loading, setLoading] = useState(!isNew);
     const [saving, setSaving] = useState(false);
+    const [uploading, setUploading] = useState(false);
     const [lang, setLang] = useState('zh'); // Editing language context
 
     // Initial state matching DB schema structure
@@ -127,6 +128,37 @@ const ProjectEditor = () => {
         }));
     };
 
+
+    const uploadImage = async (event) => {
+        try {
+            setUploading(true);
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const fileExt = file.name.split('.').pop();
+            const fileName = `${Math.random().toString(36).substring(2)}.${fileExt}`;
+            const filePath = `${fileName}`;
+
+            const { error: uploadError } = await supabase.storage
+                .from('project-images')
+                .upload(filePath, file);
+
+            if (uploadError) {
+                throw uploadError;
+            }
+
+            // Get Public URL
+            const { data } = supabase.storage
+                .from('project-images')
+                .getPublicUrl(filePath);
+
+            handleChange('image', data.publicUrl);
+        } catch (error) {
+            alert('Error uploading image: ' + error.message);
+        } finally {
+            setUploading(false);
+        }
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -263,6 +295,16 @@ const ProjectEditor = () => {
                                     className="flex-1 px-4 py-2 rounded-lg border border-slate-300 focus:border-orange-500"
                                     placeholder="https://..."
                                 />
+                                <label className={`cursor-pointer bg-slate-100 hover:bg-slate-200 text-slate-600 px-4 py-2 rounded-lg border border-slate-200 flex items-center justify-center transition-colors ${uploading ? 'opacity-50 pointer-events-none' : ''}`}>
+                                    {uploading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Upload className="w-5 h-5" />}
+                                    <input
+                                        type="file"
+                                        accept="image/*"
+                                        onChange={uploadImage}
+                                        className="hidden"
+                                        disabled={uploading}
+                                    />
+                                </label>
                                 {formData.image && (
                                     <img src={formData.image} alt="Preview" className="w-20 h-12 object-cover rounded border border-slate-200" />
                                 )}

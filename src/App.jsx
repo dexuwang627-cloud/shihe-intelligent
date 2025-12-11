@@ -27,6 +27,7 @@ const SmartEducation = lazy(() => import('./pages/services/SmartEducation'));
 const Login = lazy(() => import('./pages/admin/Login'));
 const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
 const ProjectEditor = lazy(() => import('./pages/admin/ProjectEditor'));
+const Inquiries = lazy(() => import('./pages/admin/Inquiries')); // Lazy load Inquiries
 import RequireAuth from './components/auth/RequireAuth';
 
 function AppContent() {
@@ -54,6 +55,7 @@ function AppContent() {
               <Route path="/admin/login" element={<Login />} />
               <Route element={<RequireAuth />}>
                 <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/admin/inquiries" element={<Inquiries />} />
                 <Route path="/admin/projects/new" element={<ProjectEditor />} />
                 <Route path="/admin/projects/:id" element={<ProjectEditor />} />
               </Route>
