@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { Plus, Edit, Trash2, Eye, LogOut, Loader2 } from 'lucide-react';
 import SEO from '../../components/common/SEO';
+import { useTranslation } from 'react-i18next';
 
 const AdminDashboard = () => {
     const [projects, setProjects] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { t } = useTranslation();
 
     useEffect(() => {
         fetchProjects();
@@ -26,7 +28,7 @@ const AdminDashboard = () => {
     };
 
     const handleDelete = async (id) => {
-        if (!window.confirm('Are you sure you want to delete this project? This action cannot be undone.')) return;
+        if (!window.confirm(t('admin.dashboard.delete_confirm'))) return;
 
         const { error } = await supabase
             .from('projects')
@@ -58,13 +60,13 @@ const AdminDashboard = () => {
             <SEO title="Admin Dashboard | Shihe Intelligent" />
             <div className="container mx-auto px-4">
                 <div className="flex justify-between items-center mb-8">
-                    <h1 className="text-3xl font-bold text-slate-900">Project Management</h1>
+                    <h1 className="text-3xl font-bold text-slate-900">{t('admin.dashboard.title')}</h1>
                     <div className="flex gap-4">
                         <Link to="/admin/projects/new" className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all">
-                            <Plus className="w-4 h-4" /> New Project
+                            <Plus className="w-4 h-4" /> {t('admin.dashboard.new_project')}
                         </Link>
                         <button onClick={handleLogout} className="bg-slate-200 hover:bg-slate-300 text-slate-700 px-4 py-2 rounded-lg font-bold flex items-center gap-2 transition-all">
-                            <LogOut className="w-4 h-4" /> Logout
+                            <LogOut className="w-4 h-4" /> {t('admin.dashboard.logout')}
                         </button>
                     </div>
                 </div>
@@ -73,11 +75,11 @@ const AdminDashboard = () => {
                     <table className="w-full text-left">
                         <thead className="bg-slate-50 border-b border-slate-200">
                             <tr>
-                                <th className="p-4 font-bold text-slate-600">ID</th>
-                                <th className="p-4 font-bold text-slate-600">Image</th>
-                                <th className="p-4 font-bold text-slate-600">Title (ZH)</th>
-                                <th className="p-4 font-bold text-slate-600">Group</th>
-                                <th className="p-4 font-bold text-slate-600 text-right">Actions</th>
+                                <th className="p-4 font-bold text-slate-600">{t('admin.dashboard.table.id')}</th>
+                                <th className="p-4 font-bold text-slate-600">{t('admin.dashboard.table.image')}</th>
+                                <th className="p-4 font-bold text-slate-600">{t('admin.dashboard.table.title')}</th>
+                                <th className="p-4 font-bold text-slate-600">{t('admin.dashboard.table.group')}</th>
+                                <th className="p-4 font-bold text-slate-600 text-right">{t('admin.dashboard.table.actions')}</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-100">
@@ -111,7 +113,7 @@ const AdminDashboard = () => {
                             {projects.length === 0 && (
                                 <tr>
                                     <td colSpan="5" className="p-8 text-center text-slate-500">
-                                        No projects found. Click "New Project" to add one.
+                                        {t('admin.dashboard.table.no_projects')}
                                     </td>
                                 </tr>
                             )}

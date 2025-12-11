@@ -149,10 +149,12 @@
         "contact": "聯絡我們",
         "rights": "© {{year}} 世和智能科技有限公司 All rights reserved.",
         "service_items": {
-            "green": "綠電光儲建置",
+            "green_energy": "綠電光儲建置",
             "mep": "機電節能工程",
             "ems": "EMS 能源管理",
-            "smart": "智慧跨域應用"
+            "consulting": "企業輔導與補助申請",
+            "smart_agriculture": "智慧農業/智慧照護",
+            "smart_education": "智慧教育與校園數位化"
         },
         "manager": "總經理",
         "address": "地址"
@@ -613,6 +615,55 @@
             "title": "3000 間智慧教室的成功見證",
             "desc": "這不僅印證了我們在技術實力、項目管理與服務品質上的硬實力，更積累了大量針對不同教學場景（如普通教室、多媒體教室、實驗室、階梯教室等）的成熟解決方案與應對經驗，能夠靈活應對項目實施中可能出現的各類複雜問題，確保每一個項目都能高標準、高質量交付。",
             "highlight": "未來，我們將持續深耕智慧教育領域，為更多學校打造高品質、智能化的教學空間，助力教育數位化轉型與高質量發展。"
+        }
+    },
+    "admin": {
+        "login": {
+            "title": "管理員登入",
+            "subtitle": "請輸入帳號密碼以進入後台",
+            "email": "電子信箱",
+            "password": "密碼",
+            "submit": "登入",
+            "loading": "登入中..."
+        },
+        "dashboard": {
+            "title": "專案管理後台",
+            "new_project": "新增專案",
+            "logout": "登出",
+            "table": {
+                "id": "專案 ID",
+                "image": "圖片預覽",
+                "title": "標題 (中文)",
+                "group": "分類群組",
+                "actions": "操作",
+                "no_projects": "目前沒有專案。請點擊「新增專案」建立第一筆資料。"
+            },
+            "delete_confirm": "確定要刪除此專案嗎？此動作無法還原。"
+        },
+        "editor": {
+            "new_title": "建立新專案",
+            "edit_title": "編輯專案 {{id}}",
+            "back": "返回列表",
+            "save": "儲存專案",
+            "cancel": "取消",
+            "saving": "儲存中...",
+            "tabs_label": "編輯語言：",
+            "fields": {
+                "id": "專案 ID (網址代碼)",
+                "id_desc": "唯一識別碼，用於網址。建立後不可修改。",
+                "display_group": "顯示群組",
+                "image": "圖片連結 (URL)",
+                "title": "標題",
+                "category": "類別",
+                "summary": "簡介",
+                "description": "詳細描述 (段落)",
+                "specs": "規格參數",
+                "benefits": "效益數據"
+            },
+            "actions": {
+                "add_item": "新增項目",
+                "add_paragraph": "新增段落"
+            }
         }
     }
 }
