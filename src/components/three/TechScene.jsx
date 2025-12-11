@@ -1,7 +1,7 @@
 
 import React, { useRef, useMemo } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { OrbitControls, Sphere, MeshDistortMaterial } from '@react-three/drei';
+import { Sphere, MeshDistortMaterial } from '@react-three/drei';
 import * as THREE from 'three';
 
 const ParticleSphere = () => {
@@ -135,7 +135,6 @@ const TechScene = ({ className }) => {
                 <directionalLight position={[10, 10, 5]} intensity={1} />
                 <ParticleSphere />
                 <MovingParticles count={400} />
-                {/* Removed OrbitControls to prevent conflict with mouse interaction on the particles or page scroll */}
             </Canvas>
         </div>
     );

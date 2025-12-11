@@ -81,7 +81,8 @@ const HeroCarousel = () => {
                 ))}
             </div>
 
-            <div className="absolute inset-0 bg-slate-900/70"></div>
+            <div className="absolute inset-0 bg-slate-900/40"></div>
+            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/60 to-transparent z-10"></div>
 
             {/* Indicators */}
             <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex gap-3 z-20">

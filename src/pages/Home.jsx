@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Building2, ShieldCheck, CheckCircle2, Sun, Zap, Sprout, Cpu, BarChart3, ArrowRight, Battery, Shield, Leaf, Award, Users, Globe, Wind } from 'lucide-react';
+import { motion } from 'framer-motion';
 import React, { lazy, Suspense } from 'react';
 import HeroCarousel from '../components/ui/HeroCarousel';
 import ContactForm from '../components/ui/ContactForm';
@@ -17,6 +18,21 @@ const TechScene = lazy(() => import('../components/three/TechScene'));
 
 const Home = () => {
     const { t } = useTranslation();
+
+    const containerVariants = {
+        hidden: {},
+        visible: {
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+    };
+
     return (
         <div id="page-home" className="page-section">
             <SEO
@@ -28,8 +44,13 @@ const Home = () => {
             <h1 className="sr-only">{t('home.hero.hidden_title')}</h1>
             <HeroCarousel />
 
-            <section id="about" className="py-20 bg-white">
-                <div className="container mx-auto px-4">
+            <section id="about" className="py-20 relative overflow-hidden">
+                {/* Subtle Mesh Gradient Background */}
+                <div className="absolute inset-0 bg-white z-0"></div>
+                <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-50/40 rounded-full blur-3xl -z-0 opacity-60"></div>
+                <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-50/40 rounded-full blur-3xl -z-0 opacity-60"></div>
+
+                <div className="container mx-auto px-4 relative z-10">
                     <div className="grid md:grid-cols-2 gap-12 items-center">
                         <FadeIn direction="right">
                             <div className="relative mb-8">
@@ -77,26 +98,38 @@ const Home = () => {
                                 <p className="text-slate-600 mb-6 leading-relaxed">
                                     {t('home.about.p2')}
                                 </p>
-                                <ul className="space-y-4 mb-8">
+                                <motion.ul
+                                    className="space-y-4 mb-8"
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, margin: "-50px" }}
+                                >
                                     {(t('home.about.list', { returnObjects: true }) || []).map((item, index) => (
-                                        <li key={index} className="flex items-start gap-3">
+                                        <motion.li key={index} className="flex items-start gap-3" variants={itemVariants}>
                                             <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
                                             <span className="text-slate-700">{item}</span>
-                                        </li>
+                                        </motion.li>
                                     ))}
-                                </ul>
+                                </motion.ul>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">{t('home.about.tech_title')}</h3>
-                                <ul className="space-y-4">
+                                <motion.ul
+                                    className="space-y-4"
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    whileInView="visible"
+                                    viewport={{ once: true, margin: "-50px" }}
+                                >
                                     {(t('home.about.tech_list', { returnObjects: true }) || []).map((item, index) => {
                                         const Icon = index === 0 ? ShieldCheck : index === 1 ? CheckCircle2 : Building2;
                                         return (
-                                            <li key={index} className="flex items-start gap-3">
+                                            <motion.li key={index} className="flex items-start gap-3" variants={itemVariants}>
                                                 <Icon className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
                                                 <span className="text-slate-700">{item}</span>
-                                            </li>
+                                            </motion.li>
                                         );
                                     })}
-                                </ul>
+                                </motion.ul>
                             </div>
                         </FadeIn>
                     </div>
@@ -214,12 +247,18 @@ const Home = () => {
                 </div>
             </section>
 
-            <section id="contact" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+            <section id="contact" className="py-20 bg-slate-900 text-white relative overflow-hidden pt-32">
+                {/* Wave Divider */}
+                <div className="absolute top-0 left-0 right-0 w-full overflow-hidden leading-[0] z-20">
+                    <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" className="relative block h-[60px] w-[calc(100%_+_1.3px)] fill-white">
+                        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"></path>
+                    </svg>
+                </div>
                 {/* 3D Background */}
                 <div className="absolute inset-0 z-0">
                     <LazyLoad>
                         <Suspense fallback={<div className="w-full h-full bg-slate-900" />}>
-                            <TechScene className="w-full h-full" />
+                            <TechScene className="w-full h-full opacity-60" />
                         </Suspense>
                     </LazyLoad>
                 </div>
@@ -232,27 +271,36 @@ const Home = () => {
                         <FadeIn direction="right">
                             <div className="text-green-400 font-bold tracking-wide uppercase mb-2 text-lg">{t('home.why_us.subtitle')}</div>
                             <h2 className="text-3xl md:text-4xl font-bold mb-6" dangerouslySetInnerHTML={{ __html: t('home.why_us.title') }}></h2>
-                            <div className="space-y-6">
+                            <motion.div
+                                className="space-y-6"
+                                variants={containerVariants}
+                                initial="hidden"
+                                whileInView="visible"
+                                viewport={{ once: true, margin: "-50px" }}
+                            >
                                 {(t('home.why_us.reasons', { returnObjects: true }) || []).map((reason, index) => {
                                     const Icon = index === 0 ? Battery : index === 1 ? BarChart3 : ShieldCheck;
                                     return (
-                                        <div key={index} className="flex gap-4">
-                                            <div className="bg-white/10 p-3 rounded-lg h-fit">
+                                        <motion.div key={index} className="flex gap-4" variants={itemVariants}>
+                                            <div className="bg-white/10 p-3 rounded-lg h-fit shadow-lg shadow-green-500/10 backdrop-blur-sm border border-white/10">
                                                 <Icon className="text-orange-400 w-6 h-6" />
                                             </div>
                                             <div>
-                                                <h3 className="text-xl font-bold mb-2">{reason.title}</h3>
+                                                <h3 className="text-xl font-bold mb-2 text-white">{reason.title}</h3>
                                                 <p className="text-slate-300 text-sm" dangerouslySetInnerHTML={{ __html: reason.desc }}></p>
                                             </div>
-                                        </div>
+                                        </motion.div>
                                     );
                                 })}
-                            </div>
+                            </motion.div>
                         </FadeIn>
 
-                        <FadeIn direction="left" delay={0.2} className="bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
-                            <h2 className="text-2xl font-bold mb-6 text-center">{t('home.why_us.form_title')}</h2>
-                            <ContactForm />
+                        <FadeIn direction="left" delay={0.2} className="relative">
+                            <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 shadow-2xl skew-y-1 scale-[1.02] transform transition-transform hover:scale-[1.03]"></div>
+                            <div className="relative bg-slate-900/60 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-2xl">
+                                <h2 className="text-2xl font-bold mb-6 text-center">{t('home.why_us.form_title')}</h2>
+                                <ContactForm />
+                            </div>
                         </FadeIn>
                     </div>
                 </div>
