@@ -638,7 +638,23 @@
                 "actions": "Actions",
                 "no_projects": "No projects found. Click \"New Project\" to add one."
             },
-            "delete_confirm": "Are you sure you want to delete this project? This action cannot be undone."
+            "delete_confirm": "Are you sure you want to delete this project? This action cannot be undone.",
+            "inquiries": "Inquiries"
+        },
+        "inquiries": {
+            "title": "Customer Inquiries",
+            "table": {
+                "date": "Date / Time",
+                "contact": "Company / Contact",
+                "details": "Details",
+                "status": "Status",
+                "no_data": "No inquiries found."
+            },
+            "status": {
+                "new": "New",
+                "processing": "Processing",
+                "completed": "Completed"
+            }
         },
         "editor": {
             "new_title": "New Project",

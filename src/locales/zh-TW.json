@@ -638,7 +638,23 @@
                 "actions": "操作",
                 "no_projects": "目前沒有專案。請點擊「新增專案」建立第一筆資料。"
             },
-            "delete_confirm": "確定要刪除此專案嗎？此動作無法還原。"
+            "delete_confirm": "確定要刪除此專案嗎？此動作無法還原。",
+            "inquiries": "客戶諮詢"
+        },
+        "inquiries": {
+            "title": "客戶諮詢列表",
+            "table": {
+                "date": "日期 / 時間",
+                "contact": "公司 / 聯絡人",
+                "details": "諮詢內容",
+                "status": "狀態",
+                "no_data": "目前沒有諮詢資料。"
+            },
+            "status": {
+                "new": "新諮詢",
+                "processing": "處理中",
+                "completed": "已聯絡 / 完成"
+            }
         },
         "editor": {
             "new_title": "建立新專案",
