@@ -1,12 +1,5 @@
 import { useState, useRef } from 'react';
-import emailjs from '@emailjs/browser';
 import { useTranslation } from 'react-i18next';
-
-// TODO: Replace these with your actual EmailJS credentials
-// You can get these from https://dashboard.emailjs.com/admin
-const SERVICE_ID = "service_486b1wq";
-const TEMPLATE_ID = "template_jwt8q6u";
-const PUBLIC_KEY = "0_3tN7zE5jZmvRXb-";
 
 const ContactForm = () => {
     const { t } = useTranslation();
@@ -17,23 +10,29 @@ const ContactForm = () => {
         event.preventDefault();
         setIsSubmitting(true);
 
-        try {
-            const result = await emailjs.sendForm(
-                SERVICE_ID,
-                TEMPLATE_ID,
-                form.current,
-                PUBLIC_KEY
-            );
+        const formData = new FormData(form.current);
+        const data = Object.fromEntries(formData.entries());
 
-            if (result.text === 'OK') {
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
                 alert(t('contact_form.alerts.success'));
                 form.current.reset();
             } else {
-                throw new Error(result.text);
+                throw new Error(result.error || 'Failed to send email');
             }
         } catch (error) {
-            console.error('EmailJS Error:', error);
-            alert(`${t('contact_form.alerts.error')}: ${error.text || error.message || 'Error'}`);
+            console.error('Email Error:', error);
+            alert(`${t('contact_form.alerts.error')}: ${error.message}`);
         } finally {
             setIsSubmitting(false);
         }
