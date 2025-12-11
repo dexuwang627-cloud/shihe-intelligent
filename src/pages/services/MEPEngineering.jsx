@@ -17,6 +17,8 @@ const MEPEngineering = () => {
     const iceList = t('mep_engineering.cards.ice.list', { returnObjects: true });
     const heatList = t('mep_engineering.cards.heat.list', { returnObjects: true });
 
+    const safeMap = (list) => Array.isArray(list) ? list : [];
+
     return (
         <div className="page-section pt-24 bg-slate-50 min-h-screen fade-in">
             <SEO
@@ -42,7 +44,7 @@ const MEPEngineering = () => {
                         </div>
                         <h3 className="text-xl font-bold mb-4">{t('mep_engineering.cards.hvac.title')}</h3>
                         <ul className="space-y-3 text-slate-600">
-                            {hvacList.map((item, index) => (
+                            {safeMap(hvacList).map((item, index) => (
                                 <li key={index} className="flex gap-2"><Check className="w-5 h-5 text-orange-500" /> {item}</li>
                             ))}
                         </ul>
@@ -53,7 +55,7 @@ const MEPEngineering = () => {
                         </div>
                         <h3 className="text-xl font-bold mb-4">{t('mep_engineering.cards.ice.title')}</h3>
                         <ul className="space-y-3 text-slate-600">
-                            {iceList.map((item, index) => (
+                            {safeMap(iceList).map((item, index) => (
                                 <li key={index} className="flex gap-2"><Check className="w-5 h-5 text-orange-400" /> {item}</li>
                             ))}
                         </ul>
@@ -64,7 +66,7 @@ const MEPEngineering = () => {
                         </div>
                         <h3 className="text-xl font-bold mb-4">{t('mep_engineering.cards.heat.title')}</h3>
                         <ul className="space-y-3 text-slate-600">
-                            {heatList.map((item, index) => (
+                            {safeMap(heatList).map((item, index) => (
                                 <li key={index} className="flex gap-2"><Check className="w-5 h-5 text-orange-600" /> {item}</li>
                             ))}
                         </ul>

@@ -5,7 +5,8 @@
         "services": "核心服務",
         "projects": "工程實績",
         "contact": "立即諮詢",
-        "subtitle": "Shi-He Intelligent"
+        "subtitle": "世和智能/鑫浩瀚企業",
+        "brand_en": "Shi-He Intelligent"
     },
     "home": {
         "seo": {
@@ -153,7 +154,8 @@
             "mep": "機電節能工程",
             "ems": "EMS 能源管理",
             "consulting": "企業輔導與補助申請",
-            "smart_agriculture": "智慧農業/智慧照護",
+            "smart_agriculture": "智慧農業",
+            "smart_care": "智慧照護",
             "smart_education": "智慧教育與校園數位化"
         },
         "manager": "總經理",

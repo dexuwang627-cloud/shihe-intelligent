@@ -16,6 +16,8 @@ const SmartEducation = () => {
 
     const productTags = t('smart_education.product.tags', { returnObjects: true });
 
+    const safeMap = (list) => Array.isArray(list) ? list : [];
+
     return (
         <div className="page-section pt-24 bg-white min-h-screen fade-in">
             <SEO
@@ -57,7 +59,7 @@ const SmartEducation = () => {
                             {t('smart_education.product.desc')}
                         </p>
                         <div className="flex flex-wrap gap-2">
-                            {productTags.map((tag, index) => (
+                            {safeMap(productTags).map((tag, index) => (
                                 <span key={index} className="bg-white text-blue-600 px-3 py-1 rounded-full text-sm font-bold shadow-sm">{tag}</span>
                             ))}
                         </div>

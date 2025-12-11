@@ -5,7 +5,8 @@
         "services": "Services",
         "projects": "Projects",
         "contact": "Contact Us",
-        "subtitle": "Shi-He Intelligent"
+        "subtitle": "Shi-He Intelligent",
+        "brand_en": "Shi-He Intelligent"
     },
     "home": {
         "seo": {
@@ -398,22 +399,22 @@
                 "title": "Best Fire Protection",
                 "desc": "Filling gaps in industry safety standards. Whether micro or SME storage, all equipped with remote monitoring and exclusive physical detectors, fully compliant with fire regulations to ensure user safety."
             },
-            "toggle": "View Micro-Storage Details (Core Tech & Safety Standards)",
+            "toggle": "View Micro Storage Details (Core Tech & Safety)",
             "details": {
-                "intro": "Under global energy transition and net-zero trends, energy storage will become critical core infrastructure. We continue to invest in high-safety cell technology, modular flexible architecture, and AI predictive O&M to plan ahead for clients' energy transition needs for the next 10 years.",
-                "standards_title": "International High-Spec Safety Standards",
+                "intro": "Under the global trend of energy transition and net-zero emissions, energy storage will become a key core infrastructure. We continue to invest in high-safety battery cell technology, modular flexible architecture, and AI predictive O&M, deploying ahead for clients' energy transition needs over the next 10 years.",
+                "standards_title": "International High-Safety Standards",
                 "standards_list": [
-                    "UL 1973 / UL 9540A: Storage system & thermal runaway/fire safety testing certification.",
+                    "UL 1973 / UL 9540A: Energy storage system thermal runaway and fire safety test certification.",
                     "IEC 62619 / CNS 62619: Battery module safety standards (Europe/Taiwan).",
                     "CE / CE-EMC: EU product compliance and electromagnetic compatibility.",
                     "UN38.3: Global battery transport testing for compliant export."
                 ],
-                "cert_note": "Verified by multi-country high-spec standards, products can be stably applied in industrial, building, microgrid, and medical fields worldwide.",
+                "cert_note": "Verified by multiple international high standards, products can be stably applied in various industrial, building, microgrid, and medical fields.",
                 "highlights_title": "Tech Highlights & Smart O&M",
                 "highlights_list": [
-                    "High Safety Design: Low voltage modules, independent thermal cut-off, hot-swappable, enhancing safety and stability.",
-                    "Smart O&M: Module-level monitoring, cloud data analysis, SOH prediction, creating preventative maintenance mechanisms.",
-                    "Global Regulation Layout: Mastering IEC/UL/CE trends to meet export market certification needs."
+                    "High-Safety Design: Low-voltage modules, independent thermal cutoff, hot-swappable, enhancing on-site safety and system stability.",
+                    "Smart O&M: Module-level monitoring, cloud data analysis, SOH prediction, building preventive maintenance mechanisms.",
+                    "Global Regulation Layout: Mastering IEC/UL/CE standard trends to meet export market certification needs."
                 ]
             }
         },

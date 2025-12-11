@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone, Mail, MapPin, Globe } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 
 import SearchBar from '../ui/SearchBar';
 import Magnetic from '../common/Magnetic';
@@ -9,8 +10,10 @@ import Magnetic from '../common/Magnetic';
 const Navbar = () => {
     const { t, i18n } = useTranslation();
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
+    const [isHidden, setIsHidden] = useState(false);
+    const [hoveredPath, setHoveredPath] = useState(null);
     const location = useLocation();
+    const { scrollY } = useScroll();
 
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -19,94 +22,116 @@ const Navbar = () => {
         i18n.changeLanguage(newLang);
     };
 
-    useEffect(() => {
-        let ticking = false;
-
-        const handleScroll = () => {
-            if (!ticking) {
-                window.requestAnimationFrame(() => {
-                    if (window.scrollY > 10) {
-                        setIsScrolled(true);
-                    } else {
-                        setIsScrolled(false);
-                    }
-                    ticking = false;
-                });
-
-                ticking = true;
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious();
+        if (latest > previous && latest > 150) {
+            setIsHidden(true);
+        } else {
+            setIsHidden(false);
+        }
+    });
 
     // Close menu when route changes
     useEffect(() => {
         setIsMenuOpen(false);
     }, [location]);
 
-    const isActive = (path, hash = '') => {
-        if (hash) {
-            return location.hash === hash;
-        }
-        if (path === '/') {
-            return location.pathname === '/' && !location.hash;
-        }
+    const navItems = [
+        { path: '/', label: t('nav.home') },
+        { path: '/services', label: t('nav.services') },
+    ];
+
+    const isActive = (path) => {
+        if (path === '/') return location.pathname === '/';
         return location.pathname.startsWith(path);
     };
 
-    const getLinkClass = (path, hash = '') => {
-        return isActive(path, hash)
-            ? "nav-link font-medium text-green-400 hover:text-orange-400 transition-colors font-bold"
-            : "nav-link font-medium text-slate-200 hover:text-orange-400 transition-colors";
-    };
-
     return (
-        <nav
-            id="navbar"
-            className={`fixed w-full z-50 transition-all duration-300 py-3 border-b border-green-500/50 ${isScrolled ? 'bg-slate-900 shadow-lg' : 'bg-slate-900/90 backdrop-blur-sm'
-                }`}
+        <motion.nav
+            variants={{
+                visible: { y: 0 },
+                hidden: { y: "-100%" },
+            }}
+            animate={isHidden ? "hidden" : "visible"}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-white/10 shadow-lg"
         >
-            <div className="w-full px-4 md:px-6 lg:px-8 flex justify-between items-center">
-                <Link to="/" className="flex items-center gap-2">
-                    <img src="/photos/logo2.svg" alt="世和智能 Logo" className="h-10 w-auto" width="40" height="40" />
+            <div className="w-full px-4 md:px-6 lg:px-8 py-3 flex justify-between items-center max-w-7xl mx-auto">
+                <Link to="/" className="flex items-center gap-2 group z-50">
+                    <img
+                        src="/photos/logo.svg"
+                        alt="世和智能 Logo"
+                        className="h-10 w-auto transition-transform duration-300 group-hover:scale-110 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]"
+                        width="40"
+                        height="40"
+                    />
                     <div>
-                        <div className="font-bold text-xl leading-tight text-white md:text-2xl">
+                        <div className="font-bold text-xl leading-tight text-white md:text-2xl tracking-wide group-hover:text-green-400 transition-colors">
                             {t('nav.subtitle')}
                         </div>
-                        <p className="text-xs tracking-wider text-slate-400">
-                            Shi-He Intelligent
-                        </p>
                     </div>
                 </Link>
 
-                <div className="hidden md:flex items-center gap-6">
-                    <Link to="/" className={getLinkClass('/')}>{t('nav.home')}</Link>
-                    {/* About Us link removed as per request */}
-                    <Link to="/services" className={getLinkClass('/services')}>{t('nav.services')}</Link>
+                {/* Desktop Navigation */}
+                <div className="hidden md:flex items-center gap-1">
+                    <div className="flex items-center bg-white/5 rounded-full p-1 mr-4 border border-white/10">
+                        {navItems.map((item) => (
+                            <Link
+                                key={item.path}
+                                to={item.path}
+                                className={`relative px-5 py-2 rounded-full text-sm font-medium transition-colors z-10 ${isActive(item.path) ? 'text-white' : 'text-slate-300 hover:text-white'
+                                    }`}
+                                onMouseEnter={() => setHoveredPath(item.path)}
+                                onMouseLeave={() => setHoveredPath(null)}
+                            >
+                                {isActive(item.path) && (
+                                    <motion.div
+                                        layoutId="navbar-indicator"
+                                        className="absolute inset-0 bg-green-500/20 border border-green-500/50 rounded-full"
+                                        transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                                    />
+                                )}
+                                {hoveredPath === item.path && !isActive(item.path) && (
+                                    <motion.div
+                                        layoutId="navbar-hover"
+                                        className="absolute inset-0 bg-white/10 rounded-full"
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                        transition={{ duration: 0.2 }}
+                                    />
+                                )}
+                                <span className="relative z-10">{item.label}</span>
+                            </Link>
+                        ))}
+                    </div>
 
-                    <SearchBar />
+                    <div className="flex items-center gap-4">
+                        <div className="relative">
+                            <SearchBar />
+                        </div>
 
-                    <button
-                        onClick={toggleLanguage}
-                        className="flex items-center gap-1 text-slate-200 hover:text-white transition-colors"
-                        aria-label="Toggle Language"
-                    >
-                        <Globe className="w-4 h-4" />
-                        <span className="text-sm font-medium">{i18n.language === 'en' ? 'ZH' : 'EN'}</span>
-                    </button>
+                        <button
+                            onClick={toggleLanguage}
+                            className="flex items-center gap-2 px-3 py-2 rounded-full text-slate-300 hover:text-white hover:bg-white/10 transition-all text-sm font-medium border border-transparent hover:border-white/20"
+                            aria-label="Toggle Language"
+                        >
+                            <Globe className="w-4 h-4" />
+                            <span>{i18n.language === 'en' ? 'ZH' : 'EN'}</span>
+                        </button>
 
-                    <Magnetic>
-                        <a href="/#contact" className="bg-orange-500 hover:bg-orange-600 text-white px-5 py-2 rounded-full font-medium transition-all shadow-lg hover:shadow-orange-500/30 inline-block">
-                            {t('nav.contact')}
-                        </a>
-                    </Magnetic>
+                        <Magnetic>
+                            <a href="/#contact" className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white px-6 py-2.5 rounded-full font-medium transition-all shadow-lg shadow-orange-500/20 hover:shadow-orange-500/40 transform hover:-translate-y-0.5 text-sm">
+                                {t('nav.contact')}
+                            </a>
+                        </Magnetic>
+                    </div>
                 </div>
 
+                {/* Mobile Menu Button */}
                 <button
                     id="mobile-menu-btn"
-                    className="md:hidden p-2 text-white"
+                    className="md:hidden p-2 text-white hover:bg-white/10 rounded-lg transition-colors"
                     onClick={toggleMenu}
                     aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
                     aria-expanded={isMenuOpen}
@@ -116,28 +141,79 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            {isMenuOpen && (
-                <div id="mobile-menu" className="absolute top-full left-0 w-full bg-slate-800 shadow-lg md:hidden flex flex-col p-4 gap-4 border-t border-green-500/50">
-                    <SearchBar className="mb-2" />
-                    <Link to="/" className={`text-left font-medium py-3 border-b border-slate-700 ${isActive('/') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>{t('nav.home')}</Link>
-                    <Link to="/services" className={`text-left font-medium py-3 border-b border-slate-700 ${isActive('/services') ? 'text-green-400' : 'text-slate-200 hover:text-orange-400'}`}>{t('nav.services')}</Link>
-
-                    <button
-                        onClick={toggleLanguage}
-                        className="flex items-center gap-2 text-left font-medium py-3 border-b border-slate-700 text-slate-200 hover:text-orange-400"
+            <AnimatePresence>
+                {isMenuOpen && (
+                    <motion.div
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                        variants={{
+                            hidden: { opacity: 0, height: 0 },
+                            visible: {
+                                opacity: 1,
+                                height: "auto",
+                                transition: {
+                                    duration: 0.3,
+                                    staggerChildren: 0.1,
+                                    when: "beforeChildren"
+                                }
+                            },
+                            exit: {
+                                opacity: 0,
+                                height: 0,
+                                transition: {
+                                    duration: 0.2,
+                                    when: "afterChildren"
+                                }
+                            }
+                        }}
+                        className="md:hidden bg-slate-900/95 backdrop-blur-xl border-t border-white/10 overflow-hidden"
                     >
-                        <Globe className="w-5 h-5" />
-                        <span>{i18n.language === 'en' ? '切換至中文' : 'Switch to English'}</span>
-                    </button>
+                        <div className="p-4 space-y-4">
+                            <motion.div variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
+                                <SearchBar className="w-full" />
+                            </motion.div>
 
-                    <div className="mt-2 text-center">
-                        <a href="/#contact" className="bg-orange-500 text-white py-4 rounded-lg font-medium block hover:bg-orange-600 min-h-[48px] flex items-center justify-center">
-                            {t('nav.contact')}
-                        </a>
-                    </div>
-                </div>
-            )}
-        </nav>
+                            <div className="space-y-2">
+                                {navItems.map((item) => (
+                                    <motion.div key={item.path} variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
+                                        <Link
+                                            to={item.path}
+                                            className={`block px-4 py-3 rounded-xl font-medium transition-all ${isActive(item.path)
+                                                    ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                                                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
+                                                }`}
+                                        >
+                                            {item.label}
+                                        </Link>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            <motion.button
+                                variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}
+                                onClick={toggleLanguage}
+                                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-slate-300 hover:bg-white/5 hover:text-white transition-all border border-white/10"
+                            >
+                                <div className="flex items-center gap-3">
+                                    <Globe className="w-5 h-5" />
+                                    <span>{t('nav.language') || 'Language'}</span>
+                                </div>
+                                <span className="font-bold text-white bg-white/10 px-2 py-0.5 rounded text-xs">
+                                    {i18n.language === 'en' ? '切換至中文' : 'Switch to English'}
+                                </span>
+                            </motion.button>
+
+                            <motion.div variants={{ hidden: { opacity: 0, x: -20 }, visible: { opacity: 1, x: 0 } }}>
+                                <a href="/#contact" className="block w-full text-center bg-gradient-to-r from-orange-500 to-orange-600 text-white py-3.5 rounded-xl font-bold shadow-lg shadow-orange-500/20 active:scale-95 transition-transform">
+                                    {t('nav.contact')}
+                                </a>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.nav>
     );
 };
 
@@ -147,11 +223,11 @@ const Footer = () => {
 
     return (
         <footer id="footer-contact" className="bg-slate-50 border-t border-slate-200 pt-16 pb-8">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-4 max-w-7xl">
                 <div className="grid md:grid-cols-4 gap-8 mb-12">
                     <div className="md:col-span-2">
                         <div className="flex items-center gap-2 mb-6">
-                            <img src="/photos/logo.png" alt="世和智能 Logo" className="h-8 w-auto" width="32" height="32" />
+                            <img src="/photos/logo.svg" alt="世和智能 Logo" className="h-8 w-auto" width="32" height="32" />
                             <h2 className="font-bold text-xl text-slate-800">世和智能股份有限公司</h2>
                         </div>
                         <p className="text-slate-600 mb-6 max-w-sm">
@@ -167,6 +243,7 @@ const Footer = () => {
                             <li><Link to="/services/ems" className="hover:text-orange-500 transition-colors py-1.5 block">{t('footer.service_items.ems')}</Link></li>
                             <li><Link to="/services/consulting" className="hover:text-orange-500 transition-colors py-1.5 block">{t('footer.service_items.consulting')}</Link></li>
                             <li><Link to="/services/smart-agriculture" className="hover:text-orange-500 transition-colors py-1.5 block">{t('footer.service_items.smart_agriculture')}</Link></li>
+                            <li><Link to="/smart-care" className="hover:text-orange-500 transition-colors py-1.5 block">{t('footer.service_items.smart_care')}</Link></li>
                             <li><Link to="/services/smart-education" className="hover:text-orange-500 transition-colors py-1.5 block">{t('footer.service_items.smart_education')}</Link></li>
                         </ul>
                     </div>

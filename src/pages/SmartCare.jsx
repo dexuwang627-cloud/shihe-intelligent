@@ -11,6 +11,8 @@ const SmartCare = () => {
     const radarList = t('smart_care.features.radar.list', { returnObjects: true });
     const catalogTags = t('smart_care.catalog.tags', { returnObjects: true });
 
+    const safeMap = (list) => Array.isArray(list) ? list : [];
+
     return (
         <div className="fade-in pt-24">
             <SEO
@@ -53,7 +55,7 @@ const SmartCare = () => {
                             <h3 className="text-xl font-bold text-slate-900 mb-3">{t('smart_care.features.health.title')}</h3>
                             <p className="text-slate-600 text-sm mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('smart_care.features.health.desc') }}></p>
                             <ul className="space-y-2 mb-6">
-                                {healthList.map((item, idx) => (
+                                {safeMap(healthList).map((item, idx) => (
                                     <li key={idx} className="flex items-center gap-2 text-sm text-slate-500"><Check className="w-4 h-4 text-green-500" /> {item}</li>
                                 ))}
                             </ul>
@@ -67,7 +69,7 @@ const SmartCare = () => {
                             <h3 className="text-xl font-bold text-slate-900 mb-3">{t('smart_care.features.fence.title')}</h3>
                             <p className="text-slate-600 text-sm mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('smart_care.features.fence.desc') }}></p>
                             <ul className="space-y-2 mb-6">
-                                {fenceList.map((item, idx) => (
+                                {safeMap(fenceList).map((item, idx) => (
                                     <li key={idx} className="flex items-center gap-2 text-sm text-slate-500"><Check className="w-4 h-4 text-green-500" /> {item}</li>
                                 ))}
                             </ul>
@@ -81,7 +83,7 @@ const SmartCare = () => {
                             <h3 className="text-xl font-bold text-slate-900 mb-3">{t('smart_care.features.radar.title')}</h3>
                             <p className="text-slate-600 text-sm mb-4 leading-relaxed" dangerouslySetInnerHTML={{ __html: t('smart_care.features.radar.desc') }}></p>
                             <ul className="space-y-2 mb-6">
-                                {radarList.map((item, idx) => (
+                                {safeMap(radarList).map((item, idx) => (
                                     <li key={idx} className="flex items-center gap-2 text-sm text-slate-500"><Check className="w-4 h-4 text-green-500" /> {item}</li>
                                 ))}
                             </ul>
@@ -101,7 +103,7 @@ const SmartCare = () => {
                             </p>
 
                             <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-                                {catalogTags.map((tag, idx) => (
+                                {safeMap(catalogTags).map((tag, idx) => (
                                     <div key={idx} className="flex items-center gap-2 bg-slate-100 px-5 py-2 rounded-full border border-slate-200">
                                         <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                                         <span className="font-medium">{tag}</span>

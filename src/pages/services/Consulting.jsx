@@ -13,6 +13,8 @@ const Consulting = () => {
 
     const subsidyItems = t('consulting.subsidy.items', { returnObjects: true });
 
+    const safeMap = (list) => Array.isArray(list) ? list : [];
+
     return (
         <div className="page-section pt-24 bg-slate-50 min-h-screen fade-in">
             <SEO
@@ -59,7 +61,7 @@ const Consulting = () => {
 
                         <h4 className="font-bold text-lg mb-3">{t('consulting.subsidy.common_items_title')}</h4>
                         <div className="flex flex-wrap gap-2 mb-6">
-                            {subsidyItems.map((item, index) => (
+                            {safeMap(subsidyItems).map((item, index) => (
                                 <span key={index} className="bg-slate-100 text-slate-600 px-3 py-1 rounded-lg text-sm">{item}</span>
                             ))}
                         </div>

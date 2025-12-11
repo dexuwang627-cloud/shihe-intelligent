@@ -25,7 +25,7 @@ const Home = () => {
             />
 
             {/* Hidden H1 for SEO structure, as the visual hero title is in the carousel */}
-            <h1 className="visually-hidden">{t('home.hero.hidden_title')}</h1>
+            <h1 className="sr-only">{t('home.hero.hidden_title')}</h1>
             <HeroCarousel />
 
             <section id="about" className="py-20 bg-white">

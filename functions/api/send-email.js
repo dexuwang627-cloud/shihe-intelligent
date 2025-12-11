@@ -42,8 +42,8 @@ export async function onRequestPost(context) {
         <body>
             <div class="container">
                 <div class="header">
-                    <!-- TODO: Ensure this URL points to your actual deployed logo -->
-                    <img src="https://shiheintelligent.com/photos/logo.png" alt="Shihe Intelligent" class="logo">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                  <img src="https://www.shiheintelligent.com/photos/logo.svg" alt="世和智能" style="height: 60px; width: auto;">
                 </div>
                 <div class="content">
                     <h1 class="title">收到新的客戶詢問單</h1>
