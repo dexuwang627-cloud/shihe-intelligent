@@ -23,6 +23,12 @@ const Consulting = lazy(() => import('./pages/services/Consulting'));
 const SmartAgriculture = lazy(() => import('./pages/services/SmartAgriculture'));
 const SmartEducation = lazy(() => import('./pages/services/SmartEducation'));
 
+// Admin Pages
+const Login = lazy(() => import('./pages/admin/Login'));
+const AdminDashboard = lazy(() => import('./pages/admin/AdminDashboard'));
+const ProjectEditor = lazy(() => import('./pages/admin/ProjectEditor'));
+import RequireAuth from './components/auth/RequireAuth';
+
 function AppContent() {
   const location = useLocation();
 
@@ -43,6 +49,15 @@ function AppContent() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/project-detail" element={<ProjectDetail />} />
               <Route path="/smart-care" element={<SmartCare />} />
+
+              {/* Admin Routes */}
+              <Route path="/admin/login" element={<Login />} />
+              <Route element={<RequireAuth />}>
+                <Route path="/admin/dashboard" element={<AdminDashboard />} />
+                <Route path="/admin/projects/new" element={<ProjectEditor />} />
+                <Route path="/admin/projects/:id" element={<ProjectEditor />} />
+              </Route>
+
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

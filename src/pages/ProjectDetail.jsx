@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import { projectData } from '../data/projects';
+import { ArrowLeft, Loader2 } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 import SEO from '../components/common/SEO';
 import { useTranslation } from 'react-i18next';
 
@@ -11,11 +11,42 @@ const ProjectDetail = () => {
 
     const [searchParams] = useSearchParams();
     const projectId = searchParams.get('id') || 'yanghwa';
-    const project = projectData[projectId];
+
+    const [project, setProject] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
+
+        const fetchProject = async () => {
+            setLoading(true);
+            try {
+                const { data, error } = await supabase
+                    .from('projects')
+                    .select('*')
+                    .eq('id', projectId)
+                    .single();
+
+                if (error) throw error;
+                setProject(data);
+            } catch (error) {
+                console.error('Error fetching project:', error);
+                setProject(null);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProject();
     }, [projectId]);
+
+    if (loading) {
+        return (
+            <div className="min-h-screen pt-24 flex justify-center items-center bg-slate-50">
+                <Loader2 className="w-8 h-8 animate-spin text-orange-500" />
+            </div>
+        );
+    }
 
     if (!project) {
         return (
@@ -30,13 +61,17 @@ const ProjectDetail = () => {
     }
 
     // Helper to extract localized data safely
+    const getTranslated = (data) => {
+        return (data && data[currentLang]) ? data[currentLang] : (data && data['zh']) ? data['zh'] : '';
+    };
+
     const localized = {
-        title: project.title[currentLang] || project.title['zh'],
-        summary: project.summary[currentLang] || project.summary['zh'],
-        category: project.category[currentLang] || project.category['zh'],
-        description: project.description[currentLang] || project.description['zh'],
-        specs: project.specs[currentLang] || project.specs['zh'],
-        benefits: project.benefits[currentLang] || project.benefits['zh'],
+        title: getTranslated(project.title),
+        summary: getTranslated(project.summary),
+        category: getTranslated(project.category),
+        description: getTranslated(project.description) || [],
+        specs: getTranslated(project.specs) || {},
+        benefits: getTranslated(project.benefits) || {},
     };
 
     return (
@@ -81,7 +116,7 @@ const ProjectDetail = () => {
                     <div className="lg:col-span-2">
                         <h2 className="text-2xl font-bold text-slate-900 mb-4">{t('project_detail.desc_title')}</h2>
                         <div className="space-y-6 text-slate-700 leading-relaxed mb-10">
-                            {localized.description.map((desc, index) => (
+                            {Array.isArray(localized.description) && localized.description.map((desc, index) => (
                                 <p key={index} dangerouslySetInnerHTML={{ __html: desc }}></p>
                             ))}
                         </div>

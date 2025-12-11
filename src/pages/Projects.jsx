@@ -1,7 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowLeft, LayoutGrid, List } from 'lucide-react';
-import { projectData } from '../data/projects';
+import { ArrowRight, ArrowLeft, LayoutGrid, List, Loader2 } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 import SEO from '../components/common/SEO';
 import { useTranslation } from 'react-i18next';
 
@@ -11,20 +11,50 @@ const Projects = () => {
 
     const [viewMode, setViewMode] = useState('grid'); // 'grid' or 'list'
     const [filter, setFilter] = useState('all'); // 'all', 'green-energy', 'smart-city', 'smart-agriculture'
+    const [projects, setProjects] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-    const largeScaleProjects = ['yanghwa', 'taipeidome', 'energyfarm', 'factorymep'];
-    const microSmartProjects = ['smartfarm', 'carecenter', 'officebess'];
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('projects')
+                    .select('*')
+                    .order('created_at', { ascending: true }); // Or any specific order
+
+                if (error) throw error;
+                setProjects(data || []);
+            } catch (error) {
+                console.error('Error fetching projects:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProjects();
+    }, []);
+
+    const largeScaleProjects = projects.filter(p => p.display_group === 'large').map(p => p.id);
+    const microSmartProjects = projects.filter(p => p.display_group === 'micro').map(p => p.id);
+
+    // Create a lookup map for easy access by ID in ProjectCard if needed, 
+    // but here we can just pass the project object directly to ProjectCard or find it.
+    // The original code passed 'id' and looked it up in projectData.
+    // Let's modify ProjectCard to accept 'project' object directly or look up from 'projects' state.
+
+    // Better: modify ProjectCard to take the project object.
+    const getProjectById = (id) => projects.find(p => p.id === id);
 
     const ProjectCard = ({ id }) => {
-        const project = projectData[id];
+        const project = getProjectById(id);
         if (!project) return null;
 
         // Helper to get translated content
         const getTranslated = (field) => {
-            if (typeof field === 'object' && field[currentLang]) {
+            if (field && typeof field === 'object' && field[currentLang]) {
                 return field[currentLang];
             }
-            return field; // Fallback for now until data refactor is complete
+            return field || '';
         };
 
         const title = getTranslated(project.title);
@@ -73,6 +103,14 @@ const Projects = () => {
         );
     };
 
+    if (loading) {
+        return (
+            <div className="min-h-screen pt-24 flex justify-center items-center bg-slate-50">
+                <Loader2 className="w-8 h-8 animate-spin text-orange-500" />
+            </div>
+        );
+    }
+
     return (
         <div className="fade-in">
             <SEO
@@ -118,12 +156,20 @@ const Projects = () => {
 
                     <h2 className="text-3xl font-bold text-slate-900 mb-6 border-b pb-2 mt-12">{t('projects_page.section_large')}</h2>
                     <div className={viewMode === 'grid' ? "grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16" : "space-y-4 mb-16"}>
-                        {largeScaleProjects.map(id => <ProjectCard key={id} id={id} />)}
+                        {largeScaleProjects.length > 0 ? (
+                            largeScaleProjects.map(id => <ProjectCard key={id} id={id} />)
+                        ) : (
+                            <p className="text-slate-500">Loading projects...</p>
+                        )}
                     </div>
 
                     <h2 className="text-3xl font-bold text-slate-900 mb-6 border-b pb-2 mt-12">{t('projects_page.section_micro')}</h2>
                     <div className={viewMode === 'grid' ? "grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-16" : "space-y-4 mb-16"}>
-                        {microSmartProjects.map(id => <ProjectCard key={id} id={id} />)}
+                        {microSmartProjects.length > 0 ? (
+                            microSmartProjects.map(id => <ProjectCard key={id} id={id} />)
+                        ) : (
+                            <p className="text-slate-500">Loading projects...</p>
+                        )}
                     </div>
 
                     <div className="bg-green-500/10 border border-green-500/30 text-slate-900 rounded-2xl p-8 text-center mb-20">
