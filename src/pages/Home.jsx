@@ -7,7 +7,6 @@ import ContactForm from '../components/ui/ContactForm';
 import SEO from '../components/common/SEO';
 import FadeIn from '../components/common/FadeIn';
 // import TechScene from '../components/three/TechScene';
-import TextReveal from '../components/common/TextReveal';
 import ParallaxSection from '../components/common/ParallaxSection';
 import CountUp from '../components/common/CountUp';
 import LazyLoad from '../components/common/LazyLoad';
@@ -19,19 +18,7 @@ const TechScene = lazy(() => import('../components/three/TechScene'));
 const Home = () => {
     const { t } = useTranslation();
 
-    const containerVariants = {
-        hidden: {},
-        visible: {
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-    };
 
     return (
         <div id="page-home" className="page-section">
@@ -90,7 +77,7 @@ const Home = () => {
 
                         <FadeIn direction="left" delay={0.2}>
                             <div>
-                                <TextReveal text={t('home.about.reveal_text')} className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
+                                <span className="text-green-600 font-bold tracking-wide uppercase mb-2 block">{t('home.about.reveal_text')}</span>
                                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6" dangerouslySetInnerHTML={{ __html: t('home.about.title') }}></h2>
                                 <p className="text-slate-600 mb-6 leading-relaxed">
                                     {t('home.about.p1')}
@@ -98,38 +85,26 @@ const Home = () => {
                                 <p className="text-slate-600 mb-6 leading-relaxed">
                                     {t('home.about.p2')}
                                 </p>
-                                <motion.ul
-                                    className="space-y-4 mb-8"
-                                    variants={containerVariants}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-50px" }}
-                                >
+                                <ul className="space-y-4 mb-8">
                                     {(t('home.about.list', { returnObjects: true }) || []).map((item, index) => (
-                                        <motion.li key={index} className="flex items-start gap-3" variants={itemVariants}>
+                                        <li key={index} className="flex items-start gap-3">
                                             <CheckCircle2 className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
                                             <span className="text-slate-700">{item}</span>
-                                        </motion.li>
+                                        </li>
                                     ))}
-                                </motion.ul>
+                                </ul>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3 mt-8">{t('home.about.tech_title')}</h3>
-                                <motion.ul
-                                    className="space-y-4"
-                                    variants={containerVariants}
-                                    initial="hidden"
-                                    whileInView="visible"
-                                    viewport={{ once: true, margin: "-50px" }}
-                                >
+                                <ul className="space-y-4">
                                     {(t('home.about.tech_list', { returnObjects: true }) || []).map((item, index) => {
                                         const Icon = index === 0 ? ShieldCheck : index === 1 ? CheckCircle2 : Building2;
                                         return (
-                                            <motion.li key={index} className="flex items-start gap-3" variants={itemVariants}>
+                                            <li key={index} className="flex items-start gap-3">
                                                 <Icon className="text-green-500 flex-shrink-0 mt-1 w-5 h-5" />
                                                 <span className="text-slate-700">{item}</span>
-                                            </motion.li>
+                                            </li>
                                         );
                                     })}
-                                </motion.ul>
+                                </ul>
                             </div>
                         </FadeIn>
                     </div>
@@ -140,7 +115,7 @@ const Home = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col md:flex-row items-center justify-between gap-12">
                         <FadeIn direction="right" className="md:w-1/2">
-                            <TextReveal text={t('home.services.reveal_text')} className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
+                            <span className="text-green-600 font-bold tracking-wide uppercase mb-2 block">{t('home.services.reveal_text')}</span>
                             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">{t('home.services.title')}</h2>
                             <p className="text-slate-600 mb-8 leading-relaxed text-lg">
                                 {t('home.services.description')}
@@ -201,7 +176,7 @@ const Home = () => {
                     <FadeIn direction="up">
                         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
                             <div>
-                                <TextReveal text={t('home.projects.reveal_text')} className="text-green-600 font-bold tracking-wide uppercase mb-2 block" />
+                                <span className="text-green-600 font-bold tracking-wide uppercase mb-2 block">{t('home.projects.reveal_text')}</span>
                                 <h2 className="text-3xl md:text-4xl font-bold text-slate-900">{t('home.projects.title')}</h2>
                             </div>
                             <Link to="/projects" className="text-orange-500 font-medium hover:text-orange-600 flex items-center gap-1 transition-colors">
@@ -271,17 +246,11 @@ const Home = () => {
                         <FadeIn direction="right">
                             <div className="text-green-400 font-bold tracking-wide uppercase mb-2 text-lg">{t('home.why_us.subtitle')}</div>
                             <h2 className="text-3xl md:text-4xl font-bold mb-6" dangerouslySetInnerHTML={{ __html: t('home.why_us.title') }}></h2>
-                            <motion.div
-                                className="space-y-6"
-                                variants={containerVariants}
-                                initial="hidden"
-                                whileInView="visible"
-                                viewport={{ once: true, margin: "-50px" }}
-                            >
+                            <div className="space-y-6">
                                 {(t('home.why_us.reasons', { returnObjects: true }) || []).map((reason, index) => {
                                     const Icon = index === 0 ? Battery : index === 1 ? BarChart3 : ShieldCheck;
                                     return (
-                                        <motion.div key={index} className="flex gap-4" variants={itemVariants}>
+                                        <div key={index} className="flex gap-4">
                                             <div className="bg-white/10 p-3 rounded-lg h-fit shadow-lg shadow-green-500/10 backdrop-blur-sm border border-white/10">
                                                 <Icon className="text-orange-400 w-6 h-6" />
                                             </div>
@@ -289,10 +258,10 @@ const Home = () => {
                                                 <h3 className="text-xl font-bold mb-2 text-white">{reason.title}</h3>
                                                 <p className="text-slate-300 text-sm" dangerouslySetInnerHTML={{ __html: reason.desc }}></p>
                                             </div>
-                                        </motion.div>
+                                        </div>
                                     );
                                 })}
-                            </motion.div>
+                            </div>
                         </FadeIn>
 
                         <FadeIn direction="left" delay={0.2} className="relative">
